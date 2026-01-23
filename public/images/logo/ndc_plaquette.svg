@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 520" fill="none">
+  <defs>
+    <linearGradient id="g" x1="70" y1="460" x2="560" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e11a1a"/>
+      <stop offset="0.55" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <pattern id="stripes" width="34" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="34" height="34" fill="transparent"/>
+      <rect x="0" y="0" width="6" height="34" fill="rgba(255,255,255,0.9)"/>
+    </pattern>
+    <clipPath id="clip">
+      <path d="M110 22H598v476H212L22 310V110L110 22Z"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect x="0" y="0" width="620" height="520" fill="transparent"/>
+
+    <!-- diagonal white bands (plaquette style) -->
+
+    <!-- colored slanted blocks -->
+    <g opacity="0.95">
+      <path d="M410 110l56-56v250l-56 56V110Z" fill="url(#g)"/>
+      <path d="M500 160l56-56v250l-56 56V160Z" fill="url(#g)"/>
+      <path d="M320 210l56-56v250l-56 56V210Z" fill="url(#g)"/>
+    </g>
+
+    <!-- subtle gradient wash -->
+    <path d="M-40 500C220 380 330 180 660 40" stroke="url(#g)" stroke-width="120" stroke-linecap="round" opacity="0.12"/>
+  </g>
+</svg>

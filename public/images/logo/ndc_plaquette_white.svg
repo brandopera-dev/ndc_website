@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 520" fill="none">
+  <defs>
+    <clipPath id="clip">
+      <path d="M110 22H598v476H212L22 310V110L110 22Z"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect x="0" y="0" width="620" height="520" fill="transparent"/>
+
+    <!-- white slanted blocks -->
+    <g opacity="0.95">
+      <path d="M410 110l56-56v250l-56 56V110Z" fill="#ffffff"/>
+      <path d="M500 160l56-56v250l-56 56V160Z" fill="#ffffff"/>
+      <path d="M320 210l56-56v250l-56 56V210Z" fill="#ffffff"/>
+    </g>
+
+    <!-- subtle white wash -->
+    <path d="M-40 500C220 380 330 180 660 40" stroke="#ffffff" stroke-width="120" stroke-linecap="round" opacity="0.16"/>
+  </g>
+</svg>
