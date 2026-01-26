@@ -428,7 +428,7 @@ const About = () => {
         </div>
       </section>
       
-      <ServicesGridSection />
+      {/* <ServicesGridSection /> */}
 
       {/* Team Section */}
       {/* <section className="py-20 bg-white">
