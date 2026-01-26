@@ -117,78 +117,78 @@ const StationsEssence = () => {
         </div>
       </section>
 
-      <section className="py-16 scroll-animate">
+      <section className="py-16 ndc-section-red scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
-              <p className="text-[#22c55e] text-sm font-semibold tracking-wider uppercase">• Comment nous opérons</p>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-4">
+              <p className="text-white/90 text-sm font-semibold tracking-wider uppercase">• Comment nous opérons</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mt-4">
                 Réassort, planification et pilotage des volumes
               </h2>
-              <p className="text-muted-foreground leading-relaxed mt-5">
+              <p className="text-white/80 leading-relaxed mt-5">
                 Nous accompagnons vos stations avec des solutions fiables pour garantir la disponibilité des produits, réduire les
                 ruptures et sécuriser l’ensemble de la chaîne.
               </p>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-gray-200 bg-white p-5 ndc-plaquette-card">
-                  <div className="w-11 h-11 rounded-2xl bg-[#22c55e]/10 flex items-center justify-center text-[#22c55e]">
+                <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
+                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                     <RefreshCcw className="w-5 h-5" />
                   </div>
-                  <p className="mt-4 font-bold text-gray-900">Réassort optimisé</p>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  <p className="mt-4 font-bold text-white">Réassort optimisé</p>
+                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
                     Planification des tournées et optimisation des fréquences.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-gray-200 bg-white p-5 ndc-plaquette-card">
-                  <div className="w-11 h-11 rounded-2xl bg-[#22c55e]/10 flex items-center justify-center text-[#22c55e]">
+                <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
+                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
-                  <p className="mt-4 font-bold text-gray-900">Conformité & sécurité</p>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  <p className="mt-4 font-bold text-white">Conformité & sécurité</p>
+                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
                     Protocoles adaptés aux opérations station-service.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-gray-200 bg-gray-50 p-6 ndc-plaquette-card">
-              <h3 className="text-lg font-bold text-gray-900">Modules</h3>
+            <div className="rounded-3xl border border-white/20 bg-white/10 p-6">
+              <h3 className="text-lg font-bold text-white">Modules</h3>
               <div className="mt-5 space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#22c55e]">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
                     <Network className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Distribution multi-sites</p>
-                    <p className="text-sm text-gray-600">Planification centralisée et coordination des points de vente.</p>
+                    <p className="font-semibold text-white">Distribution multi-sites</p>
+                    <p className="text-sm text-white/80">Planification centralisée et coordination des points de vente.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#22c55e]">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
                     <BarChart3 className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Pilotage des volumes</p>
-                    <p className="text-sm text-gray-600">Suivi des livraisons, contrôle des volumes et reporting.</p>
+                    <p className="font-semibold text-white">Pilotage des volumes</p>
+                    <p className="text-sm text-white/80">Suivi des livraisons, contrôle des volumes et reporting.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#22c55e]">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
                     <Building2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Support exploitation</p>
-                    <p className="text-sm text-gray-600">Accompagnement opérationnel pour assurer la continuité de service.</p>
+                    <p className="font-semibold text-white">Support exploitation</p>
+                    <p className="text-sm text-white/80">Accompagnement opérationnel pour assurer la continuité de service.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#22c55e]">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Livraison multi-zones</p>
-                    <p className="text-sm text-gray-600">Gestion des contraintes locales et des zones éloignées.</p>
+                    <p className="font-semibold text-white">Livraison multi-zones</p>
+                    <p className="text-sm text-white/80">Gestion des contraintes locales et des zones éloignées.</p>
                   </div>
                 </div>
               </div>

@@ -124,60 +124,60 @@ const LogistiqueMinerale = () => {
         </div>
       </section>
 
-      <section className="py-16 scroll-animate">
+      <section className="py-16 ndc-section-red scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
-              <p className="text-[#f59e0b] text-sm font-semibold tracking-wider uppercase">• Spécificités terrain</p>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-4">
+              <p className="text-white/90 text-sm font-semibold tracking-wider uppercase">• Spécificités terrain</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mt-4">
                 Un rôle clé auprès des mines et industries
               </h2>
-              <p className="text-muted-foreground leading-relaxed mt-5">
+              <p className="text-white/80 leading-relaxed mt-5">
                 Chaque interruption imprévue, retard d’approvisionnement ou blocage administratif peut impacter fortement la
                 performance d’exploitation. Notre approche vise à réduire ces risques et à rendre les flux plus prévisibles.
               </p>
 
               <div className="mt-7 grid sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-gray-200 bg-white p-5 ndc-plaquette-card">
-                  <div className="w-11 h-11 rounded-2xl bg-[#f59e0b]/10 flex items-center justify-center text-[#f59e0b]">
+                <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
+                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                     <Truck className="w-5 h-5" />
                   </div>
-                  <p className="mt-4 font-bold text-gray-900">Flotte dédiée</p>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  <p className="mt-4 font-bold text-white">Flotte dédiée</p>
+                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
                     Capacités adaptées aux rotations et aux contraintes d’accès.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-gray-200 bg-white p-5 ndc-plaquette-card">
-                  <div className="w-11 h-11 rounded-2xl bg-[#f59e0b]/10 flex items-center justify-center text-[#f59e0b]">
+                <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
+                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
-                  <p className="mt-4 font-bold text-gray-900">Sécurité des flux</p>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  <p className="mt-4 font-bold text-white">Sécurité des flux</p>
+                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
                     Planification, procédures HSE et points de contrôle.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-gray-200 bg-gray-50 p-6 ndc-plaquette-card">
-              <h3 className="text-lg font-bold text-gray-900">Ce que vous gagnez</h3>
+            <div className="rounded-3xl border border-white/20 bg-white/10 p-6">
+              <h3 className="text-lg font-bold text-white">Ce que vous gagnez</h3>
               <div className="mt-4 space-y-3">
                 {points.map((p) => (
                   <div key={p} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#f59e0b] mt-0.5" />
-                    <p className="text-sm text-gray-700 leading-relaxed">{p}</p>
+                    <CheckCircle2 className="w-5 h-5 text-white mt-0.5" />
+                    <p className="text-sm text-white/80 leading-relaxed">{p}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-6 rounded-2xl bg-white border border-gray-200 p-5">
+              <div className="mt-6 rounded-2xl bg-white/5 border border-white/20 p-5">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/10 flex items-center justify-center text-[#f59e0b]">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-white">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Zones d’intervention</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="font-semibold text-white">Zones d'intervention</p>
+                    <p className="text-sm text-white/80">
                       Corridors miniers, zones industrielles, dépôts et plateformes logistiques.
                     </p>
                   </div>

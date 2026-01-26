@@ -211,71 +211,71 @@ const TransportHydrocarbures = () => {
         </div>
       </section>
 
-      <section className="py-16 scroll-animate">
+      <section className="py-16 ndc-section-red scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
-              <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">
+              <p className="text-white/90 text-sm font-semibold tracking-wider uppercase">
                 • Ce que nous sécurisons
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mt-4">
                 Un modèle opérationnel intégré, orienté performance
               </h2>
-              <p className="text-muted-foreground leading-relaxed mt-5">
+              <p className="text-white/80 leading-relaxed mt-5">
                 Pour les mines et industries, l’enjeu n’est pas seulement de livrer du fuel — c’est d’éviter les ruptures, maîtriser les
                 consommations et réduire le risque opérationnel.
               </p>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-gray-200 bg-white p-5 ndc-plaquette-card">
-                  <div className="w-11 h-11 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
+                <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
+                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
-                  <p className="mt-4 font-bold text-gray-900">Conformité & sécurité</p>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                    Standards HSE stricts, procédures de contrôle et réduction des risques d’incident.
+                  <p className="mt-4 font-bold text-white">Conformité & sécurité</p>
+                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                    Standards HSE stricts, procédures de contrôle et réduction des risques d'incident.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-gray-200 bg-white p-5 ndc-plaquette-card">
-                  <div className="w-11 h-11 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
+                <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
+                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                     <BarChart3 className="w-5 h-5" />
                   </div>
-                  <p className="mt-4 font-bold text-gray-900">Pilotage & reporting</p>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  <p className="mt-4 font-bold text-white">Pilotage & reporting</p>
+                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
                     KPI, tableaux de bord et points de contrôle pour améliorer en continu.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-gray-200 bg-gray-50 p-6 ndc-plaquette-card">
-              <h3 className="text-lg font-bold text-gray-900">Axes de service</h3>
+            <div className="rounded-3xl border border-white/20 bg-white/10 p-6">
+              <h3 className="text-lg font-bold text-white">Axes de service</h3>
               <div className="mt-5 space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#e11a1a]">
                     <Droplet className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Stockage & distribution sur site</p>
-                    <p className="text-sm text-gray-600">Conception, déploiement, exploitation et maintenance des infrastructures.</p>
+                    <p className="font-semibold text-white">Stockage & distribution sur site</p>
+                    <p className="text-sm text-white/80">Conception, déploiement, exploitation et maintenance des infrastructures.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#e11a1a]">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
                     <Network className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Traçabilité des flux</p>
-                    <p className="text-sm text-gray-600">Suivi des volumes, mouvements, consommations et écarts.</p>
+                    <p className="font-semibold text-white">Traçabilité des flux</p>
+                    <p className="text-sm text-white/80">Suivi des volumes, mouvements, consommations et écarts.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#e11a1a]">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
                     <Truck className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Approvisionnement</p>
-                    <p className="text-sm text-gray-600">Planification, continuité et réduction des ruptures.</p>
+                    <p className="font-semibold text-white">Approvisionnement</p>
+                    <p className="text-sm text-white/80">Planification, continuité et réduction des ruptures.</p>
                   </div>
                 </div>
               </div>
