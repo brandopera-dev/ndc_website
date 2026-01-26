@@ -234,7 +234,7 @@ const About = () => {
                 blocage administratif dans les formalités de transit peut entraîner des répercussions considérables tant sur le plan
                 financier qu’opérationnel.
               </p>
-              <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-6 ndc-plaquette-card">
+              <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-6 ">
                 <p className="text-gray-700 leading-relaxed">
                   C’est de ces contraintes que <span className="font-bold text-gray-900">NDC Énergie</span> a pris naissance.
                 </p>
@@ -250,7 +250,7 @@ const About = () => {
               </h3>
               <div className="mt-6 space-y-5">
                 {missions.map((m) => (
-                  <div key={m.title} className="rounded-3xl border border-gray-200 bg-white p-7 ndc-plaquette-card">
+                  <div key={m.title} className="rounded-3xl border border-gray-200 bg-white p-7 ">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
                         <m.icon className="w-6 h-6" />
@@ -286,7 +286,7 @@ const About = () => {
                 Pour un acteur minier, travailler avec NDC Énergie, ce n’est pas additionner des prestataires, c’est s’appuyer sur un modèle intégré.
               </p>
             </div>
-            <div className="rounded-3xl border border-gray-200 bg-gray-50 p-7 ndc-plaquette-card max-w-xl">
+            <div className="rounded-3xl border border-gray-200 bg-gray-50 p-7  max-w-xl">
               <p className="text-sm font-bold text-gray-900">En pratique :</p>
               <ul className="mt-4 space-y-2 text-gray-700 text-sm">
                 <li className="flex items-start gap-2">
@@ -312,7 +312,7 @@ const About = () => {
           <p className="text-sm font-bold text-gray-900">Nos principes opérationnels :</p>
           <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-animate">
             {opsPrinciples.map((p) => (
-              <div key={p.title} className="rounded-3xl border border-gray-200 bg-white p-7 ndc-plaquette-card hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
+              <div key={p.title} className="rounded-3xl border border-gray-200 bg-white p-7  hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
                     <p.icon className="w-6 h-6" />
