@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,9 +8,6 @@
 html {
   scroll-behavior: smooth;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -412,8 +412,9 @@ html {
     border-radius: 1rem;
     padding: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: var(--font-primary);
+    will-change: transform;
   }
 
   .service-card:hover {
@@ -427,13 +428,15 @@ html {
     border-radius: 1rem;
     padding: 1.5rem;
     border: 1px solid hsl(var(--border));
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: var(--font-primary);
+    will-change: transform;
   }
 
   .feature-card:hover {
     border-color: hsl(var(--primary) / 0.3);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
   }
 
   .btn-modern {
@@ -442,10 +445,11 @@ html {
     letter-spacing: -0.01em;
     border-radius: 9999px;
     padding: 0.75rem 2rem;
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    will-change: transform;
   }
 
   .btn-modern:hover {
@@ -458,8 +462,9 @@ html {
 @layer utilities {
   .scroll-animate {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
   }
 
   .scroll-animate.animate-in {
@@ -467,9 +472,17 @@ html {
     transform: translateY(0);
   }
 
+  /* Délais progressifs pour animations en cascade */
+  .scroll-animate:nth-child(1) { transition-delay: 0ms; }
+  .scroll-animate:nth-child(2) { transition-delay: 80ms; }
+  .scroll-animate:nth-child(3) { transition-delay: 160ms; }
+  .scroll-animate:nth-child(4) { transition-delay: 240ms; }
+  .scroll-animate:nth-child(5) { transition-delay: 320ms; }
+  .scroll-animate:nth-child(6) { transition-delay: 400ms; }
+
   /* Smooth transitions between sections */
   section {
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Add subtle border between sections for better separation */
@@ -491,5 +504,69 @@ html {
   section.bg-black::before,
   section.section-dark::before {
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1) 50%, transparent);
+  }
+
+  /* Classes utilitaires pour transitions fluides */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-smooth-fast {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-smooth-slow {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Optimisation des hover effects */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-scale-sm:hover {
+    transform: scale(1.02);
+  }
+
+  /* Animation de fondu pour les images */
+  img {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Optimisation des boutons */
+  button, .btn, a[role="button"] {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  /* Réduction du mouvement pour accessibilité */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    .hover-lift,
+    .hover-scale,
+    .transition-smooth,
+    .transition-smooth-fast,
+    .transition-smooth-slow,
+    button,
+    .btn,
+    img {
+      transition: none !important;
+      animation: none !important;
+      will-change: auto !important;
+    }
   }
 }

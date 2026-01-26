@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Check, ChevronLeft, ChevronRight, ArrowRight, Play, ShieldCheck, Target, Users, ClipboardList, Route, BadgeCheck } from 'lucide-react';
@@ -6,9 +6,18 @@ import { Button } from '@/components/ui/button';
 import {   CTAStreamlineExample } from '@/components/cta/CTAExamples';
 import { CTAWithImage, CTASimple, CTAWithBackground } from '@/components/cta';
 import ServicesGridSection from '@/components/new_components/ServicesGridSection';
+import PageHero from '@/components/PageHero';
+import { useI18n } from '@/i18n/I18nProvider';
+import { initScrollAnimations } from '@/utils/scrollAnimations';
 
 const About = () => {
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+  const { t } = useI18n();
+
+  useEffect(() => {
+    const cleanup = initScrollAnimations();
+    return cleanup;
+  }, []);
 
   const stats = [
     { value: '25', label: 'Years in Service' },
@@ -126,56 +135,30 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 bg-[#0a1628] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg"
-            alt="About NDC"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/90 to-[#0a1628]/95" />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-white/60 text-sm mb-8">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-white">About</span>
-          </div>
-          
-          {/* Content */}
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-[#e11a1a]/10 border border-[#e11a1a]/20 text-[#e11a1a] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <span className="w-2 h-2 bg-[#e11a1a] rounded-full animate-pulse"></span>
-              WHO WE ARE
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              About <span className="text-[#e11a1a] italic">NDC</span>
-            </h1>
-            
-            <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8">
-              Excellence in logistics solutions that drive efficiency, innovation, and customer satisfaction across Africa and beyond.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <a href="/contact">
-                <Button className="bg-[#e11a1a] hover:bg-red-700 text-white px-8 py-6 rounded-full text-base font-semibold inline-flex items-center gap-2">
-                  Join Our Team
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </a>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 rounded-full text-base font-semibold">
-                Learn More
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg"
+        backgroundAlt="About NDC"
+        breadcrumb={[
+          { label: t('nav.home'), to: '/' },
+          { label: t('nav.about') },
+        ]}
+        badgeText={t('hero.about.badge')}
+        badgeDotClassName="bg-[#e11a1a]"
+        title={t('hero.about.title')}
+        description={t('hero.about.description')}
+        primaryAction={{
+          to: '/services',
+          label: t('hero.about.primaryCta'),
+        }}
+        secondaryAction={{
+          to: '/contact',
+          label: t('hero.about.secondaryCta'),
+          variant: 'outline',
+        }}
+      />
 
       {/* Who We Are Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white scroll-animate">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -225,7 +208,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 ndc-plaquette-bg">
+      <section className="py-20 bg-gray-50 scroll-animate">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
           <div className="hidden lg:block absolute -left-1 top-24">
             <div className="ndc-vertical-label text-[#e11a1a] text-sm">
@@ -289,7 +272,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white scroll-animate">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-12">
             <div>
@@ -327,9 +310,9 @@ const About = () => {
           </div>
 
           <p className="text-sm font-bold text-gray-900">Nos principes opérationnels :</p>
-          <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-animate">
             {opsPrinciples.map((p) => (
-              <div key={p.title} className="rounded-3xl border border-gray-200 bg-white p-7 ndc-plaquette-card">
+              <div key={p.title} className="rounded-3xl border border-gray-200 bg-white p-7 ndc-plaquette-card hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
                     <p.icon className="w-6 h-6" />
@@ -346,11 +329,11 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 scroll-animate">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 scroll-animate">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center hover:scale-110 transition-transform cursor-pointer">
                 <p className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-2">{stat.value}</p>
                 <p className="text-gray-600 text-sm">{stat.label}</p>
               </div>
@@ -360,7 +343,7 @@ const About = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white scroll-animate">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
             <div>

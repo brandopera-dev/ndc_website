@@ -47,7 +47,7 @@ const services = [
 ];
 
   return ( 
-      <section id="services" className="py-20 bg-gray-50 ndc-plaquette-bg">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="hidden lg:block absolute -left-1 top-24">
             <div className="ndc-vertical-label text-[#e11a1a] text-sm">

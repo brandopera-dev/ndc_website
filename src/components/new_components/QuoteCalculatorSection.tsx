@@ -105,11 +105,11 @@ const QuoteCalculatorSection = () => {
   ];
 
   return (
-    <section id="devis" className="py-14 lg:py-16 ndc-section-red ndc-plaquette-bg-white scroll-animate">
-      <div className="max-w-5xl mx-auto px-8 relative">
+    <section id="devis" className="py-14 sm:py-16 lg:py-16 ndc-section-red scroll-animate">
+      <div className="max-w-5xl mx-auto px-6 sm:px-8 relative">
         {/* Title */}
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
             Demandez un devis
             <br />
             logistique (Mines & Carburant)
@@ -120,13 +120,13 @@ const QuoteCalculatorSection = () => {
         </div>
 
         {/* Step Indicators */}
-        <div className="flex items-center justify-center gap-2 md:gap-4 mb-8">
+        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-8">
           {steps.map((s, idx) => {
             const isActive = s.id === currentStep;
             const isDone = s.id < currentStep;
             return (
               <React.Fragment key={s.id}>
-                <div className={`flex items-center gap-2 rounded-full px-4 py-2.5 border ${isActive ? 'bg-white border-white' : isDone ? 'bg-white/15 border-white/30' : 'bg-white/10 border-white/20'}`}>
+                <div className={`flex items-center gap-2 rounded-full px-3 sm:px-4 py-2.5 border ${isActive ? 'bg-white border-white' : isDone ? 'bg-white/15 border-white/30' : 'bg-white/10 border-white/20'}`}>
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center font-semibold text-xs ${isActive ? 'bg-[#e11a1a] text-white' : isDone ? 'bg-white text-[#e11a1a]' : 'bg-white/20 text-white'}`}>
                     {s.id}
                   </div>
@@ -145,7 +145,7 @@ const QuoteCalculatorSection = () => {
         </div>
 
         {/* Quote Form Card */}
-        <div className="rounded-3xl shadow-2xl p-5 lg:p-6 ndc-card-white">
+        <div className="rounded-3xl shadow-2xl p-4 sm:p-5 lg:p-6 ndc-card-white">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
             <h3 className="text-lg font-bold text-gray-900">
               Demande de devis
@@ -383,7 +383,7 @@ const QuoteCalculatorSection = () => {
                   type="button"
                   onClick={goPrev}
                   disabled={currentStep === 1}
-                  className={`rounded-xl px-6 py-3 font-semibold border ${
+                  className={`rounded-xl px-6 py-3 font-semibold border w-full sm:w-auto ${
                     currentStep === 1 ? 'opacity-50 cursor-not-allowed border-gray-200 bg-gray-50 text-gray-400' : 'border-gray-200 bg-white hover:bg-gray-50'
                   }`}
                 >
@@ -391,7 +391,7 @@ const QuoteCalculatorSection = () => {
                 </button>
 
                 {currentStep < totalSteps ? (
-                  <button type="button" onClick={goNext} className="rounded-xl px-6 py-3 font-semibold ndc-btn-red">
+                  <button type="button" onClick={goNext} className="rounded-xl px-6 py-3 font-semibold ndc-btn-red w-full sm:w-auto">
                     Continuer
                   </button>
                 ) : (
@@ -399,7 +399,7 @@ const QuoteCalculatorSection = () => {
                     type="button"
                     onClick={submit}
                     disabled={isSubmitting}
-                    className={`rounded-xl px-6 py-3 font-semibold ${isSubmitting ? 'opacity-70' : ''} ndc-btn-red`}
+                    className={`rounded-xl px-6 py-3 font-semibold w-full sm:w-auto ${isSubmitting ? 'opacity-70' : ''} ndc-btn-red`}
                   >
                     {isSubmitting ? 'Envoi...' : 'Envoyer'}
                   </button>

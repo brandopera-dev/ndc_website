@@ -1,34 +1,13 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock, Send, ChevronRight, Truck, Package, Globe } from "lucide-react";
+import { useEffect } from "react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import Header from "@/components/Header";
 import CTAFooterSection from "@/components/Footer";
 import FaqSection from "@/components/new_components/FaqSection";
 import { initScrollAnimations } from "@/utils/scrollAnimations";
+import PageHero from "@/components/PageHero";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    company: "",
-    service: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   const contactInfo = [
     { icon: MapPin, title: "Notre Siège", info: "Zone Industrielle, Abidjan, Côte d'Ivoire", subinfo: "Bureau 205, Immeuble NDC" },
     { icon: Phone, title: "Téléphone", info: "+225 27 22 00 00 00", subinfo: "+225 07 00 00 00 00" },
@@ -36,11 +15,7 @@ const Contact = () => {
     { icon: Clock, title: "Horaires", info: "Lun - Ven: 8h00 - 18h00", subinfo: "Sam: 9h00 - 13h00" },
   ];
 
-  const services = [
-    { icon: Truck, title: "Transport de Carburant", desc: "Solutions sécurisées pour hydrocarbures" },
-    { icon: Package, title: "Logistique Minière", desc: "Transport d'équipements lourds" },
-    { icon: Globe, title: "Transit & Douanes", desc: "Formalités import/export" },
-  ];
+  const { t } = useI18n();
 
   useEffect(() => {
     const cleanup = initScrollAnimations();
@@ -52,52 +27,37 @@ const Contact = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 bg-[#0a1628] overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="/images/vehicles-coal-mine-view.jpg" 
-            alt="Contact NDC" 
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/90 to-[#0a1628]/95" />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-white/60 text-sm mb-8">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-white">Contact</span>
-          </div>
-          
-          {/* Content */}
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-[#e11a1a]/10 border border-[#e11a1a]/20 text-[#e11a1a] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <span className="w-2 h-2 bg-[#e11a1a] rounded-full animate-pulse"></span>
-              GET IN TOUCH
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Contact <span className="text-[#e11a1a] italic">NDC</span>
-            </h1>
-            
-            <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8">
-              Our team is ready to answer all your questions and support you in your logistics projects. Let's build success together.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <Button className="bg-[#e11a1a] hover:bg-red-700 text-white px-8 py-6 rounded-full text-base font-semibold inline-flex items-center gap-2">
-                <Phone className="w-5 h-5" />
-                Call Us Now
-              </Button>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 rounded-full text-base font-semibold inline-flex items-center gap-2">
-                <Mail className="w-5 h-5" />
-                Send Email
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage="/images/vehicles-coal-mine-view.jpg"
+        backgroundAlt="Contact NDC"
+        breadcrumb={[
+          { label: t('nav.home'), to: '/' },
+          { label: t('nav.contact') },
+        ]}
+        badgeText={t('hero.contact.badge')}
+        badgeDotClassName="bg-[#e11a1a]"
+        title={t('hero.contact.title')}
+        description={t('hero.contact.description')}
+        primaryAction={{
+          to: 'tel:+2252722000000',
+          label: (
+            <>
+              <Phone className="w-5 h-5" />
+              {t('hero.contact.primaryCta')}
+            </>
+          ),
+        }}
+        secondaryAction={{
+          to: 'mailto:contact@ndc-logistics.com',
+          label: (
+            <>
+              <Mail className="w-5 h-5" />
+              {t('hero.contact.secondaryCta')}
+            </>
+          ),
+          variant: 'outline',
+        }}
+      />
 
       {/* Contact Info Cards */}
       <section className="py-16 -mt-8 relative z-20">
@@ -106,7 +66,7 @@ const Contact = () => {
             {contactInfo.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-card p-6 rounded-2xl border shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-card p-6 rounded-2xl border shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 scroll-animate"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <item.icon className="w-7 h-7 text-primary" />
@@ -136,7 +96,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 scroll-animate">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Prénom *</label>
@@ -206,7 +166,7 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl hover:scale-105 transition-transform"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Envoyer le Message
@@ -215,7 +175,7 @@ const Contact = () => {
             </div>
 
            
-            <div className="space-y-8">
+            <div className="space-y-8 scroll-animate">
              
               <div className="bg-muted rounded-2xl h-80 overflow-hidden relative">
                 <iframe 
@@ -239,7 +199,7 @@ const Contact = () => {
                 </p>
                 <Button 
                   size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 rounded-xl w-full"
+                  className="bg-white text-primary hover:bg-white/90 rounded-xl w-full hover:scale-105 transition-transform"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   +225 27 22 00 00 00

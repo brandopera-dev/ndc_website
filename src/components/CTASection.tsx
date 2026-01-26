@@ -4,7 +4,7 @@ import { ArrowRight, Phone } from "lucide-react";
 const CTASection = () => {
   return ( 
     // section-dark 
-    <section id="contact" className="py-20 lg:py-32 bg-stone-900 relative overflow-hidden scroll-animate">
+    <section id="contact" className="py-14 sm:py-20 lg:py-32 bg-stone-900 relative overflow-hidden scroll-animate">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-50">
           <img
@@ -18,21 +18,21 @@ const CTASection = () => {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-600 rounded-full blur-3xl" /> */}
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 relative z-10 text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 text-center">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-5 sm:mb-6">
           Prêt à lancer
           <br />
           votre projet logistique ?
         </h2>
-        <p className="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto mb-10">
+        <p className="text-white/60 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-10">
           Demandez votre devis gratuitement en quelques minutes et profitez de tarifs compétitifs.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-red-600 hover:bg-red-700 text-white rounded-lg px-8 h-14 text-lg">
+          <Button className="bg-red-600 hover:bg-red-700 text-white rounded-lg px-8 h-12 sm:h-14 text-base sm:text-lg w-full sm:w-auto">
             Demander un devis
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
-          <Button className="border-2 border-white/20 bg-transparent hover:bg-white/10 text-white rounded-lg px-8 h-14 text-lg">
+          <Button className="border-2 border-white/20 bg-transparent hover:bg-white/10 text-white rounded-lg px-8 h-12 sm:h-14 text-base sm:text-lg w-full sm:w-auto">
             <Phone className="w-5 h-5 mr-2" />
             Nous appeler
           </Button>

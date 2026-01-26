@@ -45,15 +45,15 @@ const FeaturesSection = () => {
   const plusBenefits = benefits.filter((b) => b.tone === "plus");
 
   return (
-      <section className="py-14 sm:py-20 ndc-section-red ndc-plaquette-bg-white overflow-hidden">
+      <section className="py-14 sm:py-20 ndc-section-red  overflow-hidden scroll-animate">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
           <div className="hidden lg:block absolute -left-1 top-24">
             <div className="ndc-vertical-label text-white/80 text-sm">VALEUR</div>
           </div>
 
           <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-black/20">
+            <div className="lg:col-span-5 scroll-animate">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-black/20 hover:scale-105 transition-transform cursor-pointer">
                 <img
                   src="/images/NDC--de-KATI178-sm.jpg"
                   alt="Valeur NDC Énergie"
@@ -73,7 +73,7 @@ const FeaturesSection = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 scroll-animate">
               <SectionTitle
                 kicker="Ce que nous pouvons vous apporter"
                 variant="dark"
@@ -87,7 +87,7 @@ const FeaturesSection = () => {
                 }
               />
 
-              <div className="mt-10 grid md:grid-cols-2 gap-6">
+              <div className="mt-10 grid md:grid-cols-2 gap-6 scroll-animate">
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
                   <p className="text-xs font-semibold tracking-widest uppercase text-white/80">Réduction des risques</p>
                   <div className="mt-5 space-y-5">

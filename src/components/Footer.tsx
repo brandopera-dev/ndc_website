@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
   const CTAFooterSection = () => {
   return (
-    <section className="bg-[#e11a1a] text-white ndc-plaquette-bg-white">
+    <section className="bg-[#e11a1a] text-white">
       {/* CTA Banner */}
       <div className="border-b border-white/20">
-        <div className="max-w-7xl mx-auto px-8 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12 lg:py-16">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-8">
-              <h2 className="text-3xl lg:text-4xl font-bold max-w-xl">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold max-w-xl">
                 Parlez-nous de votre besoin et recevez une réponse rapide.
               </h2>
               
@@ -27,7 +27,7 @@ import { Link } from 'react-router-dom';
 
             <Link
               to="/#devis"
-              className="bg-white text-[#e11a1a] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all flex items-center gap-2 shadow-lg"
+              className="bg-white text-[#e11a1a] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-lg w-full sm:w-auto"
             >
               Demander un devis
               <ArrowRight className="w-5 h-5" />
@@ -38,7 +38,7 @@ import { Link } from 'react-router-dom';
 
       {/* Footer */}
       <div className="bg-white text-gray-900">
-        <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {/* Brand */}
             <div>
@@ -50,7 +50,7 @@ import { Link } from 'react-router-dom';
               <img 
                 src="/images/logo/ID_NDC Energie 1.png" 
                 alt="NDC Énergie" 
-                className="h-20 w-auto object-contain"
+                className="h-16 sm:h-20 w-auto object-contain"
               /> 
               </div> 
               <p className="text-gray-600 text-sm mb-6 leading-relaxed">

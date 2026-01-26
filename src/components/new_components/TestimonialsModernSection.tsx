@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 
 const TestimonialsModernSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 640);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
 
   const testimonials = [
     {
@@ -57,20 +65,20 @@ const TestimonialsModernSection = () => {
   };
 
   return (
-    <section id="avis" className="py-20 lg:py-28 bg-black text-white overflow-hidden scroll-animate">
-      <div className="max-w-7xl mx-auto px-8">
+    <section id="avis" className="py-14 sm:py-20 lg:py-28 bg-black text-white overflow-hidden scroll-animate">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-animate">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4">
             AVIS CLIENTS
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
             Ce que disent nos clients
           </h2>
         </div>
 
         {/* Carousel Container - Stacked with overlap */}
-        <div className="relative h-[300px] mb-12">
+        <div className="relative h-[420px] sm:h-[300px] mb-12">
           <div className="absolute inset-0 flex items-start justify-center">
             {getVisibleTestimonials().map((testimonial, idx) => {
               const isCenter = testimonial.offset === 0;
@@ -78,7 +86,9 @@ const TestimonialsModernSection = () => {
               const isRight = testimonial.offset === 1;
               
               // Calculate translateX for overlap effect
-              const translateX = testimonial.offset * 350;
+              const translateX = isMobile ? 0 : testimonial.offset * 350;
+
+              if (isMobile && !isCenter) return null;
 
               return (
                 <div
@@ -91,8 +101,8 @@ const TestimonialsModernSection = () => {
                     opacity: isCenter ? 1 : 0.4,
                     filter: isCenter ? 'none' : 'brightness(0.6)',
                     width: '700px',
-                    maxWidth: '90vw',
-                    pointerEvents: isCenter ? 'auto' : 'none',
+                    maxWidth: '92vw',
+                    pointerEvents: isMobile ? 'auto' : (isCenter ? 'auto' : 'none'),
                   }}
                   onClick={() => {
                     if (isLeft) prevSlide();
@@ -152,14 +162,14 @@ const TestimonialsModernSection = () => {
           <div className="flex items-center justify-center gap-4">
             <button
               onClick={prevSlide}
-              className="w-12 h-12 rounded-full bg-white text-black hover:bg-gray-200 transition-colors flex items-center justify-center"
+              className="w-12 h-12 rounded-full bg-white text-black hover:bg-gray-200 transition-all hover:scale-110 flex items-center justify-center"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="w-12 h-12 rounded-full bg-white text-black hover:bg-gray-200 transition-colors flex items-center justify-center"
+              className="w-12 h-12 rounded-full bg-white text-black hover:bg-gray-200 transition-all hover:scale-110 flex items-center justify-center"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />

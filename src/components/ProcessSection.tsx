@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronLeft, ChevronRight, Droplet, Network, ShieldCheck, Truck } from "lucide-react";
@@ -48,6 +48,14 @@ const processCards = [
 
 const ProcessSection = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 640);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % processCards.length);
@@ -62,8 +70,8 @@ const ProcessSection = () => {
   };
 
   return (
-    <section id="process" className="py-20 lg:py-24 section-dark overflow-hidden scroll-animate ndc-swoosh-bg ndc-plaquette-bg">
-      <div className="max-w-7xl mx-auto px-8 relative">
+    <section id="process" className="py-14 sm:py-20 lg:py-24 section-dark overflow-hidden scroll-animate ndc-swoosh-bg ">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative">
         <div className="hidden lg:block absolute -left-1 top-10">
           <div className="ndc-vertical-label text-white/60 text-sm">
             PROCESS
@@ -73,12 +81,13 @@ const ProcessSection = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-16">
           <div className="flex flex-col gap-4">
+            {/*  <span className="ndc-text-gradient ndc-accent-underline">NDC Énergie</span> */}
             <SectionTitle
               kicker="Notre méthode"
               variant="dark"
               title={
                 <>
-                  Des solutions <span className="ndc-text-gradient ndc-accent-underline">NDC Énergie</span>
+                  Des solutions
                   <br />
                   pensées pour les opérations industrielles
                 </>
@@ -111,7 +120,9 @@ const ProcessSection = () => {
               const offset = index - currentIndex;
               const isActive = index === currentIndex;
               // Wider cards with more overlap - reduced spacing from 340 to 280
-              const translateX = offset * 280;
+              const translateX = isMobile ? 0 : offset * 280;
+
+              if (isMobile && !isActive) return null;
               
               return (
                 <div

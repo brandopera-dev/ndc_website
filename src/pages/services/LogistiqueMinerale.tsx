@@ -124,7 +124,7 @@ const LogistiqueMinerale = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
@@ -199,7 +199,7 @@ const LogistiqueMinerale = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5">
@@ -247,7 +247,7 @@ const LogistiqueMinerale = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white scroll-animate">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
             <p className="text-[#f59e0b] text-sm font-semibold tracking-wider uppercase">FAQ</p>

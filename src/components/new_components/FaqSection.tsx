@@ -31,22 +31,22 @@ const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-white scroll-animate">
-      <div className="max-w-7xl mx-auto px-8">
+    <section id="faq" className="py-14 sm:py-20 lg:py-28 bg-white scroll-animate">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div>
+          <div className="scroll-animate">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#e11a1a]">
               Questions & Réponses
               <span className="text-[#e11a1a]">⇄</span>
             </div>
 
-            <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
               Questions
               <br />
               fréquentes
             </h2>
 
-            <p className="mt-5 text-sm md:text-base text-gray-500 max-w-md">
+            <p className="mt-5 text-sm sm:text-base text-gray-500 max-w-md">
               Nous répondons aux questions les plus courantes sur nos services de transport, stockage et distribution.
             </p>
 
@@ -71,12 +71,12 @@ const FaqSection = () => {
               </div>
             </div>
 
-            <button className="mt-10 bg-[#e11a1a] hover:bg-red-700 text-white px-6 py-3 rounded-md font-semibold text-sm transition-colors">
+            <button className="mt-10 bg-[#e11a1a] hover:bg-red-700 text-white px-6 py-3 rounded-md font-semibold text-sm transition-all hover:scale-105 hover:shadow-lg">
               Voir toutes les FAQ
             </button>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden scroll-animate">
             {items.map((item, index) => {
               const isOpen = openIndex === index;
               return (

@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpenMobile, setIsServicesOpenMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, toggleLanguage, t } = useI18n();
 
   useEffect(() => {
     const onScroll = () => {
@@ -18,9 +20,9 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "Accueil", to: "/" },
-    { label: "À propos", to: "/about" },
-    { label: "Média", to: "/media" },
+    { label: t("nav.home"), to: "/" },
+    { label: t("nav.about"), to: "/about" },
+    { label: t("nav.media"), to: "/media" },
   ];
 
   const serviceMenuItems = [
@@ -53,19 +55,19 @@ const Header = () => {
           : "bg-stone-950 border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
               src="/images/logo/ID_NDC Energie 2.png"
               alt="NDC Énergie"
-              className={`${isScrolled ? "hidden" : "block"} h-20 w-20 rounded-lg object-cover`}
+              className={`${isScrolled ? "hidden" : "block"} h-12 w-12 sm:h-20 sm:w-20 rounded-lg object-cover`}
             />
             <img
               src="/images/logo/ID_NDC Energie 1.png"
               alt="NDC Énergie"
-              className={`${isScrolled ? "block" : "hidden"} h-24 w-auto rounded-lg object-cover`}
+              className={`${isScrolled ? "block" : "hidden"} h-10 sm:h-24 w-auto rounded-lg object-cover`}
             />
           </Link>
 
@@ -77,7 +79,7 @@ const Header = () => {
                 isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/85 hover:text-white"
               }`}
             >
-              Accueil
+              {t("nav.home")}
             </Link>
 
             <div className="relative group">
@@ -87,7 +89,7 @@ const Header = () => {
                   isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/85 hover:text-white"
                 }`}
               >
-                Services
+                {t("nav.services")}
                 <ChevronDown className="w-4 h-4" />
               </Link>
               {/* <div className="fixed left-0 right-0 top-16 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all">
@@ -215,12 +217,23 @@ const Header = () => {
                 isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/85 hover:text-white"
               }`}
             >
-              Contact
+              {t("nav.contact")}
             </Link>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              className={`rounded-full px-3 py-1 text-xs font-semibold tracking-wide border transition-colors ${
+                isScrolled
+                  ? "border-black/15 text-gray-700 hover:bg-black/5"
+                  : "border-white/20 text-white/85 hover:bg-white/10"
+              }`}
+            >
+              {language === "fr" ? "FR" : "EN"}
+            </button>
             <Link to="/contact">
               <Button
                 className={`rounded-full px-6 py-2 text-sm font-semibold inline-flex items-center gap-2 ${
@@ -229,7 +242,7 @@ const Header = () => {
                     : "bg-white hover:bg-white/90 text-[#0a1628]"
                 }`}
               >
-                Demander un devis
+                {t("nav.quote")}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
@@ -259,7 +272,7 @@ const Header = () => {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Accueil
+                {t("nav.home")}
               </Link>
 
               <div>
@@ -270,7 +283,7 @@ const Header = () => {
                   }`}
                   onClick={() => setIsServicesOpenMobile((v) => !v)}
                 >
-                  <span>Services</span>
+                  <span>{t("nav.services")}</span>
                   <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpenMobile ? "rotate-180" : ""}`} />
                 </button>
                 {isServicesOpenMobile && (
@@ -301,7 +314,7 @@ const Header = () => {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                À propos
+                {t("nav.about")}
               </Link>
               <Link
                 to="/media"
@@ -310,7 +323,7 @@ const Header = () => {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Média
+                {t("nav.media")}
               </Link>
 
               <Link
@@ -320,8 +333,18 @@ const Header = () => {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                {t("nav.contact")}
               </Link>
+
+              <button
+                type="button"
+                onClick={toggleLanguage}
+                className={`text-left transition-colors font-medium py-2 ${
+                  isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/90 hover:text-white"
+                }`}
+              >
+                {language === "fr" ? "Passer en EN" : "Switch to FR"}
+              </button>
 
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                 <Button
@@ -331,7 +354,7 @@ const Header = () => {
                       : "bg-white hover:bg-white/90 text-[#0a1628]"
                   }`}
                 >
-                  Demander un devis
+                  {t("nav.quote")}
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>

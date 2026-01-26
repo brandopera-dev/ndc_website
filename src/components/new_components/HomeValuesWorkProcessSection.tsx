@@ -92,17 +92,17 @@ const HomeValuesWorkProcessSection = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 py-16 sm:py-20 text-white">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl scroll-animate">
            Une logistique pensée
             <br />
             pour la croissance
           </h2>
-          <p className="mt-5 sm:mt-6 text-white/70 max-w-2xl leading-relaxed text-sm sm:text-base">
+          <p className="mt-5 sm:mt-6 text-white/70 max-w-2xl leading-relaxed text-sm sm:text-base scroll-animate">
             Grâce à des solutions innovantes et une expertise terrain, nous améliorons l'efficacité, réduisons les coûts et assurons une visibilité complète.
           </p>
           <div className="mt-8">
             <a href="#how-we-work">
-              <Button className="bg-white text-[#0a1628] hover:bg-white/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-semibold inline-flex items-center gap-2">
+              <Button className="bg-white text-[#0a1628] hover:bg-white/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-semibold inline-flex items-center gap-2 hover:scale-105 transition-transform">
                 En savoir plus
                 <ArrowRight className="w-5 h-5" />
               </Button>
