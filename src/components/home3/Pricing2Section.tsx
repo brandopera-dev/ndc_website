@@ -49,7 +49,7 @@ export const Pricing2Section = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1f1f1f] mb-4">
             Nos Tarifs
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -63,7 +63,7 @@ export const Pricing2Section = () => {
               key={index}
               className={`rounded-2xl p-8 ${
                 plan.highlighted 
-                  ? 'bg-[#0a1628] text-white border-4 border-[#e11a1a] transform scale-105' 
+                  ? 'bg-[#1f1f1f] text-white border-4 border-[#e11a1a] transform scale-105' 
                   : 'bg-gray-50 border-2 border-gray-200'
               }`}
             >
@@ -73,12 +73,12 @@ export const Pricing2Section = () => {
                 </div>
               )}
               
-              <h3 className={`text-2xl font-bold mb-2 ${plan.highlighted ? 'text-white' : 'text-[#0a1628]'}`}>
+              <h3 className={`text-2xl font-bold mb-2 ${plan.highlighted ? 'text-white' : 'text-[#1f1f1f]'}`}>
                 {plan.name}
               </h3>
               
               <div className="mb-4">
-                <span className={`text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-[#0a1628]'}`}>
+                <span className={`text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-[#1f1f1f]'}`}>
                   {plan.price}
                 </span>
               </div>
@@ -101,7 +101,7 @@ export const Pricing2Section = () => {
               <button className={`w-full py-3 rounded-lg font-semibold transition-all ${
                 plan.highlighted
                   ? 'bg-[#e11a1a] hover:bg-red-700 text-white'
-                  : 'bg-[#0a1628] hover:bg-[#0a1628]/90 text-white'
+                  : 'bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-white'
               }`}>
                 Choisir ce plan
               </button>

@@ -334,7 +334,7 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 scroll-animate">
             {stats.map((stat, index) => (
               <div key={index} className="text-center hover:scale-110 transition-transform cursor-pointer">
-                <p className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-2">{stat.value}</p>
+                <p className="text-4xl md:text-5xl font-bold text-[#1f1f1f] mb-2">{stat.value}</p>
                 <p className="text-gray-600 text-sm">{stat.label}</p>
               </div>
             ))}

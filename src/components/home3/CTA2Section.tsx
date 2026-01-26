@@ -3,7 +3,7 @@ import { ArrowRight, Phone, Mail } from 'lucide-react';
 
 export const CTA2Section = () => {
   return (
-    <section className="py-20 bg-[#0a1628] relative overflow-hidden">
+    <section className="py-20 bg-[#1f1f1f] relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <svg width="100%" height="100%">
           <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">

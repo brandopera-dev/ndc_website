@@ -22,7 +22,7 @@ export const CTAWithImage: React.FC<CTAWithImageProps> = ({
   imagePosition = 'left',
   variant = 'default',
 }) => {
-  const bgColor = variant === 'dark' ? 'bg-[#0a1628]' : 'bg-[#0a1628]';
+  const bgColor = variant === 'dark' ? 'bg-[#1f1f1f]' : 'bg-[#1f1f1f]';
   const textColor = 'text-white';
 
   return (

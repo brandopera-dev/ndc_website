@@ -128,7 +128,7 @@ const Media = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="relative bg-[#0a1628] overflow-hidden ndc-swoosh-bg">
+      <section className="relative bg-[#1f1f1f] overflow-hidden ndc-swoosh-bg">
         <div className="relative pt-28 lg:pt-32 pb-14 lg:pb-20">
           <div className="absolute inset-0">
             {/* <div className="absolute inset-0 opacity-35">
@@ -145,7 +145,7 @@ const Media = () => {
               alt="Industries et mines"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/75 via-[#0a1628]/70 to-[#0a1628]/95" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1f1f1f]/75 via-[#0a1628]/70 to-[#1f1f1f]/95" />
             {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(225,26,26,0.25),transparent_55%)]" /> */}
           </div>
 
@@ -217,7 +217,7 @@ const Media = () => {
         </div>
       </section>
 
-      <section id="videos" className="py-16 bg-[#0a1628] ndc-swoosh-bg">
+      <section id="videos" className="py-16 bg-[#1f1f1f] ndc-swoosh-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
             <div>
@@ -236,7 +236,7 @@ const Media = () => {
 
             <Link to="/contact" className="hidden md:block">
               <Button
-                className="bg-white text-[#0a1628] hover:bg-white/90 rounded-full"
+                className="bg-white text-[#1f1f1f] hover:bg-white/90 rounded-full"
                 size="sm"
               >
                 Proposer un contenu
@@ -329,7 +329,7 @@ const Media = () => {
               <div className="mt-6 md:hidden">
                 <Link to="/contact">
                   <Button
-                    className="bg-white text-[#0a1628] hover:bg-white/90 rounded-full w-full"
+                    className="bg-white text-[#1f1f1f] hover:bg-white/90 rounded-full w-full"
                     size="sm"
                   >
                     Proposer un contenu

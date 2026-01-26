@@ -64,7 +64,7 @@ const PageHero = ({
   };
 
   return (
-    <section className="relative pt-28 pb-16 bg-[#0a1628] overflow-hidden">
+    <section className="relative pt-28 pb-16 bg-[#1f1f1f] overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={backgroundImage}

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const Hero2Section = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0a1628]">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#1f1f1f]">
       <div className="absolute inset-0 z-0">
         <img
           src="/images/high-angle-view-industry-factory.jpg"
@@ -35,7 +35,7 @@ export const Hero2Section = () => {
               Nos Services
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="bg-white text-[#0a1628] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+            <button className="bg-white text-[#1f1f1f] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
               Demander un devis
             </button>
           </div>

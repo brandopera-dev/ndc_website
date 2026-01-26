@@ -68,7 +68,7 @@ const StationsEssence = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="relative pt-28 pb-16 bg-[#0a1628] overflow-hidden">
+      <section className="relative pt-28 pb-16 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/images/vehicles-coal-mine-view.jpg"

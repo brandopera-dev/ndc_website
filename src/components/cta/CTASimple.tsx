@@ -22,7 +22,7 @@ export const CTASimple: React.FC<CTASimpleProps> = ({
     <div className="w-full px-8 py-16">
       <div className="max-w-7xl mx-auto">
         <div
-          className="bg-[#0a1628] rounded-3xl overflow-hidden shadow-2xl relative"
+          className="bg-[#1f1f1f] rounded-3xl overflow-hidden shadow-2xl relative"
           style={{
             backgroundImage: backgroundImage 
               ? `linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url(${backgroundImage})`

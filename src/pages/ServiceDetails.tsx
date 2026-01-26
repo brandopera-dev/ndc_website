@@ -288,14 +288,14 @@ const ServiceDetails = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-28 pb-16 bg-[#0a1628] overflow-hidden">
+      <section className="relative pt-28 pb-16 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={serviceTheme.heroImage}
             alt={service.title}
             className="w-full h-full object-cover opacity-45 saturate-125 contrast-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/80 via-[#0a1628]/90 to-[#0a1628]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1f1f1f]/80 via-[#0a1628]/90 to-[#1f1f1f]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">

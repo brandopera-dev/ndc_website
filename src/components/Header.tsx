@@ -77,7 +77,7 @@ const Header = () => {
             <Link
               to="/"
               className={`transition-colors font-medium text-sm ${
-                isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/85 hover:text-white"
+                isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/85 hover:text-white"
               }`}
             >
               {t("nav.home")}
@@ -89,7 +89,7 @@ const Header = () => {
                 onClick={() => setIsServicesOpenDesktop(!isServicesOpenDesktop)}
                 onMouseEnter={() => setIsServicesOpenDesktop(true)}
                 className={`transition-colors font-medium text-sm inline-flex items-center gap-1 ${
-                  isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/85 hover:text-white"
+                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/85 hover:text-white"
                 }`}
               >
                 {t("nav.services")}
@@ -212,7 +212,7 @@ const Header = () => {
                   key={item.label}
                   to={item.to}
                   className={`transition-colors font-medium text-sm ${
-                    isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/85 hover:text-white"
+                    isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/85 hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -222,7 +222,7 @@ const Header = () => {
             <Link
               to="/contact"
               className={`transition-colors font-medium text-sm ${
-                isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/85 hover:text-white"
+                isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/85 hover:text-white"
               }`}
             >
               {t("nav.contact")}
@@ -246,8 +246,8 @@ const Header = () => {
               <Button
                 className={`rounded-full px-6 py-2 text-sm font-semibold inline-flex items-center gap-2 ${
                   isScrolled
-                    ? "bg-[#0a1628] hover:bg-[#0a1628]/90 text-white"
-                    : "bg-white hover:bg-white/90 text-[#0a1628]"
+                    ? "bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-white"
+                    : "bg-white hover:bg-white/90 text-[#1f1f1f]"
                 }`}
               >
                 {t("nav.quote")}
@@ -276,7 +276,7 @@ const Header = () => {
               <Link
                 to="/"
                 className={`transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/90 hover:text-white"
+                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -287,7 +287,7 @@ const Header = () => {
                 <button
                   type="button"
                   className={`w-full flex items-center justify-between transition-colors font-medium py-2 ${
-                    isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/90 hover:text-white"
+                    isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
                   }`}
                   onClick={() => setIsServicesOpenMobile((v) => !v)}
                 >
@@ -318,7 +318,7 @@ const Header = () => {
               <Link
                 to="/about"
                 className={`transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/90 hover:text-white"
+                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -327,7 +327,7 @@ const Header = () => {
               <Link
                 to="/media"
                 className={`transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/90 hover:text-white"
+                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -337,7 +337,7 @@ const Header = () => {
               <Link
                 to="/contact"
                 className={`transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/90 hover:text-white"
+                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -348,7 +348,7 @@ const Header = () => {
                 type="button"
                 onClick={toggleLanguage}
                 className={`text-left transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/90 hover:text-white"
+                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
                 }`}
               >
                 {language === "fr" ? "Passer en EN" : "Switch to FR"}
@@ -358,8 +358,8 @@ const Header = () => {
                 <Button
                   className={`rounded-full px-6 py-2 text-sm font-semibold inline-flex items-center gap-2 w-full mt-4 ${
                     isScrolled
-                      ? "bg-[#0a1628] hover:bg-[#0a1628]/90 text-white"
-                      : "bg-white hover:bg-white/90 text-[#0a1628]"
+                      ? "bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-white"
+                      : "bg-white hover:bg-white/90 text-[#1f1f1f]"
                   }`}
                 >
                   {t("nav.quote")}

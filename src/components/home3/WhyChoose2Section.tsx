@@ -16,7 +16,7 @@ export const WhyChoose2Section = () => {
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1f1f1f] mb-6">
               Pourquoi Nous Choisir ?
             </h2>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">

@@ -51,7 +51,7 @@ export const CTAWithBackground: React.FC<CTAWithBackgroundProps> = ({
                 {description}
               </p>
               <Link to={buttonLink}>
-                <Button className="bg-white text-[#0a1628] hover:bg-gray-100 rounded-full px-8 py-6 text-base font-semibold inline-flex items-center gap-2">
+                <Button className="bg-white text-[#1f1f1f] hover:bg-gray-100 rounded-full px-8 py-6 text-base font-semibold inline-flex items-center gap-2">
                   {buttonText}
                   <ArrowRight className="w-5 h-5" />
                 </Button>

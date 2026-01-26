@@ -67,14 +67,14 @@ const Services = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 bg-[#0a1628] overflow-hidden">
+      <section className="relative pt-32 pb-24 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/images/storage-tanks-petroleum-products.jpg"
             alt="Our Services"
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/90 to-[#0a1628]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1f1f1f]/90 to-[#1f1f1f]/95" />
         </div>
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -133,7 +133,7 @@ const Services = () => {
                 A thriving community of businesses and logistics partners, optimizing supply chains and driving growth. 
                 Together, we're building the future of logistics in Africa.
               </p>
-              <Button className="mt-8 bg-[#0a1628] hover:bg-[#0a1628]/90 text-white rounded-full px-8 group">
+              <Button className="mt-8 bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-white rounded-full px-8 group">
                 Join Now
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -142,7 +142,7 @@ const Services = () => {
             <div className="lg:w-1/2 grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center p-8 bg-white border border-gray-200 rounded-2xl hover:shadow-lg transition-shadow">
-                  <div className="text-5xl md:text-6xl font-bold text-[#0a1628] mb-2">{stat.value}</div>
+                  <div className="text-5xl md:text-6xl font-bold text-[#1f1f1f] mb-2">{stat.value}</div>
                   <div className="text-muted-foreground text-sm">{stat.label}</div>
                 </div>
               ))}
@@ -178,7 +178,7 @@ const Services = () => {
                   key={service.id}
                   className={`group p-8 rounded-2xl transition-all duration-300 hover:shadow-xl ${
                     service.highlighted
-                      ? 'bg-[#0a1628] text-white' 
+                      ? 'bg-[#1f1f1f] text-white' 
                       : 'bg-white border border-gray-200 hover:border-[#e11a1a]/30'
                   }`}
                 >
@@ -199,8 +199,8 @@ const Services = () => {
                     <Button 
                       className={`rounded-full group/btn ${
                         service.highlighted
-                          ? 'bg-white text-[#0a1628] hover:bg-white/90'
-                          : 'bg-[#0a1628] text-white hover:bg-[#0a1628]/90'
+                          ? 'bg-white text-[#1f1f1f] hover:bg-white/90'
+                          : 'bg-[#1f1f1f] text-white hover:bg-[#1f1f1f]/90'
                       }`}
                       size="sm"
                     >
@@ -241,7 +241,7 @@ const Services = () => {
                   alt="Work Process"
                   className="w-full object-cover aspect-square"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/80 via-[#0a1628]/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1f1f1f]/80 via-[#0a1628]/40 to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
                     <p className="text-white font-semibold text-lg">Trusted by 500+ Companies</p>

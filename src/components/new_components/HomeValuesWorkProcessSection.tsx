@@ -102,7 +102,7 @@ const HomeValuesWorkProcessSection = () => {
           </p>
           <div className="mt-8">
             <a href="#how-we-work">
-              <Button className="bg-white text-[#0a1628] hover:bg-white/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-semibold inline-flex items-center gap-2 hover:scale-105 transition-transform">
+              <Button className="bg-white text-[#1f1f1f] hover:bg-white/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-semibold inline-flex items-center gap-2 hover:scale-105 transition-transform">
                 En savoir plus
                 <ArrowRight className="w-5 h-5" />
               </Button>
@@ -111,7 +111,7 @@ const HomeValuesWorkProcessSection = () => {
         </div>
       </div>
 
-      {/* <div id="how-we-work" className="bg-[#0a1628] text-white">
+      {/* <div id="how-we-work" className="bg-[#1f1f1f] text-white">
         <div className="max-w-7xl mx-auto px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -146,18 +146,18 @@ const HomeValuesWorkProcessSection = () => {
                 <div
                   key={step.number}
                   className={`rounded-3xl p-6 border border-white/10 ${
-                    step.featured ? 'bg-white text-[#0a1628] border-white/0 shadow-2xl' : 'bg-[#081c36]'
+                    step.featured ? 'bg-white text-[#1f1f1f] border-white/0 shadow-2xl' : 'bg-[#081c36]'
                   }`}
                 >
                   <div
-                    className={`text-5xl font-extrabold ${step.featured ? 'text-[#0a1628]/20' : 'text-white/15'}`}
+                    className={`text-5xl font-extrabold ${step.featured ? 'text-[#1f1f1f]/20' : 'text-white/15'}`}
                   >
                     {step.number}
                   </div>
-                  <h3 className={`mt-2 text-lg font-bold ${step.featured ? 'text-[#0a1628]' : 'text-white'}`}>
+                  <h3 className={`mt-2 text-lg font-bold ${step.featured ? 'text-[#1f1f1f]' : 'text-white'}`}>
                     {step.title}
                   </h3>
-                  <p className={`mt-3 text-sm leading-relaxed ${step.featured ? 'text-[#0a1628]/70' : 'text-white/60'}`}>
+                  <p className={`mt-3 text-sm leading-relaxed ${step.featured ? 'text-[#1f1f1f]/70' : 'text-white/60'}`}>
                     {step.description}
                   </p>
                 </div>

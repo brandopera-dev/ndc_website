@@ -30,7 +30,7 @@ export const Testimonials2Section = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#0a1628]">
+    <section className="py-20 bg-[#1f1f1f]">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

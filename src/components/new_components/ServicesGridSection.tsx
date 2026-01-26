@@ -132,7 +132,7 @@ const services = [
                       <Button
                         className={`w-full rounded-full group/btn ${
                           service.highlighted
-                            ? 'bg-white text-[#0a1628] hover:bg-white/90'
+                            ? 'bg-white text-[#1f1f1f] hover:bg-white/90'
                             : 'ndc-btn-gradient'
                         }`}
                         size="sm"

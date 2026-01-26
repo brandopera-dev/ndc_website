@@ -75,14 +75,14 @@ const Home2 = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 bg-[#0a1628] overflow-hidden">
+      <section className="relative pt-32 pb-24 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="/images/high-angle-view-industry-factory.jpg" 
             alt="Logistics Hub"
             className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/90 to-[#0a1628]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1f1f1f]/90 to-[#1f1f1f]/95" />
         </div>
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -142,7 +142,7 @@ const Home2 = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-2">{stat.value}</p>
+                <p className="text-4xl md:text-5xl font-bold text-[#1f1f1f] mb-2">{stat.value}</p>
                 <p className="text-gray-600 text-sm">{stat.label}</p>
               </div>
             ))}
@@ -308,7 +308,7 @@ const Home2 = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#0a1628] text-white">
+      <section className="py-20 bg-[#1f1f1f] text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Ready to Get Started?
