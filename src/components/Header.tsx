@@ -7,6 +7,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpenMobile, setIsServicesOpenMobile] = useState(false);
+  const [isServicesOpenDesktop, setIsServicesOpenDesktop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, toggleLanguage, t } = useI18n();
 
@@ -62,12 +63,12 @@ const Header = () => {
             <img
               src="/images/logo/ID_NDC Energie 2.png"
               alt="NDC Énergie"
-              className={`${isScrolled ? "hidden" : "block"} h-12 w-12 sm:h-20 sm:w-20 rounded-lg object-cover`}
+              className={`${isScrolled ? "block" : "hidden"} h-12 w-12 sm:h-20 sm:w-20 rounded-lg object-cover`}
             />
             <img
               src="/images/logo/ID_NDC Energie 1.png"
               alt="NDC Énergie"
-              className={`${isScrolled ? "block" : "hidden"} h-10 sm:h-24 w-auto rounded-lg object-cover`}
+              className={`${isScrolled ? "hidden" : "block"}  h-10 sm:h-24 w-auto rounded-lg object-cover`}
             />
           </Link>
 
@@ -83,15 +84,17 @@ const Header = () => {
             </Link>
 
             <div className="relative group">
-              <Link
-                to="/services"
+              <button
+                type="button"
+                onClick={() => setIsServicesOpenDesktop(!isServicesOpenDesktop)}
+                onMouseEnter={() => setIsServicesOpenDesktop(true)}
                 className={`transition-colors font-medium text-sm inline-flex items-center gap-1 ${
                   isScrolled ? "text-gray-700 hover:text-[#0a1628]" : "text-white/85 hover:text-white"
                 }`}
               >
                 {t("nav.services")}
-                <ChevronDown className="w-4 h-4" />
-              </Link>
+                <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpenDesktop ? 'rotate-180' : ''}`} />
+              </button>
               {/* <div className="fixed left-0 right-0 top-16 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all">
                 <div className="bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-lg">
                   <div className="max-w-7xl mx-auto px-8 py-4">
@@ -129,9 +132,14 @@ const Header = () => {
     "
   ></div> */}
 
-              <div className="fixed left-0 right-0 top-16 opacity-0 invisible pointer-events-none
-  group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto
-  transition-all duration-300">
+              <div 
+                className={`fixed left-0 right-0 top-16 transition-all duration-300 ${
+                  isServicesOpenDesktop 
+                    ? 'opacity-100 visible pointer-events-auto' 
+                    : 'opacity-0 invisible pointer-events-none'
+                }`}
+                onMouseLeave={() => setIsServicesOpenDesktop(false)}
+              >
   
   <div className="bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-2xl">
     <div className="max-w-7xl mx-auto px-8 py-10">
