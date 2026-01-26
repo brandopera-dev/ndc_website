@@ -208,58 +208,58 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 scroll-animate">
+      <section className="py-20 ndc-section-red scroll-animate">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
           <div className="hidden lg:block absolute -left-1 top-24">
-            <div className="ndc-vertical-label text-[#e11a1a] text-sm">
+            <div className="ndc-vertical-label text-white/80 text-sm">
               CONTEXTE
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase mb-4">
+              <p className="text-white/90 text-sm font-semibold tracking-wider uppercase mb-4">
                 • UN RÔLE CLÉ
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 Un rôle clé auprès des mines et industrie
               </h2>
-              <p className="mt-6 text-gray-600 leading-relaxed">
+              <p className="mt-6 text-white/80 leading-relaxed">
                 L’industrie minière malienne est caractérisée par des activités opérationnelles étroitement liées à la disponibilité d’une
                 source d’énergie stable ainsi qu’à une maîtrise parfaite de la chaîne d’approvisionnement des matières premières, des
                 consommables, des engins de manutention et des pièces de rechanges.
               </p>
-              <p className="mt-5 text-gray-600 leading-relaxed">
+              <p className="mt-5 text-white/80 leading-relaxed">
                 Dans ce contexte dynamique et exigeant, chaque interruption imprévue, chaque retard d’approvisionnement ou chaque
                 blocage administratif dans les formalités de transit peut entraîner des répercussions considérables tant sur le plan
                 financier qu’opérationnel.
               </p>
-              <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-6 ">
-                <p className="text-gray-700 leading-relaxed">
-                  C’est de ces contraintes que <span className="font-bold text-gray-900">NDC Énergie</span> a pris naissance.
+              <div className="mt-6 rounded-2xl border border-white/20 bg-white/10 p-6 ">
+                <p className="text-white/90 leading-relaxed">
+                  C'est de ces contraintes que <span className="font-bold text-white">NDC Énergie</span> a pris naissance.
                 </p>
               </div>
             </div>
 
             <div>
-              <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase mb-4">
+              <p className="text-white/90 text-sm font-semibold tracking-wider uppercase mb-4">
                 • NOTRE MISSION
               </p>
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+              <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Nous avons pour mission
               </h3>
               <div className="mt-6 space-y-5">
                 {missions.map((m) => (
-                  <div key={m.title} className="rounded-3xl border border-gray-200 bg-white p-7 ">
+                  <div key={m.title} className="rounded-3xl border border-white/20 bg-white/10 p-7  hover:bg-white/15 transition-all">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
+                      <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                         <m.icon className="w-6 h-6" />
                       </div>
                       <div>
-                        <p className="text-xs font-extrabold tracking-widest text-[#e11a1a]">
+                        <p className="text-xs font-extrabold tracking-widest text-white">
                           {m.title}
                         </p>
-                        <p className="mt-2 text-gray-700 leading-relaxed">
+                        <p className="mt-2 text-white/80 leading-relaxed">
                           {m.description}
                         </p>
                       </div>
