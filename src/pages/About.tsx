@@ -20,10 +20,10 @@ const About = () => {
   }, []);
 
   const stats = [
-    { value: '25', label: 'Years in Service' },
-    { value: '99%', label: 'On-Time Delivery Rate' },
-    { value: '500+', label: 'Successful Delivery' },
-    { value: '300+', label: 'Team Experts We Have' },
+    { value: '25', label: 'Années d\'expérience' },
+    { value: '99%', label: 'Taux de livraison à l\'heure' },
+    { value: '500+', label: 'Livraisons réussies' },
+    { value: '300+', label: 'Experts dans notre équipe' },
   ];
 
   const freightImages = [
@@ -34,10 +34,10 @@ const About = () => {
   ];
 
   const features = [
-    'Reliability',
-    'Efficiency',
-    'Customer Focus',
-    'Sustainability',
+    'Fiabilité',
+    'Efficacité',
+    'Orientation client',
+    'Durabilité',
   ];
 
   const galleryImages = [
@@ -48,11 +48,11 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: '2008', title: 'Founded', description: 'Started with a vision to revolutionize logistics in Africa' },
-    { year: '2012', title: 'Expansion', description: 'Opened new logistics routes across the continent' },
-    { year: '2016', title: 'Innovation', description: 'Launched advanced Fuel Management solutions' },
-    { year: '2020', title: 'Growth', description: 'Established major strategic partnerships' },
-    { year: '2024', title: 'Leadership', description: 'Became the regional leader in logistics services' },
+    { year: '2008', title: 'Fondation', description: 'Démarré avec une vision de révolutionner la logistique en Afrique' },
+    { year: '2012', title: 'Expansion', description: 'Ouverture de nouvelles routes logistiques à travers le continent' },
+    { year: '2016', title: 'Innovation', description: 'Lancement de solutions avancées de Fuel Management' },
+    { year: '2020', title: 'Croissance', description: 'Établissement de partenariats stratégiques majeurs' },
+    { year: '2024', title: 'Leadership', description: 'Devenu le leader régional des services logistiques' },
   ];
 
   const teamMembers = [
@@ -476,9 +476,9 @@ const About = () => {
 
       {/* CTA Section */}
       <CTAWithImage
-        title="Let Our Team Handle your Cargo with Care"
-        description="Our experienced team ensures your cargo is handled with the utmost care, providing safe and timely delivery every step of the way."
-        buttonText="Get a Quote"
+        title="Laissez notre équipe gérer votre cargaison avec soin"
+        description="Notre équipe expérimentée garantit que votre cargaison est traitée avec le plus grand soin, assurant une livraison sûre et ponctuelle à chaque étape."
+        buttonText="Demander un devis"
         buttonLink="/contact"
         imageSrc="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg"
         imagePosition="left"
