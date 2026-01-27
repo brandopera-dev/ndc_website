@@ -97,7 +97,7 @@ const StationsEssence = () => {
               Réseaux de distribution
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Approvisionnement et gestion de stations-service avec planification des réassorts, traçabilité et standards de sécurité.
+              Approvisionnement et gestion automatisée de stations-service avec une plateforme dédiée au suivi des flux de vente et de stocks en temps réel.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
