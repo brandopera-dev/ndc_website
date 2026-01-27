@@ -314,7 +314,7 @@ const About = () => {
             {opsPrinciples.map((p) => (
               <div key={p.title} className="rounded-3xl border border-gray-200 bg-white p-7  hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a]">
+                  <div className="w-12 h-12   flex items-center justify-center text-[#e11a1a]">
                     <p.icon className="w-6 h-6" />
                   </div>
                   <div>

@@ -91,7 +91,7 @@ const AboutUseSection = () => {
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                       <div className="flex items-start gap-4">
-                        <div className="w-11 h-11 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a]">
+                        <div className="w-11 h-11  flex items-center justify-center text-[#e11a1a]">
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
