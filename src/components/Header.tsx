@@ -54,7 +54,7 @@ const Header = () => {
     <motion.header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         isScrolled
-          ? "bg-white/75 backdrop-blur-md border-b border-black/10 shadow-sm"
+          ? "bg-[#1f1f1f]/75 backdrop-blur-md border-b border-white/10 shadow-sm"
           : "bg-stone-950 border-b border-transparent"
       }`}
       initial="hidden"
@@ -103,7 +103,7 @@ const Header = () => {
             <Link
               to="/"
               className={`transition-colors font-medium text-sm ${
-                isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/85 hover:text-white"
+                isScrolled ? "text-white/85 hover:text-white" : "text-white/85 hover:text-white"
               }`}
             >
               {t("nav.home")}
@@ -115,7 +115,7 @@ const Header = () => {
                 onClick={() => setIsServicesOpenDesktop(!isServicesOpenDesktop)}
                 onMouseEnter={() => setIsServicesOpenDesktop(true)}
                 className={`transition-colors font-medium text-sm inline-flex items-center gap-1 ${
-                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/85 hover:text-white"
+                  isScrolled ? "text-white/85 hover:text-white" : "text-white/85 hover:text-white"
                 }`}
               >
                 {t("nav.services")}
@@ -242,7 +242,7 @@ const Header = () => {
                   key={item.label}
                   to={item.to}
                   className={`transition-colors font-medium text-sm ${
-                    isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/85 hover:text-white"
+                    isScrolled ? "text-white/85 hover:text-white" : "text-white/85 hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -252,7 +252,7 @@ const Header = () => {
             <Link
               to="/contact"
               className={`transition-colors font-medium text-sm ${
-                isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/85 hover:text-white"
+                isScrolled ? "text-white/85 hover:text-white" : "text-white/85 hover:text-white"
               }`}
             >
               {t("nav.contact")}
@@ -266,7 +266,7 @@ const Header = () => {
               onClick={toggleLanguage}
               className={`rounded-full px-3 py-1 text-xs font-semibold tracking-wide border transition-colors ${
                 isScrolled
-                  ? "border-black/15 text-gray-700 hover:bg-black/5"
+                  ? "border-white/20 text-white/85 hover:bg-white/10"
                   : "border-white/20 text-white/85 hover:bg-white/10"
               }`}
             >
@@ -276,7 +276,7 @@ const Header = () => {
               <Button
                 className={`rounded-full px-6 py-2 text-sm font-semibold inline-flex items-center gap-2 ${
                   isScrolled
-                    ? "bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-white"
+                    ? "bg-white hover:bg-white/90 text-[#1f1f1f]"
                     : "bg-white hover:bg-white/90 text-[#1f1f1f]"
                 }`}
               >
@@ -288,7 +288,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
+            className={`lg:hidden p-2 text-white`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -299,9 +299,7 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className={`lg:hidden py-4 border-t ${
-                isScrolled ? "border-black/10" : "border-white/10"
-              }`}
+              className={`lg:hidden py-4 border-t border-white/10`}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -310,9 +308,7 @@ const Header = () => {
             <nav className="flex flex-col gap-4">
               <Link
                 to="/"
-                className={`transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
-                }`}
+                className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.home")}
@@ -321,23 +317,19 @@ const Header = () => {
               <div>
                 <button
                   type="button"
-                  className={`w-full flex items-center justify-between transition-colors font-medium py-2 ${
-                    isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
-                  }`}
+                  className={`w-full flex items-center justify-between transition-colors font-medium py-2 text-white/90 hover:text-white`}
                   onClick={() => setIsServicesOpenMobile((v) => !v)}
                 >
                   <span>{t("nav.services")}</span>
                   <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpenMobile ? "rotate-180" : ""}`} />
                 </button>
                 {isServicesOpenMobile && (
-                  <div className={`mt-2 ml-3 flex flex-col border-l ${isScrolled ? "border-gray-200" : "border-white/20"}`}>
+                  <div className={`mt-2 ml-3 flex flex-col border-l border-white/20`}>
                     {serviceMenuItems.map((s) => (
                       <Link
                         key={s.to}
                         to={s.to}
-                        className={`pl-4 pr-2 py-2 text-sm transition-colors ${
-                          isScrolled ? "text-gray-600 hover:text-[#0a1628]" : "text-white/75 hover:text-white"
-                        }`}
+                        className={`pl-4 pr-2 py-2 text-sm transition-colors text-white/75 hover:text-white`}
                         onClick={() => {
                           setIsMenuOpen(false);
                           setIsServicesOpenMobile(false);
@@ -352,18 +344,14 @@ const Header = () => {
 
               <Link
                 to="/about"
-                className={`transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
-                }`}
+                className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.about")}
               </Link>
               <Link
                 to="/media"
-                className={`transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
-                }`}
+                className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.media")}
@@ -371,9 +359,7 @@ const Header = () => {
 
               <Link
                 to="/contact"
-                className={`transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
-                }`}
+                className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.contact")}
@@ -382,20 +368,14 @@ const Header = () => {
               <button
                 type="button"
                 onClick={toggleLanguage}
-                className={`text-left transition-colors font-medium py-2 ${
-                  isScrolled ? "text-gray-700 hover:text-[#1f1f1f]" : "text-white/90 hover:text-white"
-                }`}
+                className={`text-left transition-colors font-medium py-2 text-white/90 hover:text-white`}
               >
                 {language === "fr" ? "Passer en EN" : "Switch to FR"}
               </button>
 
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                 <Button
-                  className={`rounded-full px-6 py-2 text-sm font-semibold inline-flex items-center gap-2 w-full mt-4 ${
-                    isScrolled
-                      ? "bg-[#1f1f1f] hover:bg-[#1f1f1f]/90 text-white"
-                      : "bg-white hover:bg-white/90 text-[#1f1f1f]"
-                  }`}
+                  className={`rounded-full px-6 py-2 text-sm font-semibold inline-flex items-center gap-2 w-full mt-4 bg-white hover:bg-white/90 text-[#1f1f1f]`}
                 >
                   {t("nav.quote")}
                   <ArrowRight className="w-4 h-4" />

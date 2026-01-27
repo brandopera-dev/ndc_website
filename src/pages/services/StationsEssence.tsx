@@ -71,7 +71,7 @@ const StationsEssence = () => {
       <section className="relative pt-28 pb-16 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/vehicles-coal-mine-view.jpg"
+            src="/images/Social Media Size/NDC--de-KATI134-sm.jpg"
             alt="Réseaux de distribution"
             className="w-full h-full object-cover opacity-45 saturate-125 contrast-110"
           />
@@ -123,11 +123,12 @@ const StationsEssence = () => {
             <div>
               <p className="text-white/90 text-sm font-semibold tracking-wider uppercase">• Comment nous opérons</p>
               <h2 className="text-2xl md:text-3xl font-bold text-white mt-4">
-                Réassort, planification et pilotage des volumes
+              Système automatisé, Planification et pilotage des volumes
               </h2>
               <p className="text-white/80 leading-relaxed mt-5">
-                Nous accompagnons vos stations avec des solutions fiables pour garantir la disponibilité des produits, réduire les
-                ruptures et sécuriser l’ensemble de la chaîne.
+              Nos stations-services sont soutenues par des stratégies d’approvisionnement et des solutions de 
+              gestion automatisée qui garantissent la disponibilité des produits, réduisent les ruptures et sécurisent 
+              l’ensemble de la chaîne
               </p>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">

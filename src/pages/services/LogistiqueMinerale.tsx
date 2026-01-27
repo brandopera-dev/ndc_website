@@ -103,8 +103,7 @@ const LogistiqueMinerale = () => {
               Transport & transit
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Transport industriel et transit des intrants et matériaux sur sites avec coordination continue, sécurisation des flux et
-              planification optimisée.
+            Transport industriel et transit des intrants et matériaux sur site avec coordination continue, sécurisation des flux et planification optimisée.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
