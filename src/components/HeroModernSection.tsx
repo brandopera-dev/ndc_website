@@ -84,13 +84,15 @@ export const HeroModernSection = () => {
                 initial={{ opacity: 0, y: 30, x: 20 }}
                 animate={{ 
                   opacity: 1, 
-                  y: 0, 
+                  y: [0, -10, 0],
                   x: 0,
-                  transition: { delay: 0.3, duration: 0.6 }
                 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ 
+                  opacity: { delay: 0.3, duration: 0.6 },
+                  x: { delay: 0.3, duration: 0.6 },
                   y: { 
+                    delay: 0.9,
                     duration: 6, 
                     repeat: Infinity, 
                     repeatType: "reverse",
@@ -123,18 +125,19 @@ export const HeroModernSection = () => {
                 initial={{ opacity: 0, y: 30, x: 20 }}
                 animate={{ 
                   opacity: 1, 
-                  y: 0, 
+                  y: [0, -10, 0],
                   x: 0,
-                  transition: { delay: 0.5, duration: 0.6 }
                 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ 
+                  opacity: { delay: 0.5, duration: 0.6 },
+                  x: { delay: 0.5, duration: 0.6 },
                   y: { 
+                    delay: 1.1,
                     duration: 6, 
                     repeat: Infinity, 
                     repeatType: "reverse",
-                    ease: "easeInOut",
-                    delay: 1
+                    ease: "easeInOut"
                   }
                 }}
               >
@@ -149,18 +152,19 @@ export const HeroModernSection = () => {
                 initial={{ opacity: 0, y: 30, x: 20 }}
                 animate={{ 
                   opacity: 1, 
-                  y: 0, 
+                  y: [0, -10, 0],
                   x: 0,
-                  transition: { delay: 0.7, duration: 0.6 }
                 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ 
+                  opacity: { delay: 0.7, duration: 0.6 },
+                  x: { delay: 0.7, duration: 0.6 },
                   y: { 
+                    delay: 1.3,
                     duration: 6, 
                     repeat: Infinity, 
                     repeatType: "reverse",
-                    ease: "easeInOut",
-                    delay: 2
+                    ease: "easeInOut"
                   }
                 }}
               >
