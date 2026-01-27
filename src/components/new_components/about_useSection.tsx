@@ -1,6 +1,8 @@
 import React from 'react';
-import { Phone, Ship, Plane, Shield, Clock, TrendingUp, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Phone, Ship, Plane, Shield, Clock, TrendingUp, Users, Droplet, Truck } from 'lucide-react';
 import SectionTitle from '@/components/SectionTitle';
+import { fadeInUp, staggerContainer, staggerItem } from '@/utils/animations';
 
 const AboutUseSection = () => {
   const features = [
@@ -13,7 +15,14 @@ const AboutUseSection = () => {
   return (
     <>
       
-      <section id="about" className="py-14 sm:py-20 lg:py-28 bg-gray-50 scroll-animate">
+      <motion.section 
+        id="about" 
+        className="py-14 sm:py-20 lg:py-28 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative">
           <div className="hidden lg:block absolute -left-1 top-20">
             <div className="ndc-vertical-label text-[#e11a1a] text-sm">
@@ -22,7 +31,7 @@ const AboutUseSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <motion.div variants={staggerItem}>
               <SectionTitle
                 kicker="Comment ça marche"
                 title={
@@ -35,40 +44,52 @@ const AboutUseSection = () => {
                 description={
                   <>
                     Partenaire de confiance pour vos opérations minières et industrielles en Afrique.
-                    Expertise complète en Fuel Management, Transit et Transport avec disponibilité 24/7.
+                    Expertise complète en Fuel Management, Transport et Transit avec une disponibilité 24/7.
                   </>
                 }
               />
 
-              <div className="mt-8 grid sm:grid-cols-2 gap-6 scroll-animate">
-                <div className="flex items-center gap-4">
+              <motion.div 
+                className="mt-8 grid sm:grid-cols-2 gap-6"
+                variants={staggerContainer}
+              >
+                <motion.div className="flex items-center gap-4" variants={staggerItem}>
                   <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-[#e11a1a]">
-                    <Ship className="w-5 h-5" />
+                    <Droplet className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">Fuel Management</p>
-                    <p className="text-xs text-gray-500">3 niveaux de service</p>
+                    <p className="font-bold text-gray-900">Stockage & Fuel Management</p>
+                    <p className="text-xs text-gray-500">4 niveaux de service</p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center gap-4">
+                <motion.div className="flex items-center gap-4" variants={staggerItem}>
                   <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-[#e11a1a]">
-                    <Plane className="w-5 h-5" />
+                    <Truck className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="font-bold text-gray-900">Transit & Transport</p>
                     <p className="text-xs text-gray-500">Support complet 24/7</p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               <div className="mt-8 h-px bg-gray-200"></div>
 
-              <div className="mt-8 grid sm:grid-cols-2 gap-4 scroll-animate">
-                {features.map((f) => {
+              <motion.div 
+                className="mt-8 grid sm:grid-cols-2 gap-4"
+                variants={staggerContainer}
+              >
+                {features.map((f, index) => {
                   const Icon = f.icon;
                   return (
-                    <div key={f.title} className="rounded-2xl bg-white border border-gray-200 p-5 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
+                    <motion.div 
+                      key={f.title} 
+                      className="rounded-2xl bg-white border border-gray-200 p-5 cursor-pointer"
+                      variants={staggerItem}
+                      whileHover={{ y: -4, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
                       <div className="flex items-start gap-4">
                         <div className="w-11 h-11 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
                           <Icon className="w-5 h-5" />
@@ -78,20 +99,27 @@ const AboutUseSection = () => {
                           <p className="text-xs text-gray-500 leading-relaxed mt-1">{f.description}</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
-              </div>
+              </motion.div>
 
               <p className="mt-6 text-sm md:text-base text-gray-500 leading-relaxed max-w-xl">
                 De la conception de cuves au transport de matières premières, nous assurons la continuité
                 de vos opérations avec expertise et conformité aux normes internationales.
               </p>
 
-              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 scroll-animate">
-                <button className="ndc-btn-gradient px-8 py-4 rounded-xl font-semibold text-sm transition-all hover:scale-105 hover:shadow-lg">
+              <motion.div 
+                className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6"
+                variants={fadeInUp}
+              >
+                <motion.button 
+                  className="ndc-btn-gradient px-8 py-4 rounded-xl font-semibold text-sm"
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)" }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   EN SAVOIR PLUS
-                </button>
+                </motion.button>
 
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-700">
@@ -102,20 +130,31 @@ const AboutUseSection = () => {
                     <p className="font-extrabold text-gray-900">+236-3256.21456</p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 scroll-animate">
-              <div className="space-y-6">
-                <div className="rounded-sm overflow-hidden h-[200px] sm:h-[260px] hover:scale-105 transition-transform cursor-pointer">
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+              variants={staggerContainer}
+            >
+              <motion.div className="space-y-6" variants={staggerItem}>
+                <motion.div 
+                  className="rounded-sm overflow-hidden h-[200px] sm:h-[260px] cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                   <img
                     src="/images/man-portrait-outdoor-factory-with-confidence-logistics-gear-safety-smile-health-male-driver-happy-outside-warehouse-with-semi-truck-supply-chain-job-with-transport.jpg"
                     alt="Expert Logistique"
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </motion.div>
 
-                <div className="relative rounded-sm overflow-hidden h-[200px] sm:h-[240px] bg-gray-900 hover:scale-105 transition-transform cursor-pointer">
+                <motion.div 
+                  className="relative rounded-sm overflow-hidden h-[200px] sm:h-[240px] bg-gray-900 cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                   <img
                     src="/images/high-angle-view-industry-factory.jpg"
                     alt="Projets réalisés"
@@ -129,11 +168,15 @@ const AboutUseSection = () => {
                       <p className="text-sm font-semibold">Réussis</p>
                     </div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-              <div className="space-y-6">
-                <div className="rounded-sm bg-[#e11a1a] text-white p-8 h-[200px] sm:h-[260px] flex items-center justify-center hover:scale-105 transition-transform cursor-pointer">
+              <motion.div className="space-y-6" variants={staggerItem}>
+                <motion.div 
+                  className="rounded-sm bg-[#e11a1a] text-white p-8 h-[200px] sm:h-[260px] flex items-center justify-center cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                   <p className="text-2xl font-extrabold leading-snug text-center">
                     15+ Années
                     <br />
@@ -141,20 +184,24 @@ const AboutUseSection = () => {
                     <br />
                     Terrain
                   </p>
-                </div>
+                </motion.div>
 
-                <div className="rounded-sm overflow-hidden h-[200px] sm:h-[240px] hover:scale-105 transition-transform cursor-pointer">
+                <motion.div 
+                  className="rounded-sm overflow-hidden h-[200px] sm:h-[240px] cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                   <img
                     src="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg"
                     alt="Transport Minier"
                     className="w-full h-full object-cover"
                   />
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
 
     </>

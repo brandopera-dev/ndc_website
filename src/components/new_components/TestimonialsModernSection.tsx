@@ -65,14 +65,14 @@ const TestimonialsModernSection = () => {
   };
 
   return (
-    <section id="avis" className="py-14 sm:py-20 lg:py-28 bg-black text-white overflow-hidden scroll-animate">
+    <section id="avis" className="py-14 sm:py-20 lg:py-28 bg-white overflow-hidden scroll-animate">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <div className="text-center mb-16 scroll-animate">
-          <span className="inline-block bg-white/10 text-white text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4">
+          <span className="inline-block bg-[#e11a1a]/10 text-[#e11a1a] text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4">
             AVIS CLIENTS
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
             Ce que disent nos clients
           </h2>
         </div>
@@ -109,7 +109,7 @@ const TestimonialsModernSection = () => {
                     if (isRight) nextSlide();
                   }}
                 >
-                  <div className="bg-zinc-900 rounded-3xl p-8 border border-zinc-800">
+                  <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-lg">
                     {/* Stars */}
                     <div className="flex gap-1 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
@@ -123,31 +123,31 @@ const TestimonialsModernSection = () => {
                     {/* Location Badge */}
                     <div className="flex items-center gap-2 mb-4">
                       <MapPin className="w-4 h-4 text-[#e11a1a]" />
-                      <span className="text-sm text-gray-400">{testimonial.location}</span>
+                      <span className="text-sm text-gray-600">{testimonial.location}</span>
                     </div>
 
                     {/* Quote */}
-                    <p className="text-white leading-relaxed mb-6 text-base">
+                    <p className="text-gray-700 leading-relaxed mb-6 text-base">
                       {testimonial.text}
                     </p>
 
                     {/* Service Tag */}
-                    <div className="inline-block bg-zinc-800 text-gray-300 text-xs px-3 py-1.5 rounded-full mb-6">
+                    <div className="inline-block bg-[#e11a1a]/10 text-[#e11a1a] text-xs px-3 py-1.5 rounded-full mb-6 font-semibold">
                       {testimonial.service}
                     </div>
 
                     {/* Author */}
-                    <div className="flex items-center gap-3 pt-4 border-t border-zinc-800">
+                    <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
                       <div className="w-12 h-12 bg-gradient-to-br from-[#e11a1a] to-red-700 rounded-full flex items-center justify-center">
                         <span className="text-white font-bold text-sm">
                           {testimonial.avatar}
                         </span>
                       </div>
                       <div>
-                        <p className="font-bold text-white">
+                        <p className="font-bold text-gray-900">
                           {testimonial.name}
                         </p>
-                        <p className="text-sm text-gray-400">
+                        <p className="text-sm text-gray-600">
                           Client NDC
                         </p>
                       </div>

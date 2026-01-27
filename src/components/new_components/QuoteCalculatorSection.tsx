@@ -112,7 +112,7 @@ const QuoteCalculatorSection = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
             Demandez un devis
             <br />
-            logistique (Mines & Carburant)
+            Hydrocarbures - Transport - Transit
           </h2>
           <p className="mt-3 ndc-section-muted max-w-3xl mx-auto text-sm md:text-base">
             Un parcours simple pour qualifier votre besoin. Réponse rapide avec une proposition adaptée à votre contexte opérationnel.

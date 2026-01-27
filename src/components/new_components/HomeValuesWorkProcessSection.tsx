@@ -1,6 +1,8 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, HeartHandshake, Leaf, Lightbulb, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { fadeInUp } from '@/utils/animations';
 
 const HomeValuesWorkProcessSection = () => {
   const values = [
@@ -81,35 +83,61 @@ const HomeValuesWorkProcessSection = () => {
         </div>
       </div> */}
 
-      <div id="banniere" className="relative overflow-hidden">
-        <div className="absolute inset-0">
+      {/* <motion.div 
+        id="banniere" 
+        className="relative overflow-hidden"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
+        <motion.div 
+          className="absolute inset-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.2 }}
+        >
           <img
             src="/images/truck-is-black-man-is-standing-road.jpg"
             alt="Route logistique"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/75 to-[#0a1628]/60" />
-        </div>
+        </motion.div>
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 py-16 sm:py-20 text-white">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl scroll-animate">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl"
+            variants={fadeInUp}
+          >
            Une logistique pensée
             <br />
             pour la croissance
-          </h2>
-          <p className="mt-5 sm:mt-6 text-white/70 max-w-2xl leading-relaxed text-sm sm:text-base scroll-animate">
+          </motion.h2>
+          <motion.p 
+            className="mt-5 sm:mt-6 text-white/70 max-w-2xl leading-relaxed text-sm sm:text-base"
+            variants={fadeInUp}
+          >
             Grâce à des solutions innovantes et une expertise terrain, nous améliorons l'efficacité, réduisons les coûts et assurons une visibilité complète.
-          </p>
-          <div className="mt-8">
+          </motion.p>
+          <motion.div 
+            className="mt-8"
+            variants={fadeInUp}
+          >
             <a href="#how-we-work">
-              <Button className="bg-white text-[#1f1f1f] hover:bg-white/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-semibold inline-flex items-center gap-2 hover:scale-105 transition-transform">
-                En savoir plus
-                <ArrowRight className="w-5 h-5" />
-              </Button>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Button className="bg-white text-[#1f1f1f] hover:bg-white/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-semibold inline-flex items-center gap-2">
+                  En savoir plus
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </motion.div>
             </a>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div> */}
 
       {/* <div id="how-we-work" className="bg-[#1f1f1f] text-white">
         <div className="max-w-7xl mx-auto px-8 py-20">

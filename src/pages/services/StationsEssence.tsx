@@ -208,13 +208,13 @@ const StationsEssence = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white scroll-animate">
+      <section className="py-16 section-dark scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5">
               <p className="text-[#22c55e] text-sm font-semibold tracking-wider uppercase">• Espace d’exposition</p>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-4">Réseau, réassorts et pilotage des volumes</h2>
-              <p className="text-gray-600 leading-relaxed mt-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mt-4">Réseau, réassorts et pilotage des volumes</h2>
+              <p className="text-white/80 leading-relaxed mt-5">
                 Un aperçu des environnements et opérations : gestion multi-sites, dépôts, livraisons et couverture géographique.
               </p>
             </div>
@@ -222,7 +222,7 @@ const StationsEssence = () => {
             <div className="lg:col-span-7">
               <div className="grid sm:grid-cols-2 gap-4">
                 {gallery.map((item) => (
-                  <div key={item.label} className="group relative rounded-2xl overflow-hidden border border-gray-200">
+                  <div key={item.label} className="group relative rounded-2xl overflow-hidden border border-white/10">
                     <img
                       src={item.src}
                       alt={item.label}
@@ -237,8 +237,8 @@ const StationsEssence = () => {
                 ))}
               </div>
 
-              <div className="mt-5 rounded-2xl border border-gray-200 bg-gray-50 p-5">
-                <p className="text-sm text-gray-700 leading-relaxed">
+              <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-sm text-white/80 leading-relaxed">
                   Nous configurons des tournées et fréquences de réassort en fonction des ventes, des stocks et des contraintes locales.
                 </p>
                 <div className="mt-4 flex flex-col sm:flex-row gap-3">
@@ -246,7 +246,7 @@ const StationsEssence = () => {
                     <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">Demander une étude</Button>
                   </Link>
                   <Link to="/services/logistique-minerale" className="w-full">
-                    <Button variant="outline" className="w-full rounded-xl py-3 font-semibold">Transport & transit</Button>
+                    <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 rounded-xl py-3 font-semibold">Transport & transit</Button>
                   </Link>
                 </div>
               </div>

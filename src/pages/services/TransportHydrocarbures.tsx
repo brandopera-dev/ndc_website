@@ -190,8 +190,7 @@ const TransportHydrocarbures = () => {
               Fuel management & infrastructures
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              NDC Énergie conçoit, déploie et opère des solutions de stockage et de distribution d’hydrocarbures sur site pour garantir
-              disponibilité, traçabilité et conformité.
+             Importateur de produits pétroliers, NDC Énergie conçoit, déploie , exploite et assure la Maintenance des systèmes de stockage d’hydrocarbures
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -222,11 +221,10 @@ const TransportHydrocarbures = () => {
                 Un modèle opérationnel intégré, orienté performance
               </h2>
               <p className="text-white/80 leading-relaxed mt-5">
-                Pour les mines et industries, l’enjeu n’est pas seulement de livrer du fuel — c’est d’éviter les ruptures, maîtriser les
-                consommations et réduire le risque opérationnel.
+              Au service des acteurs miniers et industriels, nous offrons une solution complète et sur mesure qui englobe : intégrer les 4 points de la plaquette – Partie Fuel Management
               </p>
 
-              <div className="mt-8 grid sm:grid-cols-2 gap-4">
+              {/* <div className="mt-8 grid sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
                   <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                     <ShieldCheck className="w-5 h-5" />
@@ -245,7 +243,7 @@ const TransportHydrocarbures = () => {
                     KPI, tableaux de bord et points de contrôle pour améliorer en continu.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="rounded-3xl border border-white/20 bg-white/10 p-6">
@@ -295,19 +293,19 @@ const TransportHydrocarbures = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white scroll-animate">
+      <section className="py-16 section-dark scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
               <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">• Espace d’exposition</p>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-4">Infrastructures, opérations et continuité</h2>
-              <p className="text-gray-600 leading-relaxed mt-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mt-4">Infrastructures, opérations et continuité</h2>
+              <p className="text-white/80 leading-relaxed mt-5">
                 Un aperçu des environnements sur lesquels nous intervenons : stockage, distribution, opérations site et approvisionnement.
               </p>
 
               <div className="mt-7 grid grid-cols-2 gap-4">
                 {gallery.map((item) => (
-                  <div key={item.label} className="group relative rounded-2xl overflow-hidden border border-gray-200">
+                  <div key={item.label} className="group relative rounded-2xl overflow-hidden border border-white/10">
                     <img
                       src={item.src}
                       alt={item.label}

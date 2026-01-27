@@ -117,7 +117,7 @@ const Services = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-start gap-12">
             <div className="lg:w-1/2">
@@ -152,7 +152,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 ndc-section-red">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase flex items-center justify-center gap-2">
@@ -216,7 +216,7 @@ const Services = () => {
       </section>
 
       {/* Work Process Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase flex items-center justify-center gap-2">

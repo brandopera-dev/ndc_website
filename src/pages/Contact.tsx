@@ -60,20 +60,20 @@ const Contact = () => {
       />
 
       {/* Contact Info Cards */}
-      <section className="py-16 -mt-8 relative z-20">
+      <section className="py-16 -mt-8 relative z-20 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-card p-6 rounded-2xl border shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 scroll-animate"
+                className="bg-white p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 scroll-animate"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <item.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-foreground">{item.info}</p>
-                <p className="text-muted-foreground text-sm">{item.subinfo}</p>
+                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-700">{item.info}</p>
+                <p className="text-gray-600 text-sm">{item.subinfo}</p>
               </div>
             ))}
           </div>
@@ -211,7 +211,7 @@ const Contact = () => {
       </section> */}
 
       {/* FAQ Section */} 
-        <FaqSection /> 
+        <FaqSection variant="light" />
       {/* <section className="py-24 bg-muted/30">
         <div className="max-w-4xl mx-auto px-8">
           <div className="text-center mb-16">

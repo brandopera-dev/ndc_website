@@ -8,7 +8,7 @@ const processCards = [
   {
     number: 1,
     id: "transport-hydrocarbures",
-    title: "FUEL MANAGEMENT & INFRASTRUCT",
+    title: "INFRASTRUCTURES & FUEL MANAGEMENT",
     description:
       "NDC Énergie conçoit, construit, exploite et maintient des infrastructures de stockage et de distribution d’hydrocarbures directement sur site, pour garantir disponibilité, traçabilité et conformité.",
     image: "/images/storage-tanks-petroleum-products.jpg",
@@ -18,21 +18,9 @@ const processCards = [
       { icon: Network, label: "Exploitation continue" },
     ],
   },
+
   {
     number: 2,
-    id: "stations-essence",
-    title: "Réseaux de distribution",
-    description:
-      "Conception et exploitation de réseaux de stockage et de distribution d’hydrocarbures sur plusieurs points, pour optimiser les flux et réduire les pertes.",
-    image: "/images/high-angle-view-industry-factory.jpg",
-    features: [
-      { icon: Network, label: "Distribution multi-sites" },
-      { icon: ShieldCheck, label: "Procédures strictes" },
-      { icon: Droplet, label: "Disponibilité permanente" },
-    ],
-  },
-  {
-    number: 3,
     id: "logistique-minerale",
     title: "TRANSPORT & TRANSIT",
     description:
@@ -42,6 +30,18 @@ const processCards = [
       { icon: Truck, label: "Flotte dédiée" },
       { icon: Network, label: "Organisation des flux" },
       { icon: ShieldCheck, label: "Sécurisation des trajets" },
+    ],
+  }, {
+    number: 3,
+    id: "stations-essence",
+    title: "RESEAUX DE DISTRIBUTION",
+    description:
+      "Conception et exploitation de réseaux de stockage et de distribution d’hydrocarbures sur plusieurs points, pour optimiser les flux et réduire les pertes.",
+    image: "/images/high-angle-view-industry-factory.jpg",
+    features: [
+      { icon: Network, label: "Distribution multi-sites" },
+      { icon: ShieldCheck, label: "Procédures strictes" },
+      { icon: Droplet, label: "Disponibilité permanente" },
     ],
   },
 ];
@@ -98,13 +98,13 @@ const ProcessSection = () => {
             />
           </div>
           <div className="flex gap-2 mt-6 lg:mt-0">
-            <button 
+            <button
               onClick={prevSlide}
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <button 
+            <button
               onClick={nextSlide}
               className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 transition-colors"
             >
@@ -123,7 +123,7 @@ const ProcessSection = () => {
               const translateX = isMobile ? 0 : offset * 280;
 
               if (isMobile && !isActive) return null;
-              
+
               return (
                 <div
                   key={card.number}
@@ -140,14 +140,14 @@ const ProcessSection = () => {
                 >
                   {/* Card Image */}
                   <div className="relative h-48 sm:h-56 overflow-hidden">
-                    <img 
-                      src={card.image} 
+                    <img
+                      src={card.image}
                       alt={card.title}
                       className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? "scale-[1.02]" : "scale-100"}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent"></div>
                     <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-transparent"></div>
-                    
+
                     {/* Card Number on Image */}
                     <div className="absolute top-4 left-4 flex items-center gap-3">
                       <div className="w-11 h-11 rounded-full bg-[#e11a1a] flex items-center justify-center text-white font-bold text-base shadow-lg shadow-black/30">
@@ -216,11 +216,10 @@ const ProcessSection = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'w-8 bg-red-600' 
-                  : 'bg-white/30 hover:bg-white/50'
-              }`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
+                ? 'w-8 bg-red-600'
+                : 'bg-white/30 hover:bg-white/50'
+                }`}
             />
           ))}
         </div>

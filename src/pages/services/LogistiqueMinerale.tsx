@@ -199,7 +199,7 @@ const LogistiqueMinerale = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white scroll-animate">
+      <section className="py-16 section-dark scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5">

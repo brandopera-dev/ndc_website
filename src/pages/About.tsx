@@ -329,13 +329,13 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50 scroll-animate">
+      <section className="py-16 section-dark scroll-animate">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 scroll-animate">
             {stats.map((stat, index) => (
               <div key={index} className="text-center hover:scale-110 transition-transform cursor-pointer">
-                <p className="text-4xl md:text-5xl font-bold text-[#1f1f1f] mb-2">{stat.value}</p>
-                <p className="text-gray-600 text-sm">{stat.label}</p>
+                <p className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</p>
+                <p className="text-white/70 text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -396,31 +396,31 @@ const About = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 ndc-section-red">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase mb-4">
+            <p className="text-white/90 text-sm font-semibold tracking-wider uppercase mb-4">
               • JALONS
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
               Notre Histoire Depuis la Création
             </h2>
           </div>
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-300">
-              <div className="absolute top-0 left-0 h-full bg-[#e11a1a]" style={{ width: '100%' }} />
+            <div className="absolute top-6 left-0 right-0 h-0.5 bg-white/20">
+              <div className="absolute top-0 left-0 h-full bg-white" style={{ width: '100%' }} />
             </div>
 
             <div className="grid grid-cols-5 gap-4">
               {milestones.map((milestone, index) => (
                 <div key={index} className="relative text-center">
-                  <div className="w-12 h-12 mx-auto bg-white border-4 border-[#e11a1a] rounded-full flex items-center justify-center mb-4 relative z-10">
+                  <div className="w-12 h-12 mx-auto bg-white border-4 border-white rounded-full flex items-center justify-center mb-4 relative z-10">
                     <span className="text-[#e11a1a] font-bold text-xs">{milestone.year}</span>
                   </div>
-                  <h3 className="font-bold text-gray-900 text-sm mb-1">{milestone.title}</h3>
-                  <p className="text-gray-600 text-xs">{milestone.description}</p>
+                  <h3 className="font-bold text-white text-sm mb-1">{milestone.title}</h3>
+                  <p className="text-white/80 text-xs">{milestone.description}</p>
                 </div>
               ))}
             </div>

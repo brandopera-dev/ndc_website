@@ -22,7 +22,7 @@ const CTASection = () => {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-5 sm:mb-6">
           Prêt à lancer
           <br />
-          votre projet logistique ?
+          votre projet ?
         </h2>
         <p className="text-white/60 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-10">
           Demandez votre devis gratuitement en quelques minutes et profitez de tarifs compétitifs.

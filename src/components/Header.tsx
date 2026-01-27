@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useI18n } from "@/i18n/I18nProvider";
+import { headerVariants, fadeInUp } from "@/utils/animations";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,28 +51,52 @@ const Header = () => {
 
 
   return (
-    <header
+    <motion.header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         isScrolled
           ? "bg-white/75 backdrop-blur-md border-b border-black/10 shadow-sm"
           : "bg-stone-950 border-b border-transparent"
       }`}
+      initial="hidden"
+      animate="visible"
+      variants={headerVariants}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="/images/logo/ID_NDC Energie 2.png"
-              alt="NDC Énergie"
-              className={`${isScrolled ? "block" : "hidden"} h-12 w-12 sm:h-20 sm:w-20 rounded-lg object-cover`}
-            />
-            <img
-              src="/images/logo/ID_NDC Energie 1.png"
-              alt="NDC Énergie"
-              className={`${isScrolled ? "hidden" : "block"}  h-10 sm:h-24 w-auto rounded-lg object-cover`}
-            />
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <Link to="/" className="flex items-center gap-3">
+              <AnimatePresence mode="wait">
+                {isScrolled ? (
+                  <motion.img
+                    key="logo-small"
+                    src="/images/logo/ID_NDC Energie 2.png"
+                    alt="NDC Énergie"
+                    className="h-12 w-12 sm:h-20 sm:w-20 rounded-lg object-cover"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                ) : (
+                  <motion.img
+                    key="logo-large"
+                    src="/images/logo/ID_NDC Energie 1.png"
+                    alt="NDC Énergie"
+                    className="h-10 sm:h-24 w-auto rounded-lg object-cover"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </AnimatePresence>
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
@@ -132,14 +158,16 @@ const Header = () => {
     "
   ></div> */}
 
-              <div 
-                className={`fixed left-0 right-0 top-16 transition-all duration-300 ${
-                  isServicesOpenDesktop 
-                    ? 'opacity-100 visible pointer-events-auto' 
-                    : 'opacity-0 invisible pointer-events-none'
-                }`}
-                onMouseLeave={() => setIsServicesOpenDesktop(false)}
-              >
+              <AnimatePresence>
+                {isServicesOpenDesktop && (
+                  <motion.div 
+                    className="fixed left-0 right-0 top-16"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    onMouseLeave={() => setIsServicesOpenDesktop(false)}
+                  >
   
   <div className="bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-2xl">
     <div className="max-w-7xl mx-auto px-8 py-10">
@@ -201,7 +229,9 @@ const Header = () => {
       </div>
     </div>
   </div>
-</div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
             </div>
 
@@ -266,12 +296,17 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div
-            className={`lg:hidden py-4 border-t ${
-              isScrolled ? "border-black/10" : "border-white/10"
-            }`}
-          >
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className={`lg:hidden py-4 border-t ${
+                isScrolled ? "border-black/10" : "border-white/10"
+              }`}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
             <nav className="flex flex-col gap-4">
               <Link
                 to="/"
@@ -367,10 +402,11 @@ const Header = () => {
                 </Button>
               </Link>
             </nav>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

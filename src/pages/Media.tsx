@@ -342,7 +342,7 @@ const Media = () => {
         </div>
       </section>
 
-      <section id="galerie" className="py-16 bg-gray-50">
+      <section id="galerie" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm font-semibold text-[#e11a1a] uppercase tracking-wider">
             <Camera className="w-4 h-4" />
@@ -380,16 +380,16 @@ const Media = () => {
         </div>
       </section>
 
-      <section id="actualites" className="py-16">
+      <section id="actualites" className="py-16 section-dark">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm font-semibold text-[#e11a1a] uppercase tracking-wider">
             <Newspaper className="w-4 h-4" />
             Actualités
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mt-2">
             Blogs & news
           </h2>
-          <p className="text-muted-foreground mt-2 max-w-2xl">
+          <p className="text-white/70 mt-2 max-w-2xl">
             Mises à jour, annonces et communications autour de NDC Énergie.
           </p>
 
@@ -397,22 +397,22 @@ const Media = () => {
             {news.map((n) => (
               <div
                 key={n.title}
-                className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col"
+                className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col"
               >
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                <div className="text-xs font-semibold text-white/60 uppercase tracking-wider">
                   {n.date}
                 </div>
-                <h3 className="mt-2 font-bold text-foreground text-lg leading-snug">
+                <h3 className="mt-2 font-bold text-white text-lg leading-snug">
                   {n.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mt-3 leading-relaxed flex-1">
+                <p className="text-white/70 text-sm mt-3 leading-relaxed flex-1">
                   {n.excerpt}
                 </p>
                 <div className="mt-6">
                   <Link to="/contact">
                     <Button
                       variant="outline"
-                      className="rounded-full"
+                      className="rounded-full border-white/20 text-white hover:bg-white/10"
                       size="sm"
                     >
                       En savoir plus
