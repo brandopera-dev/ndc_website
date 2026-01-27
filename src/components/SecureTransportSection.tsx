@@ -9,7 +9,7 @@ const SecureTransportSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left - Image */}
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="overflow-hidden shadow-2xl">
               <img
                 src={transportTrailer}
                 alt="Secure vehicle transportation"
@@ -20,7 +20,7 @@ const SecureTransportSection = () => {
 
           {/* Right - Content */}
           <div>
-            <span className="inline-block bg-red-50 text-red-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
+            <span className="inline-block bg-[#1f1f1f]/10 text-red-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
               SECURITY & RELIABILITY
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
@@ -33,7 +33,7 @@ const SecureTransportSection = () => {
             {/* Features List */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center flex-shrink-0">
                   <Shield className="w-5 h-5 text-red-600" />
                 </div>
                 <div>
@@ -42,7 +42,7 @@ const SecureTransportSection = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center flex-shrink-0">
                   <Clock className="w-5 h-5 text-red-600" />
                 </div>
                 <div>
@@ -51,7 +51,7 @@ const SecureTransportSection = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center flex-shrink-0">
                   <CheckCircle className="w-5 h-5 text-red-600" />
                 </div>
                 <div>

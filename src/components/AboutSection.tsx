@@ -91,7 +91,7 @@ const AboutSection = () => {
             </div>
 
             {/* Background Image */}
-            <div className="absolute top-12 -right-4 lg:-right-8 w-64 lg:w-80 h-48 lg:h-56 rounded-2xl overflow-hidden shadow-xl -z-0">
+            <div className="absolute top-12 -right-4 lg:-right-8 w-64 lg:w-80 h-48 lg:h-56 overflow-hidden shadow-xl -z-0">
               <img 
                 src={transportTrailer} 
                 alt="Transport camion" 

@@ -27,7 +27,7 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-red-50 text-red-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
+          <span className="inline-block bg-[#1f1f1f]/10 text-red-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
             TESTIMONIALS
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
@@ -59,7 +59,7 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-[#1f1f1f]/10 rounded-full flex items-center justify-center">
                   <span className="text-red-600 font-bold">
                     {testimonial.name.charAt(0)}
                   </span>

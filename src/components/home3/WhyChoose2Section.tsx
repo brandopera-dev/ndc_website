@@ -34,7 +34,7 @@ export const WhyChoose2Section = () => {
           </div>
           
           <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden">
+            <div className="aspect-square overflow-hidden">
               <img
                 src="/images/high-angle-view-industry-factory.jpg"
                 alt="Why Choose Us"

@@ -31,13 +31,13 @@ const FaqSection = ({ variant = 'dark' }: FaqSectionProps) => {
 
             <div className={`mt-8 space-y-3 text-sm ${isDark ? 'text-white/80' : 'text-gray-700'}`}>
               <div className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
+                <span className="w-5 h-5 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </span>
                 <p>Solutions spécialisées pour marchandises fragiles et périssables</p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
+                <span className="w-5 h-5 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </span>
                 <p>Suivi en temps réel des expéditions avec mises à jour</p>

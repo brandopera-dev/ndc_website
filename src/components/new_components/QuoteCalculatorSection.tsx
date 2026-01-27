@@ -182,7 +182,7 @@ const QuoteCalculatorSection = () => {
 
           {submitted ? (
             <div className="text-center py-10">
-              <div className="mx-auto w-12 h-12 rounded-2xl bg-[#e11a1a]/10 text-[#e11a1a] flex items-center justify-center font-extrabold">
+              <div className="mx-auto w-12 h-12 rounded-full bg-[#1f1f1f]/10 text-[#e11a1a] flex items-center justify-center font-extrabold">
                 OK
               </div>
               <h4 className="mt-5 text-2xl font-bold text-gray-900">Demande envoyée</h4>

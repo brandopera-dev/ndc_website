@@ -247,7 +247,7 @@ const Media = () => {
 
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-8">
-              <div className="rounded-3xl overflow-hidden border border-white/10 bg-black">
+              <div className="overflow-hidden border border-white/10 bg-black">
                 <div className="relative aspect-video">
                   <iframe
                     key={activeVideo.youtubeId}
@@ -297,7 +297,7 @@ const Media = () => {
                         }`}
                       >
                         <div className="w-28 shrink-0">
-                          <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black aspect-video">
+                          <div className="relative overflow-hidden border border-white/10 bg-black aspect-video">
                             <img
                               src={`https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`}
                               alt={v.title}
@@ -358,7 +358,7 @@ const Media = () => {
           <div className="mt-10 columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
             {gallery.map((img) => (
               <div key={img.alt} className="mb-6 break-inside-avoid">
-                <div className="group rounded-2xl overflow-hidden border border-gray-200 bg-white">
+                <div className="group overflow-hidden border border-gray-200 bg-white">
                   <div className="relative overflow-hidden">
                     <img
                       src={img.src}

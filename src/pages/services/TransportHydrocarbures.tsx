@@ -305,7 +305,7 @@ const TransportHydrocarbures = () => {
 
               <div className="mt-7 grid grid-cols-2 gap-4">
                 {gallery.map((item) => (
-                  <div key={item.label} className="group relative rounded-2xl overflow-hidden border border-white/10">
+                  <div key={item.label} className="group relative overflow-hidden border border-white/10">
                     <img
                       src={item.src}
                       alt={item.label}

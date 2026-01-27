@@ -99,7 +99,7 @@ export const HeroModernSection = () => {
                 }}
               >
                 <div className="flex items-center gap-4 mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center">
                     <Shield className="w-6 h-6 text-[#e11a1a]" />
                   </div>
                   <div>

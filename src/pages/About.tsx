@@ -184,7 +184,7 @@ const About = () => {
             </div>
 
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   src="/images/storage-tanks-petroleum-products.jpg"
                   alt="Infrastructure NDC"
@@ -195,7 +195,7 @@ const About = () => {
                 <div className="space-y-3">
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center">
+                      <div className="w-5 h-5 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center">
                         <Check className="w-3 h-3 text-[#e11a1a]" />
                       </div>
                       <span className="text-gray-700 text-sm font-medium">{feature}</span>
@@ -314,7 +314,7 @@ const About = () => {
             {opsPrinciples.map((p) => (
               <div key={p.title} className="rounded-3xl border border-gray-200 bg-white p-7  hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
+                  <div className="w-12 h-12 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a]">
                     <p.icon className="w-6 h-6" />
                   </div>
                   <div>
@@ -366,7 +366,7 @@ const About = () => {
             <div className="flex gap-4 overflow-hidden">
               {galleryImages.slice(currentGalleryIndex, currentGalleryIndex + 3).map((image, index) => (
                 <div key={index} className="flex-1 min-w-0">
-                  <div className="rounded-2xl overflow-hidden h-[250px]">
+                  <div className="overflow-hidden h-[250px]">
                     <img
                       src={image}
                       alt={`Galerie ${index + 1}`}

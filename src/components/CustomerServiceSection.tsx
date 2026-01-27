@@ -8,7 +8,7 @@ const CustomerServiceSection = () => {
         <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="flex-1">
-              <span className="inline-block bg-red-50 text-red-600 text-xs font-semibold px-4 py-2 rounded-full mb-4 uppercase tracking-wider">
+              <span className="inline-block bg-[#1f1f1f]/10 text-red-600 text-xs font-semibold px-4 py-2 rounded-full mb-4 uppercase tracking-wider">
                 ASSISTANCE
               </span>
               <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
@@ -25,7 +25,7 @@ const CustomerServiceSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
-              <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#1f1f1f]/10 rounded-full flex items-center justify-center">
                 <Phone className="w-5 h-5 text-red-600" />
               </div>
               <div>
@@ -34,7 +34,7 @@ const CustomerServiceSection = () => {
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
-              <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#1f1f1f]/10 rounded-full flex items-center justify-center">
                 <MessageCircle className="w-5 h-5 text-red-600" />
               </div>
               <div>
@@ -43,7 +43,7 @@ const CustomerServiceSection = () => {
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
-              <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#1f1f1f]/10 rounded-full flex items-center justify-center">
                 <Mail className="w-5 h-5 text-red-600" />
               </div>
               <div>

@@ -192,7 +192,7 @@ const Header = () => {
           <Link
             key={s.to}
             to={s.to}
-            className="group relative overflow-hidden rounded-3xl
+            className="group relative overflow-hidden
               border border-gray-200 bg-gray-100
               hover:border-red-500/40 transition-all"
           >

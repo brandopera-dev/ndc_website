@@ -71,7 +71,7 @@ const HomeValuesWorkProcessSection = () => {
               const Icon = item.icon;
               return (
                 <div key={item.title} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-                  <div className="w-10 h-10 rounded-xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
+                  <div className="w-10 h-10 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a]">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="mt-4 font-bold text-gray-900">{item.title}</h3>

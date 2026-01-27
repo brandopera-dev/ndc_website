@@ -163,7 +163,7 @@ const Home2 = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[#e11a1a]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-[#1f1f1f]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <feature.icon className="w-8 h-8 text-[#e11a1a]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -182,7 +182,7 @@ const Home2 = () => {
               <img 
                 src="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg"
                 alt="Logistics Operations"
-                className="rounded-2xl shadow-2xl"
+                className="shadow-2xl"
               />
             </div>
             <div>
@@ -196,7 +196,7 @@ const Home2 = () => {
               <div className="space-y-4 mb-8">
                 {["Real-time Tracking System", "24/7 Customer Support", "Secure & Insured Delivery", "Global Network Coverage"].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#e11a1a]/10 flex items-center justify-center">
+                    <div className="w-6 h-6 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center">
                       <Check className="w-4 h-4 text-[#e11a1a]" />
                     </div>
                     <span className="text-gray-700 font-medium">{item}</span>
@@ -289,7 +289,7 @@ const Home2 = () => {
               { name: "Sarah Mitchell", role: "Operations Manager", image: "/images/Social Media Size/NDC--de-KATI107-sm.jpg" },
               { name: "Michael Chen", role: "Logistics Director", image: "/images/Social Media Size/NDC--de-KATI121-sm.jpg" },
             ].map((member, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+              <div key={index} className="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
                 <div className="h-64 overflow-hidden">
                   <img 
                     src={member.image} 

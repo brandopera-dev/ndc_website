@@ -54,7 +54,7 @@ const AboutUseSection = () => {
                 variants={staggerContainer}
               >
                 <motion.div className="flex items-center gap-4" variants={staggerItem}>
-                  <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-[#e11a1a]">
+                  <div className="w-12 h-12 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a]">
                     <Droplet className="w-5 h-5" />
                   </div>
                   <div>
@@ -64,7 +64,7 @@ const AboutUseSection = () => {
                 </motion.div>
 
                 <motion.div className="flex items-center gap-4" variants={staggerItem}>
-                  <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-[#e11a1a]">
+                  <div className="w-12 h-12 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a]">
                     <Truck className="w-5 h-5" />
                   </div>
                   <div>
@@ -91,7 +91,7 @@ const AboutUseSection = () => {
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                       <div className="flex items-start gap-4">
-                        <div className="w-11 h-11 rounded-2xl bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a]">
+                        <div className="w-11 h-11 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center text-[#e11a1a]">
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
@@ -139,7 +139,7 @@ const AboutUseSection = () => {
             >
               <motion.div className="space-y-6" variants={staggerItem}>
                 <motion.div 
-                  className="rounded-sm overflow-hidden h-[200px] sm:h-[260px] cursor-pointer"
+                  className="overflow-hidden h-[200px] sm:h-[260px] cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
@@ -151,7 +151,7 @@ const AboutUseSection = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="relative rounded-sm overflow-hidden h-[200px] sm:h-[240px] bg-gray-900 cursor-pointer"
+                  className="relative overflow-hidden h-[200px] sm:h-[240px] bg-gray-900 cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
@@ -187,7 +187,7 @@ const AboutUseSection = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="rounded-sm overflow-hidden h-[200px] sm:h-[240px] cursor-pointer"
+                  className="overflow-hidden h-[200px] sm:h-[240px] cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >

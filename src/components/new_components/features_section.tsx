@@ -53,7 +53,7 @@ const FeaturesSection = () => {
             variants={slideInLeft}
           >
             <motion.div 
-              className="relative rounded-3xl overflow-hidden border border-white/10 bg-black/20 cursor-pointer"
+              className="relative overflow-hidden border border-white/10 bg-black/20 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >

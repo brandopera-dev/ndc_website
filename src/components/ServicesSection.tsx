@@ -58,13 +58,13 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-red-50 text-red-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
+          <span className="inline-block bg-[#1f1f1f]/10 text-red-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
             OUR SERVICES
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Our Vehicle{" "}
             <span className="inline-flex items-center gap-2 mx-1">
-              <span className="inline-flex items-center justify-center bg-red-50 rounded-full px-3 py-1">
+              <span className="inline-flex items-center justify-center bg-[#1f1f1f]/10 rounded-full px-3 py-1">
                 <span className="text-xl">🚗</span>
               </span>
             </span>
@@ -79,7 +79,7 @@ const ServicesSection = () => {
               key={service.title}
               className="service-card group text-center"
             >
-              <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-red-50 transition-colors">
+              <div className="w-14 h-14 bg-muted rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1f1f1f]/10 transition-colors">
                 <service.icon className="w-7 h-7 text-muted-foreground group-hover:text-red-600 transition-colors" />
               </div>
               <h3 className="font-bold text-foreground mb-1">{service.title}</h3>

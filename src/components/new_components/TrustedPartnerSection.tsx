@@ -69,7 +69,7 @@ const partnerLogos = [
 
               {/* Light Card */}
               <div className="bg-gray-200 shadow-sm shadow-gray-400 rounded-2xl p-6 lg:p-8">
-                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mb-6">
+                <div className="w-10 h-10 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center mb-6">
                   <Target className="w-5 h-5 text-[#e11a1a]" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">Façonner l'Avenir de la Logistique</h3>
@@ -84,7 +84,7 @@ const partnerLogos = [
           {/* Right - Transfer Form with Image */}
           <div className="lg:col-span-2 relative h-[500px] lg:h-[550px]">
             {/* Background Image - Full height */}
-            <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 overflow-hidden shadow-2xl">
               <img 
                 src="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg" 
                 alt="Transport camion" 
@@ -110,7 +110,7 @@ const partnerLogos = [
                 </div>
 
                 <div className="flex justify-center py-1">
-                  <div className="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center">
                     <ArrowUpDown className="w-4 h-4 text-[#e11a1a]" />
                   </div>
                 </div>

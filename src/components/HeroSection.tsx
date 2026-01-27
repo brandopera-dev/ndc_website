@@ -34,7 +34,7 @@ const HeroSection = () => {
 
           {/* Right - Hero Image */}
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative overflow-hidden shadow-2xl">
               <img
                 src={heroTruck}
                 alt="Transport de véhicules"

@@ -28,7 +28,7 @@ const ShipBannerFeaturesSection = () => {
   return (
     <section className="py-14 bg-white scroll-animate">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="relative rounded-3xl overflow-hidden">
+        <div className="relative overflow-hidden">
           <div className="h-[420px]">
             <img
               src="/images/vehicles-coal-mine-view.jpg"

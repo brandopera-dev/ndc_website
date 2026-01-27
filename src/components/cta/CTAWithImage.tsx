@@ -37,7 +37,7 @@ export const CTAWithImage: React.FC<CTAWithImageProps> = ({
           <div className={`grid lg:grid-cols-2 gap-8 items-center p-8 lg:p-12 ${imagePosition === 'right' ? 'lg:grid-flow-dense' : ''}`}>
             {/* Image */}
             <div className={imagePosition === 'right' ? 'lg:col-start-2' : ''}>
-              <div className="rounded-2xl overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   src={imageSrc}
                   alt={title}

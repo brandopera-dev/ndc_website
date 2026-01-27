@@ -69,7 +69,7 @@ const TestimonialsModernSection = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <div className="text-center mb-16 scroll-animate">
-          <span className="inline-block bg-[#e11a1a]/10 text-[#e11a1a] text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4">
+          <span className="inline-block bg-[#1f1f1f]/10 text-[#e11a1a] text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4">
             AVIS CLIENTS
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
@@ -132,7 +132,7 @@ const TestimonialsModernSection = () => {
                     </p>
 
                     {/* Service Tag */}
-                    <div className="inline-block bg-[#e11a1a]/10 text-[#e11a1a] text-xs px-3 py-1.5 rounded-full mb-6 font-semibold">
+                    <div className="inline-block bg-[#1f1f1f]/10 text-[#e11a1a] text-xs px-3 py-1.5 rounded-full mb-6 font-semibold">
                       {testimonial.service}
                     </div>
 

@@ -87,7 +87,7 @@ const Services = () => {
           
           {/* Content */}
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-[#e11a1a]/10 border border-[#e11a1a]/20 text-[#e11a1a] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 bg-[#1f1f1f]/10 border border-[#e11a1a]/20 text-[#e11a1a] px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <span className="w-2 h-2 bg-[#e11a1a] rounded-full animate-pulse"></span>
               OUR SERVICES
             </div>
@@ -183,7 +183,7 @@ const Services = () => {
                   }`}
                 >
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
-                    service.highlighted ? 'bg-white/10' : 'bg-[#e11a1a]/10'
+                    service.highlighted ? 'bg-white/10' : 'bg-[#1f1f1f]/10'
                   }`}>
                     <IconComponent className={`w-8 h-8 ${service.highlighted ? 'text-white' : 'text-[#e11a1a]'}`} />
                   </div>
@@ -235,7 +235,7 @@ const Services = () => {
                 Our experience is your advantage. We combine proven methodologies with innovative solutions.
               </p>
               
-              <div className="relative rounded-3xl overflow-hidden">
+              <div className="relative overflow-hidden">
                 <img
                   src="/images/vehicles-coal-mine-view.jpg"
                   alt="Work Process"

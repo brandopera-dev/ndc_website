@@ -34,7 +34,7 @@ export const FeaturesGrid2Section = () => {
               key={index}
               className="group p-6 rounded-xl bg-gray-50 hover:bg-[#1f1f1f] transition-all duration-300 cursor-pointer"
             >
-              <div className="w-16 h-16 rounded-lg bg-[#e11a1a]/10 group-hover:bg-[#e11a1a] flex items-center justify-center mb-4 transition-all">
+              <div className="w-16 h-16 rounded-full bg-[#1f1f1f]/10 group-hover:bg-[#e11a1a] flex items-center justify-center mb-4 transition-all">
                 <div className="text-[#e11a1a] group-hover:text-white transition-colors">
                   {feature.icon}
                 </div>

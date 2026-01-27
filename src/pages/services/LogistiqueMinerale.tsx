@@ -212,7 +212,7 @@ const LogistiqueMinerale = () => {
             <div className="lg:col-span-7">
               <div className="grid sm:grid-cols-2 gap-4">
                 {gallery.map((item) => (
-                  <div key={item.label} className="group relative rounded-2xl overflow-hidden border border-gray-200">
+                  <div key={item.label} className="group relative overflow-hidden border border-gray-200">
                     <img
                       src={item.src}
                       alt={item.label}

@@ -330,7 +330,7 @@ const ServiceDetails = () => {
             {images.map((img, index) => (
               <div
                 key={index}
-                className={`relative rounded-xl overflow-hidden cursor-pointer transition-all ${
+                className={`relative overflow-hidden cursor-pointer transition-all ${
                   index === 0 ? 'col-span-2 row-span-2 aspect-square' : 'aspect-video'
                 }`}
                 onClick={() => setActiveImageIndex(index)}
@@ -593,7 +593,7 @@ const ServiceDetails = () => {
       {/* CTA Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="relative rounded-3xl overflow-hidden">
+          <div className="relative overflow-hidden">
             <img
               src={serviceTheme.heroImage}
               alt="CTA Background"

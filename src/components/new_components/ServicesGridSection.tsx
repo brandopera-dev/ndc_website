@@ -106,7 +106,7 @@ const services = [
                   )}
 
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
-                    service.highlighted ? 'bg-white/10' : 'bg-[#e11a1a]/10'
+                    service.highlighted ? 'bg-white/10' : 'bg-[#1f1f1f]/10'
                   }`}>
                     <IconComponent className={`w-8 h-8 ${service.highlighted ? 'text-white' : 'text-[#e11a1a]'}`} />
                   </div>
