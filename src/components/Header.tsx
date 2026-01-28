@@ -87,7 +87,7 @@ const Header = () => {
                     key="logo-large"
                     src="/images/logo/ID_NDC Energie 1.png"
                     alt="NDC Énergie"
-                    className="h-10 sm:h-24 w-auto rounded-lg object-cover"
+                    className="h-12 sm:h-24 w-auto rounded-lg object-cover"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
