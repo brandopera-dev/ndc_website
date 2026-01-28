@@ -16,7 +16,7 @@ export const translations = {
       about: {
         badge: "Qui nous sommes",
         title: "À propos de NDC",
-        description: "Un partenaire intégré pour sécuriser les opérations minières et industrielles (fuel management, transit, transport).",
+        description: "Un partenaire intégré pour sécuriser les activités d'exploitations des mines et industries. (Fuel Management et infrastructures associées, Transport, Transit)",
         primaryCta: "Découvrir nos services",
         secondaryCta: "Nous contacter",
       },

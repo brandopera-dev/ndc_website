@@ -67,7 +67,7 @@ const About = () => {
       title: 'GARANTIR',
       icon: ShieldCheck,
       description:
-        "Aux industries minières et de la cimenterie un maintien de l’approvisionnement en hydrocarbures.",
+        "Aux industriels, un maintien de l’approvisionnement en hydrocarbures.",
     },
     {
       title: 'OFFRIR',
@@ -118,7 +118,7 @@ const About = () => {
       title: 'RESPONSABILITÉ UNIQUE',
       icon: Users,
       description:
-        "Un seul partenaire responsable de l’ensemble de la chaîne hydrocarbure–transport–transit.",
+        "Un seul partenaire responsable de l’ensemble de la chaîne Hydrocarbures–Transport–Transit.",
     },
   ];
 
@@ -166,19 +166,27 @@ const About = () => {
                 • QUI SOMMES-NOUS
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                Nous Sommes Spécialisés dans les{' '}
-                <span className="text-[#e11a1a]">Services Logistiques</span> de Bout en Bout
+                Nous Sommes Spécialisés dans {' : '}
               </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Notre équipe dédiée travaille sans relâche pour fournir des solutions logistiques 
-                fiables pour les entreprises de toutes tailles, vous aidant à atteindre vos 
-                objectifs avec rapidité et fiabilité.
-              </p>
+              <ul className="text-gray-600 mb-6 leading-relaxed space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#e11a1a] mt-1">•</span>
+                  <span>L'importation et la distribution d'hydrocarbures</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#e11a1a] mt-1">•</span>
+                  <span>La conception, la construction, l'exploitation, la maintenance de systèmes de stockage d'hydrocarbures et le Fuel Management</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#e11a1a] mt-1">•</span>
+                  <span>Le transport transfrontalier et le transit</span>
+                </li>
+              </ul>
 
               <div className="bg-gray-50 border-l-4 border-[#e11a1a] p-4 mb-8">
                 <p className="text-gray-700 italic">
-                  Nous simplifions la logistique avec une technologie avancée, afin que vous 
-                  puissiez vous concentrer sur la croissance de votre entreprise.
+                Nous plaçons la valorisation des ressources humaines au cœur de notre stratégie à travers laquelle nos Femmes et hommes engagés, 
+                contribuent à bâtir une vision ambitieuse et durable.
                 </p>
               </div>
             </div>
@@ -252,7 +260,7 @@ const About = () => {
                 {missions.map((m) => (
                   <div key={m.title} className="rounded-3xl border border-white/20 bg-white/10 p-7  hover:bg-white/15 transition-all">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-white">
+                      <div className="w-12 h-12  flex items-center justify-center text-white">
                         <m.icon className="w-6 h-6" />
                       </div>
                       <div>
@@ -283,7 +291,7 @@ const About = () => {
                 Notre modèle opérationnel
               </h2>
               <p className="mt-5 text-gray-600 leading-relaxed max-w-2xl">
-                Pour un acteur minier, travailler avec NDC Énergie, ce n’est pas additionner des prestataires, c’est s’appuyer sur un modèle intégré.
+                Travailler avec NDC Énergie, ce n’est pas additionner des prestataires, c’est s’appuyer sur un modèle intégré.
               </p>
             </div>
             <div className="rounded-3xl border border-gray-200 bg-gray-50 p-7  max-w-xl">
