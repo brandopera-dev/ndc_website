@@ -296,7 +296,7 @@ const Media = () => {
           </div>
         </div>
       </section>
-
+{/* 
       <section id="videos" className="py-16 bg-[#1f1f1f] ndc-swoosh-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
@@ -331,15 +331,13 @@ const Media = () => {
                 className="overflow-hidden border border-white/10 bg-black cursor-pointer group"
                 onClick={() => openVideoModal(activeVideo.youtubeId)}
               >
-                <div className="relative aspect-video">
-                  {/* Thumbnail au lieu de l'iframe */}
+                <div className="relative aspect-video"> 
                   <img
                     src={`https://i.ytimg.com/vi/${activeVideo.youtubeId}/maxresdefault.jpg`}
                     alt={activeVideo.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  
-                  {/* Overlay avec bouton play */}
+                   
                   <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
                     <div className="w-20 h-20 rounded-full bg-[#e11a1a] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
                       <Play className="w-8 h-8 text-white ml-1" fill="white" />
@@ -435,7 +433,7 @@ const Media = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id="galerie" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
