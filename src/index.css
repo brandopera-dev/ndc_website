@@ -548,79 +548,107 @@ html {
 /* Scroll Animations */
 @layer utilities {
   .scroll-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-animate.scroll-hidden {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity, transform;
   }
 
   .scroll-animate.animate-in {
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Délais progressifs pour animations en cascade */
-  .scroll-animate:nth-child(1) { transition-delay: 0ms; }
-  .scroll-animate:nth-child(2) { transition-delay: 100ms; }
-  .scroll-animate:nth-child(3) { transition-delay: 200ms; }
-  .scroll-animate:nth-child(4) { transition-delay: 300ms; }
-  .scroll-animate:nth-child(5) { transition-delay: 400ms; }
-  .scroll-animate:nth-child(6) { transition-delay: 500ms; }
-  .scroll-animate:nth-child(7) { transition-delay: 600ms; }
-  .scroll-animate:nth-child(8) { transition-delay: 700ms; }
+  .scroll-animate.animate-in:nth-child(1) { transition-delay: 0ms; }
+  .scroll-animate.animate-in:nth-child(2) { transition-delay: 100ms; }
+  .scroll-animate.animate-in:nth-child(3) { transition-delay: 200ms; }
+  .scroll-animate.animate-in:nth-child(4) { transition-delay: 300ms; }
+  .scroll-animate.animate-in:nth-child(5) { transition-delay: 400ms; }
+  .scroll-animate.animate-in:nth-child(6) { transition-delay: 500ms; }
+  .scroll-animate.animate-in:nth-child(7) { transition-delay: 600ms; }
+  .scroll-animate.animate-in:nth-child(8) { transition-delay: 700ms; }
 
   /* Animations spécifiques par attribut data-animate */
   [data-animate="fadeInUp"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  [data-animate="fadeInUp"].scroll-hidden {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="fadeInUp"].animate-in {
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="fadeIn"] {
+    opacity: 1;
+  }
+
+  [data-animate="fadeIn"].scroll-hidden {
     opacity: 0;
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="fadeIn"].animate-in {
     opacity: 1;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="slideInLeft"] {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  [data-animate="slideInLeft"].scroll-hidden {
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="slideInLeft"].animate-in {
     opacity: 1;
     transform: translateX(0);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="slideInRight"] {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  [data-animate="slideInRight"].scroll-hidden {
     opacity: 0;
     transform: translateX(50px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="slideInRight"].animate-in {
     opacity: 1;
     transform: translateX(0);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="scaleIn"] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  [data-animate="scaleIn"].scroll-hidden {
     opacity: 0;
     transform: scale(0.9);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [data-animate="scaleIn"].animate-in {
     opacity: 1;
     transform: scale(1);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Smooth transitions between sections */

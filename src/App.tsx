@@ -23,17 +23,22 @@ import { pageTransition } from "@/utils/animations";
 
 const queryClient = new QueryClient();
 
-const ScrollToHash = () => {
+const ScrollToTop = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (!location.hash) return;
-
-    const id = location.hash.replace("#", "");
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Si il y a un hash, défiler vers l'élément
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+    }
+    
+    // Sinon, défiler vers le haut de la page
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [location.pathname, location.hash]);
 
   return null;
@@ -79,7 +84,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToHash />
+          <ScrollToTop />
           <AnimatedRoutes />
         </BrowserRouter>
       </TooltipProvider>

@@ -2,30 +2,52 @@
 export const initScrollAnimations = () => {
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -50px 0px'
   };
 
+  // Récupérer tous les éléments à animer
+  const animatedSections = document.querySelectorAll('.scroll-animate');
+  const specificAnimations = document.querySelectorAll('[data-animate]');
+
+  // Cacher les éléments qui ne sont pas déjà visibles dans le viewport
+  animatedSections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    // Si l'élément est en dessous du viewport, le cacher
+    if (rect.top > window.innerHeight) {
+      section.classList.add('scroll-hidden');
+    }
+  });
+
+  specificAnimations.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top > window.innerHeight) {
+      element.classList.add('scroll-hidden');
+    }
+  });
+
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Ajouter un délai progressif pour les animations en cascade
-        setTimeout(() => {
-          entry.target.classList.add('animate-in');
-        }, index * 50);
+        // Retirer scroll-hidden et ajouter animate-in
+        entry.target.classList.remove('scroll-hidden');
+        entry.target.classList.add('animate-in');
+        // Ne plus observer cet élément
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observe all sections with scroll-animate class
-  const animatedSections = document.querySelectorAll('.scroll-animate');
+  // Observer tous les éléments
   animatedSections.forEach((section) => {
-    observer.observe(section);
+    if (section.classList.contains('scroll-hidden')) {
+      observer.observe(section);
+    }
   });
 
-  // Observer pour les éléments avec des animations spécifiques
-  const specificAnimations = document.querySelectorAll('[data-animate]');
   specificAnimations.forEach((element) => {
-    observer.observe(element);
+    if (element.classList.contains('scroll-hidden')) {
+      observer.observe(element);
+    }
   });
 
   return () => {
