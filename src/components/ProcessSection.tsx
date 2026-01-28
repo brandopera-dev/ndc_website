@@ -128,7 +128,7 @@ const ProcessSection = () => {
                 <div
                   key={card.number}
                   onClick={() => goToSlide(index)}
-                  className="absolute w-[90%] sm:w-[85%] md:w-[600px] lg:w-[700px] bg-[#1a1a1a] overflow-hidden border border-white/10 cursor-pointer transition-all duration-500 ease-out"
+                  className="absolute w-[90%] sm:w-[85%] md:w-[600px] lg:w-[700px] bg-[#1a1a1a] rounded-3xl overflow-hidden border border-white/10 cursor-pointer transition-all duration-500 ease-out"
                   style={{
                     left: '50%',
                     transform: `translateX(calc(-50% + ${translateX}px)) scale(${isActive ? 1 : 0.92})`,
