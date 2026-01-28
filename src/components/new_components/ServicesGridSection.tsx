@@ -133,7 +133,7 @@ const services = [
                         className={`w-full rounded-full group/btn ${
                           service.highlighted
                             ? 'bg-white text-[#1f1f1f] hover:bg-white/90'
-                            : 'ndc-btn-gradient'
+                            : 'bg-[#e11a1a] hover:bg-red-700 text-white'
                         }`}
                         size="sm"
                       >
@@ -173,7 +173,7 @@ const services = [
                   chaînes d’approvisionnement.
                 </p>
                 <Link to="/services/logistique-minerale" className="inline-block mt-8">
-                  <Button className="ndc-btn-gradient rounded-full" size="sm">
+                  <Button className="bg-[#e11a1a] hover:bg-red-700 text-white rounded-full" size="sm">
                     Voir le service
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>

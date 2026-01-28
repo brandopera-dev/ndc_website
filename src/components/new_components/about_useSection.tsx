@@ -114,7 +114,7 @@ const AboutUseSection = () => {
                 variants={fadeInUp}
               >
                 <motion.button 
-                  className="ndc-btn-gradient px-8 py-4 rounded-xl font-semibold text-sm"
+                  className="bg-[#e11a1a] hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold text-sm"
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)" }}
                   whileTap={{ scale: 0.98 }}
                 >

@@ -117,7 +117,7 @@ const PageHero = ({
                     className={
                       primaryAction.variant === "outline"
                         ? "border-white/25 text-white hover:bg-white/10 rounded-xl px-8 py-6 font-semibold w-full"
-                        : "ndc-btn-gradient text-white rounded-xl px-8 py-6 font-semibold inline-flex items-center gap-2 w-full"
+                        : "bg-[#e11a1a] hover:bg-red-700 text-white rounded-xl px-8 py-6 font-semibold inline-flex items-center gap-2 w-full"
                     }
                     variant={primaryAction.variant === "outline" ? "outline" : undefined}
                   >
@@ -134,7 +134,7 @@ const PageHero = ({
                     className={
                       secondaryAction.variant === "outline"
                         ? "border-white/25 text-white hover:bg-white/10 rounded-xl px-8 py-6 font-semibold w-full"
-                        : "ndc-btn-gradient text-white rounded-xl px-8 py-6 font-semibold inline-flex items-center gap-2 w-full"
+                        : "bg-[#e11a1a] hover:bg-red-700 text-white rounded-xl px-8 py-6 font-semibold inline-flex items-center gap-2 w-full"
                     }
                   >
                     {secondaryAction.label}

@@ -108,7 +108,7 @@ const LogistiqueMinerale = () => {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/contact">
-                <Button className="ndc-btn-gradient text-white rounded-xl px-8 py-6 font-semibold inline-flex items-center gap-2">
+                <Button className="bg-[#e11a1a] hover:bg-red-700 text-white rounded-xl px-8 py-6 font-semibold inline-flex items-center gap-2">
                   Demander un devis
                   <ArrowRight className="w-5 h-5" />
                 </Button>

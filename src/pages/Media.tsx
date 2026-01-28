@@ -172,7 +172,7 @@ const Media = () => {
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-3">
                   <a href="#videos" className="w-full sm:w-auto">
-                    <Button className="ndc-btn-gradient rounded-full px-6 py-3 font-semibold w-full sm:w-auto">
+                    <Button className="bg-[#e11a1a] hover:bg-red-700 text-white rounded-full px-6 py-3 font-semibold w-full sm:w-auto">
                       Voir les vidéos
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
