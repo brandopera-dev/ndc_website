@@ -104,10 +104,10 @@ const AboutUseSection = () => {
                 })}
               </motion.div>
 
-              <p className="mt-6 text-sm md:text-base text-gray-500 leading-relaxed max-w-xl">
+              {/* <p className="mt-6 text-sm md:text-base text-gray-500 leading-relaxed max-w-xl">
                 De la conception de cuves au transport de matières premières, nous assurons la continuité
                 de vos opérations avec expertise et conformité aux normes internationales.
-              </p>
+              </p> */}
 
               <motion.div 
                 className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6"
@@ -127,7 +127,7 @@ const AboutUseSection = () => {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500">Appelez-nous 24/7</p>
-                    <p className="font-extrabold text-gray-900">+236-3256.21456</p>
+                    <p className="font-extrabold text-gray-900">+223 91 88 38 67</p>
                   </div>
                 </div>
               </motion.div>

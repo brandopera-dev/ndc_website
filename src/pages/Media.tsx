@@ -134,7 +134,7 @@ const Media = () => {
     { src: "/images/Social Media Size/1NDC--de-KATI134-sm.jpg", alt: "Livraison sécurisée" },
   ];
 
-  const news = [
+  const   news = [
     {
       title: "NDC Énergie renforce ses capacités de distribution",
       date: "Janvier 2026",
