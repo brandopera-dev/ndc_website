@@ -28,7 +28,7 @@ type PageHeroProps = {
 
  const isExternalHref = (to: string) => /^(https?:|mailto:|tel:)/.test(to);
 
-const PageHero = ({
+const PageHero = React.memo(({
   backgroundImage,
   backgroundAlt,
   breadcrumb,
@@ -96,7 +96,7 @@ const PageHero = ({
 
           {badgeText ? (
             <div className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/10 text-white/85 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <span className={`w-2 h-2 rounded-full ${badgeDotClassName || "bg-[#22c55e]"}`} />
+              <span className={`w-2 h-2 rounded-full ${badgeDotClassName || "bg-[#e11a1a]"}`} />
               {badgeText}
             </div>
           ) : null}
@@ -148,6 +148,6 @@ const PageHero = ({
       </div>
     </section>
   );
-};
+});
 
 export default PageHero;

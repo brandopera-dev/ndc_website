@@ -134,7 +134,8 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section 
+        badgeText={t('hero.about.badge')}*/}
       <PageHero
         backgroundImage="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg"
         backgroundAlt="About NDC"
@@ -142,7 +143,6 @@ const About = () => {
           { label: t('nav.home'), to: '/' },
           { label: t('nav.about') },
         ]}
-        badgeText={t('hero.about.badge')}
         badgeDotClassName="bg-[#e11a1a]"
         title={t('hero.about.title')}
         description={t('hero.about.description')}

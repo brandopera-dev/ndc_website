@@ -249,7 +249,7 @@ const ServiceDetails = () => {
         ],
       },
       "stations-essence": {
-        accent: "#22c55e",
+        accent: "#e11a1a",
         heroImage: "/images/vehicles-coal-mine-view.jpg",
         images: [
           "/images/vehicles-coal-mine-view.jpg",

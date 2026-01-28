@@ -45,7 +45,7 @@ const Header = () => {
     title: "Réseaux de distribution",
     subtitle: "Stations-service & infrastructures multi-sites",
     to: "/services/stations-essence",
-    image: "/images/vehicles-coal-mine-view.jpg",
+    image: "/images/Social Media Size/NDC--de-KATI137-sm.jpg",
   },
 ];
 

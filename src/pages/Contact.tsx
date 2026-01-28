@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import Header from "@/components/Header";
 import CTAFooterSection from "@/components/Footer";
 import FaqSection from "@/components/new_components/FaqSection";
+import QuoteCalculatorSection from "@/components/new_components/QuoteCalculatorSection";
 import { initScrollAnimations } from "@/utils/scrollAnimations";
 import PageHero from "@/components/PageHero";
 import { useI18n } from "@/i18n/I18nProvider";
@@ -26,7 +27,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
+      {/* Hero Section  badgeText={t('hero.contact.badge')}*/}
       <PageHero
         backgroundImage="/images/vehicles-coal-mine-view.jpg"
         backgroundAlt="Contact NDC"
@@ -34,7 +35,7 @@ const Contact = () => {
           { label: t('nav.home'), to: '/' },
           { label: t('nav.contact') },
         ]}
-        badgeText={t('hero.contact.badge')}
+       
         badgeDotClassName="bg-[#e11a1a]"
         title={t('hero.contact.title')}
         description={t('hero.contact.description')}
@@ -66,7 +67,7 @@ const Contact = () => {
             {contactInfo.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-white p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 scroll-animate"
+                className="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all hover:-translate-y-1 scroll-animate"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <item.icon className="w-7 h-7 text-primary" />
@@ -79,6 +80,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Quote Calculator Section */}
+      <QuoteCalculatorSection />
 
       {/* Contact Form & Map Section */}
       {/* <section className="py-24">
@@ -211,7 +215,7 @@ const Contact = () => {
       </section> */}
 
       {/* FAQ Section */} 
-        <FaqSection variant="light" />
+        <FaqSection />
       {/* <section className="py-24 bg-muted/30">
         <div className="max-w-4xl mx-auto px-8">
           <div className="text-center mb-16">
