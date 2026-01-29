@@ -55,14 +55,14 @@ const FaqSection = () => {
                 <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </span>
-                <p>Gestion efficace du transport de marchandises</p>
+                <p>Gestion efficace du transport de matières premières, engins et marchandises</p>
               </div>
               <div className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </span>
-                <p>Solutions spécialisées pour marchandises fragiles et périssables</p>
-              </div>
+                <p> Gestion des risques et protocoles d'urgence en cas de deversement de produits transportes </p>
+              </div> 
               <div className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
                   <Check className="w-3.5 h-3.5" />
