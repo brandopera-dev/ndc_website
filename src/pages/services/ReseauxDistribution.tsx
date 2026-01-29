@@ -380,7 +380,7 @@ const ReseauxDistribution = () => {
         </div>
       </section>
 
-     
+      
       <section className="py-16 bg-white scroll-animate">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
