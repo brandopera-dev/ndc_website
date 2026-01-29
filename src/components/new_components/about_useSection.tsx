@@ -173,7 +173,7 @@ const AboutUseSection = () => {
 
               <motion.div className="space-y-6" variants={staggerItem}>
                 <motion.div 
-                  className="rounded-sm bg-[#e11a1a] text-white p-8 h-[200px] sm:h-[260px] flex items-center justify-center cursor-pointer"
+                  className=" bg-[#e11a1a] text-white p-8 h-[200px] sm:h-[260px] flex items-center justify-center cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >

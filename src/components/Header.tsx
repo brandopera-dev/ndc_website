@@ -32,19 +32,19 @@ const Header = () => {
   {
     title: "Fuel Management",
     subtitle: "Stockage & distribution d’hydrocarbures sur site",
-    to: "/services/transport-hydrocarbures",
+    to: "/services/fuel-management",
     image: "/images/storage-tanks-petroleum-products.jpg",
   },
   {
     title: "Transport & Transit",
     subtitle: "Logistique industrielle et ressources minières",
-    to: "/services/logistique-minerale",
+    to: "/services/transport-transit",
     image: "/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg",
   },
   {
     title: "Réseaux de distribution",
     subtitle: "Stations-service & infrastructures multi-sites",
-    to: "/services/stations-essence",
+    to: "/services/reseaux-distribution",
     image: "/images/Social Media Size/NDC--de-KATI137-sm.jpg",
   },
 ];
@@ -76,7 +76,7 @@ const Header = () => {
                     key="logo-small"
                     src="/images/logo/ID_NDC Energie 2.png"
                     alt="NDC Énergie"
-                    className="h-12 w-12 sm:h-20 sm:w-20 rounded-lg object-cover"
+                    className="h-14 w-14 sm:h-24 sm:w-24 rounded-lg object-cover"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
@@ -87,7 +87,7 @@ const Header = () => {
                     key="logo-large"
                     src="/images/logo/ID_NDC Energie 1.png"
                     alt="NDC Énergie"
-                    className="h-12 sm:h-24 w-auto rounded-lg object-cover"
+                    className="h-16 sm:h-28 w-auto rounded-lg object-cover"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}

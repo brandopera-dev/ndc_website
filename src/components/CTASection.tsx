@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return ( 
@@ -28,14 +29,18 @@ const CTASection = () => {
           Demandez votre devis gratuitement en quelques minutes et profitez de tarifs compétitifs.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-red-600 hover:bg-red-700 text-white rounded-lg px-8 h-12 sm:h-14 text-base sm:text-lg w-full sm:w-auto">
-            Demander un devis
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
-          <Button className="border-2 border-white/20 bg-transparent hover:bg-white/10 text-white rounded-lg px-8 h-12 sm:h-14 text-base sm:text-lg w-full sm:w-auto">
-            <Phone className="w-5 h-5 mr-2" />
-            Nous appeler
-          </Button>
+          <Link to="/#devis" className="w-full sm:w-auto">
+            <Button className="bg-[#e11a1a] hover:bg-red-700 text-white rounded-lg px-8 h-12 sm:h-14 text-base sm:text-lg w-full">
+              Demander un devis
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+          <a href="tel:+2252722000000" className="w-full sm:w-auto">
+            <Button className="border-2 border-white/20 bg-transparent hover:bg-white/10 text-white rounded-lg px-8 h-12 sm:h-14 text-base sm:text-lg w-full">
+              <Phone className="w-5 h-5 mr-2" />
+              Nous appeler
+            </Button>
+          </a>
         </div>
       </div>
     </section>

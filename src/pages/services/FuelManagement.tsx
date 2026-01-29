@@ -1,12 +1,8 @@
-/* eslint-disable no-useless-escape */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  BarChart3,
   Droplet,
-  MapPin,
   Network,
   ShieldCheck,
   Truck,
@@ -22,102 +18,11 @@ import {
 } from "@/components/ui/accordion";
 import { initScrollAnimations } from "@/utils/scrollAnimations";
 
-const TransportHydrocarbures = () => {
-  const mapContainerRef = useRef<HTMLDivElement | null>(null);
-  const leafletMapRef = useRef<any>(null);
-
+const FuelManagement = () => {
   useEffect(() => {
     const cleanup = initScrollAnimations();
     return cleanup;
   }, []);
-
-  const stations = useMemo(
-    () => [
-      { name: "Lubumbashi", lat: -11.6609, lng: 27.4794 },
-      { name: "Likasi", lat: -10.981, lng: 26.7377 },
-      { name: "Kolwezi", lat: -10.7167, lng: 25.4667 },
-      { name: "Tenke", lat: -10.6129, lng: 26.12 },
-      { name: "Kambove", lat: -10.876, lng: 26.597 },
-    ],
-    []
-  );
-
-  useEffect(() => {
-    const loadLeaflet = async () => {
-      if ((window as any).L) return;
-
-      if (!document.querySelector('link[data-leaflet="true"]')) {
-        const linkEl = document.createElement("link");
-        linkEl.rel = "stylesheet";
-        linkEl.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
-        linkEl.setAttribute("data-leaflet", "true");
-        document.head.appendChild(linkEl);
-      }
-
-      await new Promise<void>((resolve, reject) => {
-        const existing = document.querySelector('script[data-leaflet="true"]') as HTMLScriptElement | null;
-        if (existing) {
-          if ((window as any).L) resolve();
-          else existing.addEventListener("load", () => resolve(), { once: true });
-          return;
-        }
-
-        const scriptEl = document.createElement("script");
-        scriptEl.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
-        scriptEl.async = true;
-        scriptEl.defer = true;
-        scriptEl.setAttribute("data-leaflet", "true");
-        scriptEl.onload = () => resolve();
-        scriptEl.onerror = () => reject(new Error("Leaflet load failed"));
-        document.body.appendChild(scriptEl);
-      });
-    };
-
-    const initMap = async () => {
-      if (!mapContainerRef.current) return;
-      await loadLeaflet();
-      const L = (window as any).L as any;
-      if (!L || leafletMapRef.current) return;
-
-      const map = L.map(mapContainerRef.current, {
-        zoomControl: false,
-        attributionControl: false,
-      }).setView([-11.6, 26.8], 7);
-
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-      }).addTo(map);
-
-      stations.forEach((s: any) => {
-        L.circleMarker([s.lat, s.lng], {
-          radius: 7,
-          color: "#e11a1a",
-          weight: 2,
-          fillColor: "#e11a1a",
-          fillOpacity: 0.9,
-        })
-          .addTo(map)
-          .bindPopup(`<div style=\"font-weight:600;\">${s.name}</div>`);
-      });
-
-      const bounds = L.latLngBounds(stations.map((s: any) => [s.lat, s.lng]));
-      map.fitBounds(bounds.pad(0.35));
-
-      leafletMapRef.current = map;
-    };
-
-    initMap();
-
-    return () => {
-      if (leafletMapRef.current) {
-        try {
-          leafletMapRef.current.remove();
-        } finally {
-          leafletMapRef.current = null;
-        }
-      }
-    };
-  }, [stations]);
 
   const gallery = [
     {
@@ -282,7 +187,7 @@ const TransportHydrocarbures = () => {
                 <Link to="/contact" className="w-full">
                   <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">Contacter un expert</Button>
                 </Link>
-                <Link to="/services/stations-essence" className="w-full">
+                <Link to="/services/reseaux-distribution" className="w-full">
                   <Button variant="outline" className="w-full rounded-xl py-3 font-semibold">
                     Réseaux de distribution
                   </Button>
@@ -325,24 +230,35 @@ const TransportHydrocarbures = () => {
               <div className="p-6">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-white/80 text-sm font-semibold tracking-wider uppercase">Implantations</p>
-                    <h3 className="text-lg font-bold mt-2">Points de distribution & stations opérées</h3>
+                    <p className="text-white/80 text-sm font-semibold tracking-wider uppercase">Nos engagements</p>
+                    <h3 className="text-lg font-bold mt-2">Garanties opérationnelles</h3>
                     <p className="text-white/70 text-sm mt-2 leading-relaxed">
-                      Visualisez un échantillon de points de service. Les emplacements sont illustratifs et s’adaptent à votre périmètre.
+                      Un modèle de service conçu pour sécuriser vos opérations et garantir la continuité.
                     </p>
                   </div>
                   <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-[#e11a1a]">
-                    <MapPin className="w-5 h-5" />
+                    <ShieldCheck className="w-5 h-5" />
                   </div>
                 </div>
               </div>
 
-              <div className="px-6 pb-6">
-                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/30">
-                  <div ref={mapContainerRef} className="w-full h-[340px]" />
+              <div className="px-6 pb-6 space-y-4">
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+                  <span className="w-3 h-3 rounded-full bg-[#e11a1a]" />
+                  <span className="text-white/90">Disponibilité 24/7 des équipes terrain</span>
                 </div>
-
-                 
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+                  <span className="w-3 h-3 rounded-full bg-[#e11a1a]" />
+                  <span className="text-white/90">Conformité HSE et standards internationaux</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+                  <span className="w-3 h-3 rounded-full bg-[#e11a1a]" />
+                  <span className="text-white/90">Reporting et KPI personnalisés</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+                  <span className="w-3 h-3 rounded-full bg-[#e11a1a]" />
+                  <span className="text-white/90">Maintenance préventive et corrective</span>
+                </div>
               </div>
             </div>
           </div>
@@ -376,4 +292,4 @@ const TransportHydrocarbures = () => {
   );
 };
 
-export default TransportHydrocarbures;
+export default FuelManagement;

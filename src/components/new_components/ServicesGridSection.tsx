@@ -9,7 +9,7 @@ const ServicesGridSection = () => {
  
 const services = [
   {
-    id: 'logistique-minerale',
+    id: 'transport-transit',
     icon: Truck,
     title: 'TRANSPORT & TRANSIT',
     description: "Transport industriel et transit des intrants et matériaux sur sites avec coordination opérationnelle continue.",
@@ -21,7 +21,7 @@ const services = [
     highlighted: false
   },
   {
-    id: 'stations-essence',
+    id: 'reseaux-distribution',
     icon: Network,
     title: 'Réseaux de distribution',
     description: "Conception et exploitation de réseaux de stockage et de distribution d’hydrocarbures pour sécuriser la disponibilité sur site.",
@@ -33,7 +33,7 @@ const services = [
     highlighted: true
   },
   {
-    id: 'transport-hydrocarbures',
+    id: 'fuel-management',
     icon: Droplet,
     title: 'FUEL MANAGEMENT & INFRASTRUCT',
     description: "Nous concevons, construisons, exploitons et maintenons des infrastructures complètes de stockage et de distribution d’hydrocarbures directement sur site.",
@@ -172,7 +172,7 @@ const services = [
                   et une coordination opérationnelle continue, nous sécurisons les flux critiques et garantissons la continuité des
                   chaînes d’approvisionnement.
                 </p>
-                <Link to="/services/logistique-minerale" className="inline-block mt-8">
+                <Link to="/services/transport-transit" className="inline-block mt-8">
                   <Button className="bg-[#e11a1a] hover:bg-red-700 text-white rounded-full" size="sm">
                     Voir le service
                     <ArrowRight className="ml-2 w-4 h-4" />

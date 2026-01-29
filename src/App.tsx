@@ -12,9 +12,9 @@ import Home3 from "./pages/Home3";
 import Home2 from "./pages/Home2";
 import Services from "./pages/Services";
 import ServiceDetails from "./pages/ServiceDetails";
-import TransportHydrocarbures from "./pages/services/TransportHydrocarbures";
-import LogistiqueMinerale from "./pages/services/LogistiqueMinerale";
-import StationsEssence from "./pages/services/StationsEssence";
+import FuelManagement from "./pages/services/FuelManagement";
+import TransportTransit from "./pages/services/TransportTransit";
+import ReseauxDistribution from "./pages/services/ReseauxDistribution";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Media from "./pages/Media";
@@ -62,9 +62,9 @@ const AnimatedRoutes = () => {
           <Route path="/home3" element={<Home3 />} />
           <Route path="/home2" element={<Home2 />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/transport-hydrocarbures" element={<TransportHydrocarbures />} />
-          <Route path="/services/logistique-minerale" element={<LogistiqueMinerale />} />
-          <Route path="/services/stations-essence" element={<StationsEssence />} />
+          <Route path="/services/fuel-management" element={<FuelManagement />} />
+          <Route path="/services/transport-transit" element={<TransportTransit />} />
+          <Route path="/services/reseaux-distribution" element={<ReseauxDistribution />} />
           <Route path="/services/:serviceId" element={<ServiceDetails />} />
           <Route path="/media" element={<Media />} />
           <Route path="/about" element={<About />} />

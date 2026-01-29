@@ -160,7 +160,7 @@ const HomeValuesWorkProcessSection = () => {
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </a>
-                <a href="#process" className="inline-block mt-4">
+                <a href="#services" className="inline-block mt-4">
                   <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 py-6 font-semibold inline-flex items-center gap-2">
                     Voir notre processus
                     <ArrowRight className="w-5 h-5" />

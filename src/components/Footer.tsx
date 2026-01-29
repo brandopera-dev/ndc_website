@@ -50,7 +50,7 @@ import { Link } from 'react-router-dom';
               <img 
                 src="/images/logo/ID_NDC Energie 1.png" 
                 alt="NDC Énergie" 
-                className="h-16 sm:h-20 w-auto object-contain"
+                className="h-24 sm:h-28 w-auto object-contain"
               /> 
               </div> 
               <p className="text-gray-600 text-sm mb-6 leading-relaxed">
@@ -89,9 +89,9 @@ import { Link } from 'react-router-dom';
             <div>
               <h3 className="font-bold text-lg mb-6">Services</h3>
               <ul className="space-y-3">
-                <li><Link to="/services/transport-hydrocarbures" className="text-gray-600 hover:text-[#e11a1a] transition-colors">Gestion du fuel & infrastructures</Link></li>
-                <li><Link to="/services/stations-essence" className="text-gray-600 hover:text-[#e11a1a] transition-colors">Réseaux de distribution</Link></li>
-                <li><Link to="/services/logistique-minerale" className="text-gray-600 hover:text-[#e11a1a] transition-colors">Transport & transit</Link></li>
+                <li><Link to="/services/fuel-management" className="text-gray-600 hover:text-[#e11a1a] transition-colors">Gestion du fuel & infrastructures</Link></li>
+                <li><Link to="/services/reseaux-distribution" className="text-gray-600 hover:text-[#e11a1a] transition-colors">Réseaux de distribution</Link></li>
+                <li><Link to="/services/transport-transit" className="text-gray-600 hover:text-[#e11a1a] transition-colors">Transport & transit</Link></li>
                 <li><Link to="/#services" className="text-gray-600 hover:text-[#e11a1a] transition-colors">Voir tous les services</Link></li>
               </ul>
             </div>
@@ -110,7 +110,7 @@ import { Link } from 'react-router-dom';
                 <Link to="/#avis" className="px-4 py-3 bg-gray-100 rounded-lg text-sm text-gray-700 hover:text-[#e11a1a] transition-colors">
                   Avis clients
                 </Link>
-                <Link to="/#process" className="px-4 py-3 bg-gray-100 rounded-lg text-sm text-gray-700 hover:text-[#e11a1a] transition-colors">
+                <Link to="/#services" className="px-4 py-3 bg-gray-100 rounded-lg text-sm text-gray-700 hover:text-[#e11a1a] transition-colors">
                   Notre méthode
                 </Link>
               </div>
@@ -124,6 +124,23 @@ import { Link } from 'react-router-dom';
               <Link to="/contact" className="hover:text-[#e11a1a] transition-colors">Mentions</Link>
               <Link to="/contact" className="hover:text-[#e11a1a] transition-colors">Politique de confidentialité</Link>
             </div>
+          </div>
+
+          {/* Signature */}
+          <div className="pt-4 text-center text-xs text-gray-400">
+            <p>
+              Made with <span className="text-[#e11a1a]">♥</span> by{' '}
+              <a 
+                href="https://supebrand.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="font-semibold text-gray-500 hover:text-[#e11a1a] transition-colors"
+              >
+                SUPERBRAND
+              </a>
+              <span className="mx-2">•</span>
+              <span className="italic">we love coffee ☕</span>
+            </p>
           </div>
         </div>
       </div>

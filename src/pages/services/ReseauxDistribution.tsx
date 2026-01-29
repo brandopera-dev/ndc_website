@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+/* eslint-disable no-useless-escape */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -20,11 +22,130 @@ import {
 } from "@/components/ui/accordion";
 import { initScrollAnimations } from "@/utils/scrollAnimations";
 
-const StationsEssence = () => {
+const ReseauxDistribution = () => {
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const leafletMapRef = useRef<any>(null);
+
   useEffect(() => {
     const cleanup = initScrollAnimations();
     return cleanup;
   }, []);
+
+  const stations = useMemo(
+    () => [
+      { name: "Bamako", lat: 12.6392, lng: -8.0029 },
+      { name: "Kayes", lat: 14.4469, lng: -11.4356 },
+      { name: "Sikasso", lat: 11.3167, lng: -5.6667 },
+      { name: "Ségou", lat: 13.4317, lng: -6.2617 },
+      { name: "Mopti", lat: 14.4843, lng: -4.1973 },
+      { name: "Koutiala", lat: 12.3833, lng: -5.4667 },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    const loadLeaflet = async () => {
+      if ((window as any).L) return;
+
+      if (!document.querySelector('link[data-leaflet="true"]')) {
+        const linkEl = document.createElement("link");
+        linkEl.rel = "stylesheet";
+        linkEl.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+        linkEl.setAttribute("data-leaflet", "true");
+        document.head.appendChild(linkEl);
+      }
+
+      await new Promise<void>((resolve, reject) => {
+        const existing = document.querySelector('script[data-leaflet="true"]') as HTMLScriptElement | null;
+        if (existing) {
+          if ((window as any).L) resolve();
+          else existing.addEventListener("load", () => resolve(), { once: true });
+          return;
+        }
+
+        const scriptEl = document.createElement("script");
+        scriptEl.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+        scriptEl.async = true;
+        scriptEl.defer = true;
+        scriptEl.setAttribute("data-leaflet", "true");
+        scriptEl.onload = () => resolve();
+        scriptEl.onerror = () => reject(new Error("Leaflet load failed"));
+        document.body.appendChild(scriptEl);
+      });
+    };
+
+    const initMap = async () => {
+      if (!mapContainerRef.current) return;
+      await loadLeaflet();
+      const L = (window as any).L as any;
+      if (!L || leafletMapRef.current) return;
+
+      const map = L.map(mapContainerRef.current, {
+        zoomControl: false,
+        attributionControl: false,
+      }).setView([14.0, -6.0], 6);
+
+      // Tile layer gris/dark style
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+        maxZoom: 19,
+        subdomains: "abcd",
+      }).addTo(map);
+
+      // Custom pin icon NDC
+      const ndcIcon = L.divIcon({
+        className: "ndc-map-marker",
+        html: `
+          <div style="
+            width: 36px;
+            height: 46px;
+            position: relative;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+          ">
+            <svg viewBox="0 0 36 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 0C8.06 0 0 8.06 0 18c0 12.6 18 28 18 28s18-15.4 18-28C36 8.06 27.94 0 18 0z" fill="#e11a1a"/>
+              <circle cx="18" cy="16" r="8" fill="white"/>
+              <text x="18" y="20" text-anchor="middle" fill="#e11a1a" font-size="10" font-weight="bold">⛽</text>
+            </svg>
+          </div>
+        `,
+        iconSize: [36, 46],
+        iconAnchor: [18, 46],
+        popupAnchor: [0, -46],
+      });
+
+      stations.forEach((s: any) => {
+        L.marker([s.lat, s.lng], { icon: ndcIcon })
+          .addTo(map)
+          .bindPopup(`
+            <div style="
+              font-family: system-ui, sans-serif;
+              padding: 8px 12px;
+              text-align: center;
+            ">
+              <div style="font-weight: 700; font-size: 14px; color: #1f1f1f;">${s.name}</div>
+              <div style="font-size: 11px; color: #666; margin-top: 4px;">Station NDC Énergie</div>
+            </div>
+          `);
+      });
+
+      const bounds = L.latLngBounds(stations.map((s: any) => [s.lat, s.lng]));
+      map.fitBounds(bounds.pad(0.25));
+
+      leafletMapRef.current = map;
+    };
+
+    initMap();
+
+    return () => {
+      if (leafletMapRef.current) {
+        try {
+          leafletMapRef.current.remove();
+        } finally {
+          leafletMapRef.current = null;
+        }
+      }
+    };
+  }, [stations]);
 
   const gallery = [
     {
@@ -107,7 +228,7 @@ const StationsEssence = () => {
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/services/logistique-minerale">
+              <Link to="/services/transport-transit">
                 <Button variant="outline" className="border-white/25 text-white hover:bg-white/10 rounded-xl px-8 py-6 font-semibold">
                   Transport & transit
                 </Button>
@@ -198,7 +319,7 @@ const StationsEssence = () => {
                 <Link to="/contact" className="w-full">
                   <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">Contacter</Button>
                 </Link>
-                <Link to="/services/transport-hydrocarbures" className="w-full">
+                <Link to="/services/fuel-management" className="w-full">
                   <Button variant="outline" className="w-full rounded-xl py-3 font-semibold">
                     Fuel management
                   </Button>
@@ -209,53 +330,57 @@ const StationsEssence = () => {
         </div>
       </section>
 
-      <section className="py-16 section-dark scroll-animate">
+      {/* Section Carte des implantations - Grande carte */}
+      <section className="py-20 section-dark scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-5">
-              <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">• Espace d’exposition</p>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mt-4">Réseau, réassorts et pilotage des volumes</h2>
-              <p className="text-white/80 leading-relaxed mt-5">
-                Un aperçu des environnements et opérations : gestion multi-sites, dépôts, livraisons et couverture géographique.
-              </p>
+          {/* Header */}
+          <div className="text-center mb-12">
+            <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">• Notre réseau</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-4">Stations NDC Énergie au Mali</h2>
+            <p className="text-white/70 leading-relaxed mt-4 max-w-2xl mx-auto">
+              Un maillage stratégique couvrant les principales zones économiques du Mali pour garantir 
+              la disponibilité des produits pétroliers sur l'ensemble du territoire.
+            </p>
+          </div>
+
+          {/* Stations list */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+            {stations.map((station) => (
+              <div 
+                key={station.name} 
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-[#e11a1a]" />
+                <span className="font-medium text-white text-sm">{station.name}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Grande carte */}
+          <div className="rounded-3xl overflow-hidden border border-white/10 bg-[#0d1117]">
+            <div ref={mapContainerRef} className="w-full h-[500px] md:h-[600px]" />
+          </div>
+
+          {/* Légende */}
+          <div className="mt-8 flex flex-wrap justify-center gap-8">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-10 flex items-center justify-center">
+                <svg viewBox="0 0 36 46" fill="none" className="w-6 h-8">
+                  <path d="M18 0C8.06 0 0 8.06 0 18c0 12.6 18 28 18 28s18-15.4 18-28C36 8.06 27.94 0 18 0z" fill="#e11a1a"/>
+                  <circle cx="18" cy="16" r="8" fill="white"/>
+                </svg>
+              </div>
+              <span className="text-white/80 text-sm">Station-service NDC Énergie</span>
             </div>
-
-            <div className="lg:col-span-7">
-              <div className="grid sm:grid-cols-2 gap-4">
-                {gallery.map((item) => (
-                  <div key={item.label} className="group relative overflow-hidden border border-white/10">
-                    <img
-                      src={item.src}
-                      alt={item.label}
-                      className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                    <div className="absolute left-3 bottom-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 backdrop-blur">
-                      <span className="w-2 h-2 rounded-full bg-[#e11a1a]" />
-                      <span className="text-xs font-semibold text-white">{item.label}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-sm text-white/80 leading-relaxed">
-                  Nous configurons des tournées et fréquences de réassort en fonction des ventes, des stocks et des contraintes locales.
-                </p>
-                <div className="mt-4 flex flex-col sm:flex-row gap-3">
-                  <Link to="/contact" className="w-full">
-                    <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">Demander une étude</Button>
-                  </Link>
-                  <Link to="/services/logistique-minerale" className="w-full">
-                    <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 rounded-xl py-3 font-semibold">Transport & transit</Button>
-                  </Link>
-                </div>
-              </div>
+            <div className="flex items-center gap-3">
+              <div className="w-4 h-4 rounded-full bg-[#e11a1a]/30 border-2 border-[#e11a1a]" />
+              <span className="text-white/80 text-sm">Zone de couverture</span>
             </div>
           </div>
         </div>
       </section>
 
+     
       <section className="py-16 bg-white scroll-animate">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
@@ -278,9 +403,10 @@ const StationsEssence = () => {
         </div>
       </section>
 
+
       <Footer />
     </div>
   );
 };
 
-export default StationsEssence;
+export default ReseauxDistribution;

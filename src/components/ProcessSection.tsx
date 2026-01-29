@@ -7,7 +7,7 @@ import SectionTitle from "@/components/SectionTitle";
 const processCards = [
   {
     number: 1,
-    id: "transport-hydrocarbures",
+    id: "fuel-management",
     title: "INFRASTRUCTURES & FUEL MANAGEMENT",
     description:
       "NDC Énergie conçoit, construit, exploite et maintient des infrastructures de stockage et de distribution d’hydrocarbures directement sur site, pour garantir disponibilité, traçabilité et conformité.",
@@ -21,7 +21,7 @@ const processCards = [
 
   {
     number: 2,
-    id: "logistique-minerale",
+    id: "transport-transit",
     title: "TRANSPORT & TRANSIT",
     description:
       "Transport industriel et transit des intrants et matériaux sur sites avec coordination opérationnelle continue, sécurisation des convois et planification optimisée des rotations.",
@@ -33,7 +33,7 @@ const processCards = [
     ],
   }, {
     number: 3,
-    id: "stations-essence",
+    id: "reseaux-distribution",
     title: "RESEAUX DE DISTRIBUTION",
     description:
       "Conception et exploitation de réseaux de stockage et de distribution d’hydrocarbures sur plusieurs points, pour optimiser les flux et réduire les pertes.",
@@ -70,7 +70,7 @@ const ProcessSection = () => {
   };
 
   return (
-    <section id="process" className="py-14 sm:py-20 lg:py-24 section-dark overflow-hidden scroll-animate ndc-swoosh-bg ">
+    <section id="services" className="py-14 sm:py-20 lg:py-24 section-dark overflow-hidden scroll-animate ndc-swoosh-bg ">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative">
         <div className="hidden lg:block absolute -left-1 top-10">
           <div className="ndc-vertical-label text-white/60 text-sm">

@@ -9,21 +9,21 @@ import { CTAWarehouseExample } from '@/components/cta/CTAExamples';
 
 const services = [
   {
-    id: 'transport-hydrocarbures',
+    id: 'fuel-management',
     icon: Droplet,
     title: "Fuel management & infrastructures",
     description: "Conception, déploiement et exploitation d’infrastructures de stockage et de distribution d’hydrocarbures sur site.",
     highlighted: false
   },
   {
-    id: 'stations-essence',
+    id: 'reseaux-distribution',
     icon: Network,
     title: "Réseaux de distribution",
     description: "Approvisionnement et gestion de stations-service : planification des réassorts, traçabilité et standards de sécurité.",
     highlighted: true
   },
   {
-    id: 'logistique-minerale',
+    id: 'transport-transit',
     icon: Truck,
     title: "Transport & transit",
     description: "Transport industriel et transit des intrants et matériaux sur sites avec coordination opérationnelle continue.",

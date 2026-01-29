@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import { initScrollAnimations } from "@/utils/scrollAnimations";
 
-const LogistiqueMinerale = () => {
+const TransportTransit = () => {
   useEffect(() => {
     const cleanup = initScrollAnimations();
     return cleanup;
@@ -113,7 +113,7 @@ const LogistiqueMinerale = () => {
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/services/transport-hydrocarbures">
+              <Link to="/services/fuel-management">
                 <Button variant="outline" className="border-white/25 text-white hover:bg-white/10 rounded-xl px-8 py-6 font-semibold">
                   Fuel management
                 </Button>
@@ -187,7 +187,7 @@ const LogistiqueMinerale = () => {
                 <Link to="/contact" className="w-full">
                   <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">Contacter</Button>
                 </Link>
-                <Link to="/services/stations-essence" className="w-full">
+                <Link to="/services/reseaux-distribution" className="w-full">
                   <Button variant="outline" className="w-full rounded-xl py-3 font-semibold">
                     Réseaux de distribution
                   </Button>
@@ -203,8 +203,8 @@ const LogistiqueMinerale = () => {
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5">
               <p className="text-[#f59e0b] text-sm font-semibold tracking-wider uppercase">• Espace d’exposition</p>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-4">Matériels, flux et zones d’intervention</h2>
-              <p className="text-gray-600 leading-relaxed mt-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mt-4">Matériels, flux et zones d’intervention</h2>
+              <p className="text-gray-100 leading-relaxed mt-5">
                 Un aperçu des contextes terrain (pistes, corridors, plateformes) et des opérations de transport & transit.
               </p>
             </div>
@@ -212,7 +212,7 @@ const LogistiqueMinerale = () => {
             <div className="lg:col-span-7">
               <div className="grid sm:grid-cols-2 gap-4">
                 {gallery.map((item) => (
-                  <div key={item.label} className="group relative overflow-hidden border border-gray-200">
+                  <div key={item.label} className="group relative overflow-hidden border border-gray-700">
                     <img
                       src={item.src}
                       alt={item.label}
@@ -236,7 +236,7 @@ const LogistiqueMinerale = () => {
                   <Link to="/contact" className="w-full">
                     <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">Discuter de votre flux</Button>
                   </Link>
-                  <Link to="/services/transport-hydrocarbures" className="w-full">
+                  <Link to="/services/fuel-management" className="w-full">
                     <Button variant="outline" className="w-full rounded-xl py-3 font-semibold">Fuel management</Button>
                   </Link>
                 </div>
@@ -273,4 +273,4 @@ const LogistiqueMinerale = () => {
   );
 };
 
-export default LogistiqueMinerale;
+export default TransportTransit;

@@ -39,7 +39,7 @@ const servicesData: Record<string, {
   features: { icon: React.ElementType; title: string; description: string }[];
   faqs: { question: string; answer: string }[];
 }> = {
-  'transport-hydrocarbures': {
+  'fuel-management': {
     title: 'Transport d\'Hydrocarbures',
     subtitle: 'Transport sécurisé de carburants et produits pétroliers',
     description: 'Solutions de transport spécialisées pour les hydrocarbures avec des citernes conformes aux normes internationales de sécurité.',
@@ -60,7 +60,7 @@ const servicesData: Record<string, {
       { question: 'Quelle est votre couverture géographique?', answer: 'Nous couvrons l\'ensemble du territoire national avec des partenaires régionaux pour les zones les plus reculées.' },
     ],
   },
-  'logistique-minerale': {
+  'transport-transit': {
     title: 'Logistique Minérale',
     subtitle: 'Solutions de transport pour minerais et matériaux',
     description: 'Transport spécialisé pour l\'industrie minière avec des équipements adaptés aux charges lourdes.',
@@ -165,7 +165,7 @@ const servicesData: Record<string, {
       { question: 'Quel est le délai de préparation des commandes?', answer: 'Les commandes reçues avant midi sont préparées le jour même.' },
     ],
   },
-  'stations-essence': {
+  'reseaux-distribution': {
     title: "Stations d'essence",
     subtitle: "Approvisionnement et gestion de stations-service",
     description: "Solutions pour l'alimentation, la gestion et le réassort des stations-service avec traçabilité et sécurité.",
@@ -201,18 +201,8 @@ const ServiceDetails = () => {
     return cleanup;
   }, []);
 
-  const redirectTo =
-    serviceId === "transport-hydrocarbures"
-      ? "/services/transport-hydrocarbures"
-      : serviceId === "logistique-minerale"
-        ? "/services/logistique-minerale"
-        : serviceId === "stations-essence"
-          ? "/services/stations-essence"
-          : null;
-
-  if (redirectTo) {
-    return <Navigate to={redirectTo} replace />;
-  }
+  // Les services principaux ont leurs propres pages dédiées
+  // Cette page gère les autres services génériques
 
   const service = serviceId ? servicesData[serviceId] : null;
 
@@ -230,7 +220,7 @@ const ServiceDetails = () => {
     if (!serviceId) return defaultTheme;
 
     const themes: Record<string, typeof defaultTheme> = {
-      "transport-hydrocarbures": {
+      "fuel-management": {
         accent: "#e11a1a",
         heroImage: "/images/storage-tanks-petroleum-products.jpg",
         images: [
@@ -239,7 +229,7 @@ const ServiceDetails = () => {
           "/images/vehicles-coal-mine-view.jpg",
         ],
       },
-      "logistique-minerale": {
+      "transport-transit": {
         accent: "#f59e0b",
         heroImage: "/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg",
         images: [
@@ -248,7 +238,7 @@ const ServiceDetails = () => {
           "/images/high-angle-view-industry-factory.jpg",
         ],
       },
-      "stations-essence": {
+      "reseaux-distribution": {
         accent: "#e11a1a",
         heroImage: "/images/vehicles-coal-mine-view.jpg",
         images: [
