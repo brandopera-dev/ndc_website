@@ -24,7 +24,7 @@ const processCards = [
     id: "transport-transit",
     title: "TRANSPORT & TRANSIT",
     description:
-      "Transport industriel et transit des intrants et matériaux sur sites avec coordination opérationnelle continue, sécurisation des convois et planification optimisée des rotations.",
+      " Transport transfrontalier et transit des matières premières, des materiels et engins miniers ainsi que les produits pétroliers.",
     image: "/images/images_ndc/TRANSPORT/TR -1.png",
     features: [
       { icon: Truck, label: "Flotte dédiée" },
