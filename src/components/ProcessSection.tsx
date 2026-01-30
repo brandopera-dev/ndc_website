@@ -25,7 +25,7 @@ const processCards = [
     title: "TRANSPORT & TRANSIT",
     description:
       "Transport industriel et transit des intrants et matériaux sur sites avec coordination opérationnelle continue, sécurisation des convois et planification optimisée des rotations.",
-    image: "/images/images_ndc/CITERNE/C 1.png",
+    image: "/images/images_ndc/TRANSPORT/TR -1.png",
     features: [
       { icon: Truck, label: "Flotte dédiée" },
       { icon: Network, label: "Organisation des flux" },
