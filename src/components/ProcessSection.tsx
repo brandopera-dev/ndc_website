@@ -25,7 +25,7 @@ const processCards = [
     title: "TRANSPORT & TRANSIT",
     description:
       "Transport industriel et transit des intrants et matériaux sur sites avec coordination opérationnelle continue, sécurisation des convois et planification optimisée des rotations.",
-    image: "/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg",
+    image: "/images/images_ndc/CITERNE/C 1.png",
     features: [
       { icon: Truck, label: "Flotte dédiée" },
       { icon: Network, label: "Organisation des flux" },
@@ -37,7 +37,7 @@ const processCards = [
     title: "RESEAUX DE DISTRIBUTION",
     description:
       "Conception et exploitation de réseaux de stockage et de distribution d’hydrocarbures sur plusieurs points, pour optimiser les flux et réduire les pertes.",
-    image: "/images/high-angle-view-industry-factory.jpg",
+    image: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg",
     features: [
       { icon: Network, label: "Distribution multi-sites" },
       { icon: ShieldCheck, label: "Procédures strictes" },
