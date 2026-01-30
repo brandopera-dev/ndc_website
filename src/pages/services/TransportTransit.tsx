@@ -110,7 +110,7 @@ const TransportTransit = () => {
               Transport & transit
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Transport industriel et transit des intrants et matériaux sur site avec coordination continue, sécurisation des flux et planification optimisée.
+           Transport transfrontalier et transit des matières premières, des materiels et engins miniers ainsi que les produits pétroliers.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
