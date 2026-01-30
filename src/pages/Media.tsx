@@ -561,7 +561,7 @@ const Media = () => {
         </div>
       </section>
 
-      <section id="actualites" className="py-16 section-dark">
+      {/* <section id="actualites" className="py-16 section-dark">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm font-semibold text-[#e11a1a] uppercase tracking-wider">
             <Newspaper className="w-4 h-4" />
@@ -605,7 +605,7 @@ const Media = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>
