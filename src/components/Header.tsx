@@ -45,7 +45,7 @@ const Header = () => {
     title: "Réseaux de distribution",
     subtitle: "Stations-service & infrastructures multi-sites",
     to: "/services/reseaux-distribution",
-    image: "/images/Social Media Size/NDC--de-KATI137-sm.jpg",
+    image: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg",
   },
 ];
 
