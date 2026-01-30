@@ -143,9 +143,9 @@ const Media = () => {
     { src: "/images/images_ndc/Bureaux/B-2.png", alt: "Espace de travail", category: "bureaux" },
     { src: "/images/images_ndc/Bureaux/B - 3.png", alt: "Salle de réunion", category: "bureaux" },
     { src: "/images/images_ndc/Bureaux/B -4.png", alt: "Open space", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B - 5.png", alt: "Direction", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B -6.png", alt: "Équipe bureaux", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B -7.png", alt: "Salle conférence", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B - 8.png", alt: "Direction", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B -9.png", alt: "Équipe bureaux", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B -5.png", alt: "Salle conférence", category: "bureaux" },
     // Garage & Maintenance
     { src: "/images/images_ndc/GARAGE/G-1.png", alt: "Atelier maintenance", category: "garage" },
     { src: "/images/images_ndc/GARAGE/G - 2.png", alt: "Garage NDC", category: "garage" },
