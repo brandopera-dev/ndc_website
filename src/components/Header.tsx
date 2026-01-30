@@ -39,7 +39,7 @@ const Header = () => {
     title: "Transport & Transit",
     subtitle: "Logistique industrielle et ressources minières",
     to: "/services/transport-transit",
-    image: "/images/images_ndc/CITERNE/C 1.png",
+    image: "/images/images_ndc/TRANSPORT/TR -1.png",
   },
   {
     title: "Réseaux de distribution",
