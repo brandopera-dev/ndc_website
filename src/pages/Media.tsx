@@ -229,21 +229,6 @@ const Media = () => {
                 alt={modalImage.alt}
                 className="w-full h-auto max-h-[85vh] object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/60 to-transparent">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#e11a1a] flex items-center justify-center">
-                    <Camera className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-lg">{modalImage.alt}</p>
-                    {modalImage.category && (
-                      <p className="text-white/60 text-sm">
-                        {categories.find(c => c.id === modalImage.category)?.label} • NDC Énergie
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
             </div>
           )}
         </DialogContent>
@@ -536,21 +521,13 @@ const Media = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Icône */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                       <Camera className="w-6 h-6 text-white" />
                     </div>
-                  </div>
-
-                  {/* Label catégorie + titre */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <span className="inline-block px-2 py-1 rounded-full bg-[#e11a1a] text-white text-xs font-medium mb-2">
-                      {categories.find(c => c.id === img.category)?.label}
-                    </span>
-                    <p className="text-white font-semibold text-sm">{img.alt}</p>
                   </div>
                 </div>
               </div>

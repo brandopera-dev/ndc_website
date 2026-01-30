@@ -413,10 +413,11 @@ const ReseauxDistribution = () => {
               className="col-span-2 row-span-2 group relative overflow-hidden rounded-3xl cursor-pointer h-[300px] md:h-[450px]"
             >
               <img src={gallery[0]?.src} alt={gallery[0]?.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur text-white text-xs font-medium mb-2">{gallery[0]?.label}</span>
-                <p className="text-white/80 text-sm">Réseau NDC Énergie</p>
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
+                  <Camera className="w-6 h-6 text-white" />
+                </div>
               </div>
             </div>
 
@@ -428,13 +429,10 @@ const ReseauxDistribution = () => {
                 className="group relative overflow-hidden rounded-2xl cursor-pointer h-[140px] md:h-[215px]"
               >
                 <img src={item.src} alt={item.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="text-white text-sm font-medium">{item.label}</span>
-                </div>
-                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
-                    <Camera className="w-4 h-4 text-white" />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
+                    <Camera className="w-5 h-5 text-white" />
                   </div>
                 </div>
               </div>
@@ -448,9 +446,11 @@ const ReseauxDistribution = () => {
                 className="group relative overflow-hidden rounded-2xl cursor-pointer h-[120px] md:h-[180px]"
               >
                 <img src={item.src} alt={item.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="text-white text-xs font-medium">{item.label}</span>
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
+                    <Camera className="w-4 h-4 text-white" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -478,17 +478,6 @@ const ReseauxDistribution = () => {
           {selectedImage && (
             <div className="relative">
               <img src={selectedImage.src} alt={selectedImage.label} className="w-full h-auto max-h-[80vh] object-contain" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/50 to-transparent">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#e11a1a] flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-xl">{selectedImage.label}</p>
-                    <p className="text-white/60 text-sm">NDC Énergie • Réseaux de Distribution</p>
-                  </div>
-                </div>
-              </div>
             </div>
           )}
         </DialogContent>

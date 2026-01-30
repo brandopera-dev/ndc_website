@@ -41,16 +41,20 @@ const About = () => {
   ];
 
   const galleryImages = [
+    // Transport & Transit
     '/images/images_ndc/TRANSPORT/TR -1.png',
-    '/images/images_ndc/TRANSPORT/TR - 2.png',
-    '/images/images_ndc/TRANSPORT/TR -3.png',
-    '/images/images_ndc/TRANSPORT/TR -4.png',
-    '/images/images_ndc/TRANSPORT/TR -5.png',
     '/images/images_ndc/TRANSPORT/TR -6.png',
-    '/images/images_ndc/TRANSPORT/TR -7.png',
-    '/images/images_ndc/TRANSPORT/TR -8.png',
-    '/images/images_ndc/TRANSPORT/TR -9.png',
-    '/images/images_ndc/TRANSPORT/TR 10.png',
+    // Fuel Management
+    '/images/images_ndc/FUEL/1F.jpg',
+    '/images/images_ndc/FUEL/2F.jpg',
+    // Réseaux de Distribution
+    '/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg',
+    '/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg',
+    // Bureaux
+    '/images/images_ndc/Bureaux/B-1.png',
+    '/images/images_ndc/Bureaux/B-2.png',
+    // Garage & Maintenance
+    '/images/images_ndc/GARAGE/G-1.png',
   ];
 
   const milestones = [
@@ -365,15 +369,9 @@ const About = () => {
                 • GALERIE
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Notre Flotte en <span className="text-[#e11a1a] italic">Action:</span> Notre
-                <br />
-                <span className="italic">Parcours</span> Logistique
+                NDC Énergie en <span className="text-[#e11a1a] italic">Action</span>
               </h2>
             </div>
-            <p className="text-gray-600 max-w-md mt-4 lg:mt-0 text-sm">
-              "Un aperçu du parcours de notre flotte, où chaque étape est soigneusement 
-              gérée pour la précision, la rapidité et la fiabilité."
-            </p>
           </div>
 
           <div className="relative">
