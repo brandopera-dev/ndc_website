@@ -10,9 +10,9 @@ import { useI18n } from "@/i18n/I18nProvider";
 
 const Contact = () => {
   const contactInfo = [
-    { icon: MapPin, title: "Notre Siège", info: "Zone Industrielle, Abidjan, Côte d'Ivoire", subinfo: "Bureau 205, Immeuble NDC" },
-    { icon: Phone, title: "Téléphone", info: "+225 27 22 00 00 00", subinfo: "+225 07 00 00 00 00" },
-    { icon: Mail, title: "Email", info: "contact@ndc-logistics.com", subinfo: "support@ndc-logistics.com" },
+    { icon: MapPin, title: "Notre Siège", info: "Hamdalaye, ACI 2000, Bamako, Mali", subinfo: "" },
+    { icon: Phone, title: "Téléphone", info: "+223 91 88 38 67", subinfo: "" },
+    { icon: Mail, title: "Email", info: "info@ndc.africa", subinfo: "" },
     { icon: Clock, title: "Horaires", info: "Lun - Ven: 8h00 - 18h00", subinfo: "Sam: 9h00 - 13h00" },
   ];
 
