@@ -131,7 +131,7 @@ const FuelManagement = () => {
                 Un modèle opérationnel intégré, orienté performance
               </h2>
               <p className="text-white/80 leading-relaxed mt-5">
-              Au service des acteurs miniers et industriels, nous offrons une solution complète et sur mesure qui englobe : intégrer les 4 points de la plaquette – Partie Fuel Management
+              Au service des acteurs miniers et industriels, nous offrons une solution complète et sur mesure qui englobe : 
               </p>
 
               {/* <div className="mt-8 grid sm:grid-cols-2 gap-4">
