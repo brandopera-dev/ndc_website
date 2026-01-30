@@ -86,7 +86,7 @@ const partnerLogos = [
             {/* Background Image - Full height */}
             <div className="absolute inset-0 overflow-hidden shadow-2xl">
               <img 
-                src="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg" 
+                src="/images/images_ndc/TRANSPORT/TR -8.png" 
                 alt="Transport camion" 
                 className="w-full h-full object-cover"
               />

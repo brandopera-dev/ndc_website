@@ -70,8 +70,8 @@ const Services = () => {
       <section className="relative pt-32 pb-24 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/storage-tanks-petroleum-products.jpg"
-            alt="Our Services"
+            src="/images/images_ndc/TRANSPORT/TR -1.png"
+            alt="Nos Services NDC"
             className="w-full h-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#1f1f1f]/90 to-[#1f1f1f]/95" />

@@ -31,7 +31,7 @@ const ShipBannerFeaturesSection = () => {
         <div className="relative overflow-hidden">
           <div className="h-[420px]">
             <img
-              src="/images/vehicles-coal-mine-view.jpg"
+              src="/images/images_ndc/TRANSPORT/TR -7.png"
               alt="Opérations minières"
               className="w-full h-full object-cover"
             />

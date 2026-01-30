@@ -156,7 +156,7 @@ const AboutUseSection = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <img
-                    src="/images/high-angle-view-industry-factory.jpg"
+                    src="/images/images_ndc/FUEL/3F.jpg"
                     alt="Projets réalisés"
                     className="absolute inset-0 w-full h-full object-cover opacity-30"
                   />
@@ -192,8 +192,8 @@ const AboutUseSection = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <img
-                    src="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg"
-                    alt="Transport Minier"
+                    src="/images/images_ndc/TRANSPORT/TR -6.png"
+                    alt="Transport NDC"
                     className="w-full h-full object-cover"
                   />
                 </motion.div>

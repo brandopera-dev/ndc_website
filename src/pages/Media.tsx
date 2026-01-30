@@ -92,46 +92,51 @@ const Media = () => {
   };
 
   const gallery = [
-    // Images Social Media Size - Lancement
+    // Images NDC - Bureaux
+    { src: "/images/images_ndc/Bureaux/B-1.png", alt: "Bureaux NDC - Accueil" },
+    { src: "/images/images_ndc/Bureaux/B-2.png", alt: "Bureaux NDC - Espace de travail" },
+    { src: "/images/images_ndc/Bureaux/B - 3.png", alt: "Bureaux NDC - Réunion" },
+    // Images NDC - Transport
+    { src: "/images/images_ndc/TRANSPORT/TR -1.png", alt: "Transport - Camion citerne" },
+    { src: "/images/images_ndc/TRANSPORT/TR - 2.png", alt: "Transport - Flotte" },
+    { src: "/images/images_ndc/TRANSPORT/TR -3.png", alt: "Transport - Convoi" },
+    { src: "/images/images_ndc/TRANSPORT/TR -4.png", alt: "Transport - Livraison" },
+    // Images NDC - Fuel
+    { src: "/images/images_ndc/FUEL/1F.jpg", alt: "Fuel Management - Stockage" },
+    { src: "/images/images_ndc/FUEL/2F.jpg", alt: "Fuel Management - Infrastructure" },
+    { src: "/images/images_ndc/FUEL/3F.jpg", alt: "Fuel Management - Installation" },
+    // Images NDC - Garage
+    { src: "/images/images_ndc/GARAGE/G-1.png", alt: "Garage - Maintenance" },
+    { src: "/images/images_ndc/GARAGE/G - 2.png", alt: "Garage - Atelier" },
+    { src: "/images/images_ndc/GARAGE/G - 3.png", alt: "Garage - Équipements" },
+    // Images NDC - Chauffeurs
+    { src: "/images/images_ndc/CHAUFFEURS/CF-1.png", alt: "Chauffeurs - Équipe" },
+    { src: "/images/images_ndc/CHAUFFEURS/CF 2.png", alt: "Chauffeurs - Formation" },
+    // Images NDC - Citernes
+    { src: "/images/images_ndc/CITERNE/C 1.png", alt: "Citerne - Transport" },
+    { src: "/images/images_ndc/CITERNE/C -2 .png", alt: "Citerne - Livraison" },
+    // Images NDC - Réseaux
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", alt: "Station NDC Kati" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", alt: "Réseau de distribution" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", alt: "Point de distribution" },
+    { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", alt: "Inauguration station" },
+    // Plus de Transport
+    { src: "/images/images_ndc/TRANSPORT/TR -5.png", alt: "Transport - Route" },
+    { src: "/images/images_ndc/TRANSPORT/TR -6.png", alt: "Transport - Camion" },
+    { src: "/images/images_ndc/TRANSPORT/TR -7.png", alt: "Transport - Logistique" },
+    { src: "/images/images_ndc/TRANSPORT/TR -8.png", alt: "Transport - Opérations" },
+    // Plus de Bureaux
+    { src: "/images/images_ndc/Bureaux/B -4.png", alt: "Bureaux - Open space" },
+    { src: "/images/images_ndc/Bureaux/B - 5.png", alt: "Bureaux - Direction" },
+    { src: "/images/images_ndc/Bureaux/B -6.png", alt: "Bureaux - Équipe" },
+    { src: "/images/images_ndc/Bureaux/B -7.png", alt: "Bureaux - Salle de réunion" },
+    // Images Social Media
     { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", alt: "Lancement NDC - Cérémonie" },
-    { src: "/images/storage-tanks-petroleum-products.jpg", alt: "Infrastructures de stockage" },
-    { src: "/images/Social Media Size/NDC-Lancement113-sm.jpg", alt: "Lancement NDC - Équipe" },
-    { src: "/images/high-angle-view-industry-factory.jpg", alt: "Opérations industrielles" },
     { src: "/images/Social Media Size/NDC-Lancement119-sm.jpg", alt: "Lancement NDC - Événement" },
-    { src: "/images/vehicles-coal-mine-view.jpg", alt: "Logistique sur site" },
-    { src: "/images/Social Media Size/NDC-Lancement124-sm.jpg", alt: "Lancement NDC - Inauguration" },
-    { src: "/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg", alt: "Transport & transit" },
     { src: "/images/Social Media Size/NDC-Lancement130-sm.jpg", alt: "Lancement NDC - Partenaires" },
-    { src: "/images/Social Media Size/NDC-Lancement142-sm.jpg", alt: "Lancement NDC - Célébration" },
-    { src: "/images/Social Media Size/NDC-Lancement148-sm.jpg", alt: "Lancement NDC - Discours" },
-    // Images Social Media Size - Kati
     { src: "/images/Social Media Size/NDC--de-KATI101-sm.jpg", alt: "Opérations terrain - Kati" },
-    { src: "/images/storage-tanks-petroleum-products.jpg", alt: "Stockage & distribution" },
-    { src: "/images/Social Media Size/NDC--de-KATI107-sm.jpg", alt: "Infrastructure NDC" },
-    { src: "/images/Social Media Size/NDC--de-KATI121-sm.jpg", alt: "Équipe opérationnelle" },
-    { src: "/images/high-angle-view-industry-factory.jpg", alt: "Infrastructures industrielles" },
-    { src: "/images/Social Media Size/NDC--de-KATI131-1-sm.jpg", alt: "Logistique sur site" },
-    { src: "/images/Social Media Size/NDC--de-KATI133-sm.jpg", alt: "Distribution hydrocarbures" },
     { src: "/images/Social Media Size/NDC--de-KATI134-sm.jpg", alt: "Transport sécurisé" },
-    { src: "/images/vehicles-coal-mine-view.jpg", alt: "Convois sécurisés" },
-    { src: "/images/Social Media Size/NDC--de-KATI137-sm.jpg", alt: "Contrôle qualité" },
-    { src: "/images/Social Media Size/NDC--de-KATI152-sm.jpg", alt: "Installations NDC" },
-    { src: "/images/Social Media Size/NDC--de-KATI178-sm.jpg", alt: "Opérations de stockage" },
-    { src: "/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg", alt: "Transport minier" },
     { src: "/images/Social Media Size/NDC--de-KATI181-sm.jpg", alt: "Flotte NDC" },
-    { src: "/images/Social Media Size/NDC--de-KATI187-sm.jpg", alt: "Équipements terrain" },
-    { src: "/images/Social Media Size/NDC--de-KATI198-sm.jpg", alt: "Coordination opérationnelle" },
-    { src: "/images/Social Media Size/NDC--de-KATI199-sm.jpg", alt: "Service client" },
-    { src: "/images/Social Media Size/NDC--de-KATI202-sm.jpg", alt: "Partenariat industriel" },
-    { src: "/images/Social Media Size/NDC--de-KATI204-sm.jpg", alt: "Conformité & sécurité" },
-    { src: "/images/Social Media Size/NDC--de-KATI206-sm.jpg", alt: "Solutions énergétiques" },
-    { src: "/images/Social Media Size/NDC--de-KATI216-sm.jpg", alt: "Expertise logistique" },
-    { src: "/images/Social Media Size/NDC--de-KATI30-sm.jpg", alt: "Transport & transit" },
-    { src: "/images/Social Media Size/NDC--de-KATI55-sm.jpg", alt: "Fuel Management" },
-    { src: "/images/Social Media Size/NDC--de-KATI80-sm.jpg", alt: "Réseaux de distribution" },
-    { src: "/images/Social Media Size/NDC--de-KATI92-sm.jpg", alt: "Infrastructure de stockage" },
-    { src: "/images/Social Media Size/NDC--de-KATI19-sm.jpg", alt: "Opérations quotidiennes" },
-    { src: "/images/Social Media Size/1NDC--de-KATI134-sm.jpg", alt: "Livraison sécurisée" },
   ];
 
   const   news = [

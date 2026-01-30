@@ -1,15 +1,17 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BarChart3,
   Building2,
+  Camera,
   MapPin,
   Network,
   RefreshCcw,
   ShieldCheck,
+  X,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -20,6 +22,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { initScrollAnimations } from "@/utils/scrollAnimations";
 
 const ReseauxDistribution = () => {
@@ -148,23 +155,21 @@ const ReseauxDistribution = () => {
   }, [stations]);
 
   const gallery = [
-    {
-      src: "/images/high-angle-view-industry-factory.jpg",
-      label: "Réseau",
-    },
-    {
-      src: "/images/storage-tanks-petroleum-products.jpg",
-      label: "Dépôts",
-    },
-    {
-      src: "/images/vehicles-coal-mine-view.jpg",
-      label: "Livraisons",
-    },
-    {
-      src: "/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg",
-      label: "Couverture",
-    },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", label: "Station Kati" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", label: "Réseau" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", label: "Distribution" },
+    { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", label: "Inauguration" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI107 copy.jpg", label: "Infrastructure" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg", label: "Station-service" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI19 copy.jpg", label: "Pompes" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", label: "Équipements" },
+    { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", label: "Lancement" },
+    { src: "/images/Social Media Size/NDC-Lancement119-sm.jpg", label: "Événement" },
+    { src: "/images/Social Media Size/NDC--de-KATI181-sm.jpg", label: "Équipe" },
+    { src: "/images/Social Media Size/NDC--de-KATI134-sm.jpg", label: "Service" },
   ];
+
+  const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
 
   const faqs = [
     {
@@ -380,21 +385,129 @@ const ReseauxDistribution = () => {
         </div>
       </section>
 
-      
-      <section className="py-16 bg-white scroll-animate">
+      {/* Section Galerie - Style Bento */}
+      <section className="py-24 bg-white scroll-animate overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header avec style premium */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e11a1a]/10 border border-[#e11a1a]/20 mb-4">
+                <Camera className="w-4 h-4 text-[#e11a1a]" />
+                <span className="text-[#e11a1a] text-sm font-semibold">Galerie photos</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                Nos stations
+                <span className="block text-gray-400">& événements</span>
+              </h2>
+            </div>
+            <p className="text-gray-600 max-w-md text-sm leading-relaxed">
+              Découvrez notre réseau de stations-service, nos inaugurations et nos équipes sur le terrain au Mali.
+            </p>
+          </div>
+
+          {/* Grille Bento asymétrique */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {/* Grande image */}
+            <div
+              onClick={() => setSelectedImage(gallery[0])}
+              className="col-span-2 row-span-2 group relative overflow-hidden rounded-3xl cursor-pointer h-[300px] md:h-[450px]"
+            >
+              <img src={gallery[0]?.src} alt={gallery[0]?.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur text-white text-xs font-medium mb-2">{gallery[0]?.label}</span>
+                <p className="text-white/80 text-sm">Réseau NDC Énergie</p>
+              </div>
+            </div>
+
+            {/* Images moyennes */}
+            {gallery.slice(1, 5).map((item, index) => (
+              <div
+                key={index}
+                onClick={() => setSelectedImage(item)}
+                className="group relative overflow-hidden rounded-2xl cursor-pointer h-[140px] md:h-[215px]"
+              >
+                <img src={item.src} alt={item.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-white text-sm font-medium">{item.label}</span>
+                </div>
+                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
+                    <Camera className="w-4 h-4 text-white" />
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Rangée du bas - images plus petites */}
+            {gallery.slice(5, 9).map((item, index) => (
+              <div
+                key={index}
+                onClick={() => setSelectedImage(item)}
+                className="group relative overflow-hidden rounded-2xl cursor-pointer h-[120px] md:h-[180px]"
+              >
+                <img src={item.src} alt={item.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-white text-xs font-medium">{item.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Compteur */}
+          <div className="mt-8 flex items-center justify-center gap-2 text-gray-400 text-sm">
+            <span>{gallery.length} photos</span>
+            <span>•</span>
+            <span>Cliquez pour agrandir</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Modal Image - Style Premium */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-6xl w-[95vw] p-0 bg-[#0a0a0a] border border-white/10 rounded-3xl overflow-hidden">
+          <DialogTitle className="sr-only">{selectedImage?.label || "Image"}</DialogTitle>
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          {selectedImage && (
+            <div className="relative">
+              <img src={selectedImage.src} alt={selectedImage.label} className="w-full h-auto max-h-[80vh] object-contain" />
+              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/50 to-transparent">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#e11a1a] flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-xl">{selectedImage.label}</p>
+                    <p className="text-white/60 text-sm">NDC Énergie • Réseaux de Distribution</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      <section className="py-16 section-dark scroll-animate">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
             <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">FAQ</p>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-3">Questions fréquentes</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mt-3">Questions fréquentes</h2>
           </div>
 
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((item) => (
-              <AccordionItem key={item.q} value={item.q} className="border-b border-gray-200">
-                <AccordionTrigger className="text-left font-semibold text-gray-900">
+              <AccordionItem key={item.q} value={item.q} className="border-b border-white/20">
+                <AccordionTrigger className="text-left font-semibold text-white">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed">
+                <AccordionContent className="text-white/80 leading-relaxed">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
@@ -402,7 +515,6 @@ const ReseauxDistribution = () => {
           </Accordion>
         </div>
       </section>
-
 
       <Footer />
     </div>

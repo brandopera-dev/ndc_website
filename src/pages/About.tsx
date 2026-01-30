@@ -41,10 +41,16 @@ const About = () => {
   ];
 
   const galleryImages = [
-    '/images/high-angle-view-industry-factory.jpg',
-    '/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg',
-    '/images/storage-tanks-petroleum-products.jpg',
-    '/images/vehicles-coal-mine-view.jpg',
+    '/images/images_ndc/TRANSPORT/TR -1.png',
+    '/images/images_ndc/TRANSPORT/TR - 2.png',
+    '/images/images_ndc/TRANSPORT/TR -3.png',
+    '/images/images_ndc/TRANSPORT/TR -4.png',
+    '/images/images_ndc/TRANSPORT/TR -5.png',
+    '/images/images_ndc/TRANSPORT/TR -6.png',
+    '/images/images_ndc/TRANSPORT/TR -7.png',
+    '/images/images_ndc/TRANSPORT/TR -8.png',
+    '/images/images_ndc/TRANSPORT/TR -9.png',
+    '/images/images_ndc/TRANSPORT/TR 10.png',
   ];
 
   const milestones = [
@@ -194,8 +200,8 @@ const About = () => {
             <div className="relative">
               <div className="overflow-hidden">
                 <img
-                  src="/images/storage-tanks-petroleum-products.jpg"
-                  alt="Infrastructure NDC"
+                  src="/images/images_ndc/Bureaux/B-1.png"
+                  alt="Bureaux NDC Énergie"
                   className="w-full h-[400px] object-cover"
                 />
               </div>
@@ -488,7 +494,7 @@ const About = () => {
         description="Notre équipe expérimentée garantit que votre cargaison est traitée avec le plus grand soin, assurant une livraison sûre et ponctuelle à chaque étape."
         buttonText="Demander un devis"
         buttonLink="/contact"
-        imageSrc="/images/large-truck-carrying-sand-platinum-mining-site-africa.jpg"
+        imageSrc="/images/images_ndc/TRANSPORT/TR -1.png"
         imagePosition="left"
       />
 
