@@ -203,6 +203,74 @@ const FuelManagement = () => {
         </div>
       </section>
 
+
+      {/* Section Timeline - Notre Processus */}
+      <section className="py-20 bg-white scroll-animate">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase mb-4">
+              • NOTRE PROCESSUS
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Une approche intégrée en 4 étapes
+            </h2>
+          </div>
+
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-200 hidden md:block">
+              <div className="absolute top-0 left-0 h-full bg-[#e11a1a]" style={{ width: '100%' }} />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+              {/* Étape 1 - Conception */}
+              <div className="relative text-center">
+                <div className="w-12 h-12 mx-auto bg-[#e11a1a] border-4 border-[#e11a1a] rounded-full flex items-center justify-center mb-4 relative z-10">
+                  <span className="text-white font-bold text-sm">01</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-lg mb-3">LA CONCEPTION</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Dimensionnement des capacités de stockage suivant les besoins de consommations, Élaboration des notes de calculs et l'ensemble des Plans d'exécution.
+                </p>
+              </div>
+
+              {/* Étape 2 - Construction */}
+              <div className="relative text-center">
+                <div className="w-12 h-12 mx-auto bg-[#e11a1a] border-4 border-[#e11a1a] rounded-full flex items-center justify-center mb-4 relative z-10">
+                  <span className="text-white font-bold text-sm">02</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-lg mb-3">LA CONSTRUCTION</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Constructions des infrastructures, Installation des Automates et Équipements d'hydrocarbures, Mise en place du système informatique de Fuel Management, Installation des dispositifs du système Réseau Incendie, Travaux de Tests.
+                </p>
+              </div>
+
+              {/* Étape 3 - Exploitation */}
+              <div className="relative text-center">
+                <div className="w-12 h-12 mx-auto bg-[#e11a1a] border-4 border-[#e11a1a] rounded-full flex items-center justify-center mb-4 relative z-10">
+                  <span className="text-white font-bold text-sm">03</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-lg mb-3">L'EXPLOITATION</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Détermination de la stratégie et des fréquences de livraisons en hydrocarbures, Mise en place des manuels de procédures d'exploitation, Élaboration des rapports d'exploitation (suivi des consommations, les inventaires et réconciliation), Mise en place des indicateurs de performance.
+                </p>
+              </div>
+
+              {/* Étape 4 - Maintenance */}
+              <div className="relative text-center">
+                <div className="w-12 h-12 mx-auto bg-[#e11a1a] border-4 border-[#e11a1a] rounded-full flex items-center justify-center mb-4 relative z-10">
+                  <span className="text-white font-bold text-sm">04</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-lg mb-3">LA MAINTENANCE</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Inspections régulières des installations, Planning d'intervention pour maintenance préventive et curative, Mise à disposition de stocks de consommables et de pièces de rechanges.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 section-dark scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
