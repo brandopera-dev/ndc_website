@@ -170,7 +170,7 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl hover:scale-105 transition-transform"
+                  className="w-full bg-[#e11a1a] hover:bg-[#c01616] text-white rounded-xl transition-all"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Envoyer le Message

@@ -244,7 +244,7 @@ const TransportTransit = () => {
                     <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">Discuter de votre flux</Button>
                   </Link>
                   <Link to="/services/fuel-management" className="w-full">
-                    <Button variant="outline" className="w-full rounded-xl py-3 font-semibold">Fuel management</Button>
+                    <Button variant="outline" className="w-full ndc-btn-white rounded-xl py-3 text-gray-900 font-semibold">Fuel management</Button>
                   </Link>
                 </div>
               </div>
