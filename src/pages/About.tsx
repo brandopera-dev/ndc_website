@@ -20,7 +20,7 @@ const About = () => {
   }, []);
 
   const stats = [
-    { value: '25', label: 'Années d\'expérience' },
+    { value: '18', label: 'Années d\'expérience' },
     { value: '99%', label: 'Taux de livraison à l\'heure' },
     { value: '500+', label: 'Livraisons réussies' },
     { value: '300+', label: 'Experts dans notre équipe' },

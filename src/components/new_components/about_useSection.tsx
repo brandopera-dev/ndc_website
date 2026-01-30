@@ -178,7 +178,7 @@ const AboutUseSection = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <p className="text-2xl font-extrabold leading-snug text-center">
-                    15+ Années
+                    18+ Années
                     <br />
                     d'Expérience
                     <br />

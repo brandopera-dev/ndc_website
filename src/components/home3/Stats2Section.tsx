@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Stats2Section = () => {
   const stats = [
-    { value: '15+', label: 'Ans d\'expérience' },
+    { value: '18', label: 'Ans d\'expérience' },
     { value: '500+', label: 'Projets réalisés' },
     { value: '50+', label: 'Clients satisfaits' },
     { value: '24/7', label: 'Support disponible' }
