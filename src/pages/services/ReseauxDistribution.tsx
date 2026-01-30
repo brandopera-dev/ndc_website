@@ -252,12 +252,13 @@ const ReseauxDistribution = () => {
               Système automatisé, Planification et pilotage des volumes
               </h2>
               <p className="text-white/80 leading-relaxed mt-5">
-              Nos stations-services sont soutenues par des stratégies d’approvisionnement et des solutions de 
-              gestion automatisée qui garantissent la disponibilité des produits, réduisent les ruptures et sécurisent 
-              l’ensemble de la chaîne
+              Dotées de systèmes gestion automatisée, nos stations-services sont suivis et pilotés en temps réel pourgarantir la disponibilité des produits ainsi qu’une traçabilité sécurisée des flux de ventes et de stocks.
+              </p>
+              <p className="text-white/80 leading-relaxed mt-5">
+              Leader en importation de produits pétroliers au Mali, NDC Energie accompagne les distributeursd’hydrocarbures et détenteur de stations-service par une politique d’approvisionnement quis’appuie sur :
               </p>
 
-              <div className="mt-8 grid sm:grid-cols-2 gap-4">
+              {/* <div className="mt-8 grid sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
                   <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
                     <RefreshCcw className="w-5 h-5" />
@@ -276,7 +277,7 @@ const ReseauxDistribution = () => {
                     Protocoles adaptés aux opérations station-service.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="rounded-3xl border border-white/20 bg-white/10 p-6">
@@ -287,7 +288,7 @@ const ReseauxDistribution = () => {
                     <Network className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white">Distribution multi-sites</p>
+                    <p className="font-semibold text-white">La distribution multi-sites</p>
                     <p className="text-sm text-white/80">Planification centralisée et coordination des points de vente.</p>
                   </div>
                 </div>
@@ -296,7 +297,7 @@ const ReseauxDistribution = () => {
                     <BarChart3 className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white">Pilotage des volumes</p>
+                    <p className="font-semibold text-white">Le pilotage des volumes</p>
                     <p className="text-sm text-white/80">Suivi des livraisons, contrôle des volumes et reporting.</p>
                   </div>
                 </div>
