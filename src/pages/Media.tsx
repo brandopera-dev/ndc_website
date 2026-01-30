@@ -79,9 +79,9 @@ const Media = () => {
 
   // État pour le modal des images
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
+  const [modalImage, setModalImage] = useState<{ src: string; alt: string; category?: string } | null>(null);
 
-  const openImageModal = (image: { src: string; alt: string }) => {
+  const openImageModal = (image: { src: string; alt: string; category?: string }) => {
     setModalImage(image);
     setIsImageModalOpen(true);
   };
@@ -91,53 +91,77 @@ const Media = () => {
     setModalImage(null);
   };
 
-  const gallery = [
-    // Images NDC - Bureaux
-    { src: "/images/images_ndc/Bureaux/B-1.png", alt: "Bureaux NDC - Accueil" },
-    { src: "/images/images_ndc/Bureaux/B-2.png", alt: "Bureaux NDC - Espace de travail" },
-    { src: "/images/images_ndc/Bureaux/B - 3.png", alt: "Bureaux NDC - Réunion" },
-    // Images NDC - Transport
-    { src: "/images/images_ndc/TRANSPORT/TR -1.png", alt: "Transport - Camion citerne" },
-    { src: "/images/images_ndc/TRANSPORT/TR - 2.png", alt: "Transport - Flotte" },
-    { src: "/images/images_ndc/TRANSPORT/TR -3.png", alt: "Transport - Convoi" },
-    { src: "/images/images_ndc/TRANSPORT/TR -4.png", alt: "Transport - Livraison" },
-    // Images NDC - Fuel
-    { src: "/images/images_ndc/FUEL/1F.jpg", alt: "Fuel Management - Stockage" },
-    { src: "/images/images_ndc/FUEL/2F.jpg", alt: "Fuel Management - Infrastructure" },
-    { src: "/images/images_ndc/FUEL/3F.jpg", alt: "Fuel Management - Installation" },
-    // Images NDC - Garage
-    { src: "/images/images_ndc/GARAGE/G-1.png", alt: "Garage - Maintenance" },
-    { src: "/images/images_ndc/GARAGE/G - 2.png", alt: "Garage - Atelier" },
-    { src: "/images/images_ndc/GARAGE/G - 3.png", alt: "Garage - Équipements" },
-    // Images NDC - Chauffeurs
-    { src: "/images/images_ndc/CHAUFFEURS/CF-1.png", alt: "Chauffeurs - Équipe" },
-    { src: "/images/images_ndc/CHAUFFEURS/CF 2.png", alt: "Chauffeurs - Formation" },
-    // Images NDC - Citernes
-    { src: "/images/images_ndc/CITERNE/C 1.png", alt: "Citerne - Transport" },
-    { src: "/images/images_ndc/CITERNE/C -2 .png", alt: "Citerne - Livraison" },
-    // Images NDC - Réseaux
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", alt: "Station NDC Kati" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", alt: "Réseau de distribution" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", alt: "Point de distribution" },
-    { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", alt: "Inauguration station" },
-    // Plus de Transport
-    { src: "/images/images_ndc/TRANSPORT/TR -5.png", alt: "Transport - Route" },
-    { src: "/images/images_ndc/TRANSPORT/TR -6.png", alt: "Transport - Camion" },
-    { src: "/images/images_ndc/TRANSPORT/TR -7.png", alt: "Transport - Logistique" },
-    { src: "/images/images_ndc/TRANSPORT/TR -8.png", alt: "Transport - Opérations" },
-    // Plus de Bureaux
-    { src: "/images/images_ndc/Bureaux/B -4.png", alt: "Bureaux - Open space" },
-    { src: "/images/images_ndc/Bureaux/B - 5.png", alt: "Bureaux - Direction" },
-    { src: "/images/images_ndc/Bureaux/B -6.png", alt: "Bureaux - Équipe" },
-    { src: "/images/images_ndc/Bureaux/B -7.png", alt: "Bureaux - Salle de réunion" },
-    // Images Social Media
-    { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", alt: "Lancement NDC - Cérémonie" },
-    { src: "/images/Social Media Size/NDC-Lancement119-sm.jpg", alt: "Lancement NDC - Événement" },
-    { src: "/images/Social Media Size/NDC-Lancement130-sm.jpg", alt: "Lancement NDC - Partenaires" },
-    { src: "/images/Social Media Size/NDC--de-KATI101-sm.jpg", alt: "Opérations terrain - Kati" },
-    { src: "/images/Social Media Size/NDC--de-KATI134-sm.jpg", alt: "Transport sécurisé" },
-    { src: "/images/Social Media Size/NDC--de-KATI181-sm.jpg", alt: "Flotte NDC" },
+  // Catégories de la galerie
+  const categories = [
+    { id: "all", label: "Tout", icon: Camera },
+    { id: "transport", label: "Transport", icon: Network },
+    { id: "fuel", label: "Fuel Management", icon: Droplet },
+    { id: "reseaux", label: "Réseaux", icon: ShieldCheck },
+    { id: "bureaux", label: "Bureaux", icon: Camera },
+    { id: "garage", label: "Garage & Maintenance", icon: Camera },
+    { id: "evenements", label: "Événements", icon: Camera },
   ];
+
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const gallery = [
+    // Transport
+    { src: "/images/images_ndc/TRANSPORT/TR -1.png", alt: "Flotte NDC", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR - 2.png", alt: "Camion citerne", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR -3.png", alt: "Convoi routier", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR -4.png", alt: "Livraison carburant", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR -5.png", alt: "Transport sécurisé", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR -6.png", alt: "Véhicules NDC", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR -7.png", alt: "Opérations terrain", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR -8.png", alt: "Logistique", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR -9.png", alt: "Corridor transport", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR 10.png", alt: "Transport hydrocarbures", category: "transport" },
+    { src: "/images/images_ndc/CITERNE/C 1.png", alt: "Citerne NDC", category: "transport" },
+    { src: "/images/images_ndc/CITERNE/C -2 .png", alt: "Équipement citerne", category: "transport" },
+    { src: "/images/images_ndc/CHAUFFEURS/CF-1.png", alt: "Équipe chauffeurs", category: "transport" },
+    { src: "/images/images_ndc/CHAUFFEURS/CF 2.png", alt: "Chauffeurs professionnels", category: "transport" },
+    // Fuel Management
+    { src: "/images/images_ndc/FUEL/1F.jpg", alt: "Stockage hydrocarbures", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/2F.jpg", alt: "Infrastructure de stockage", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/3F.jpg", alt: "Installation cuves", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/6F.jpg", alt: "Approvisionnement", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/1.jpg", alt: "Dépôt carburant", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/3.jpg", alt: "Site de stockage", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/7.jpg", alt: "Opérations fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/13.jpg", alt: "Maintenance équipements", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/14.jpg", alt: "Contrôle qualité", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/16.jpg", alt: "Équipements fuel", category: "fuel" },
+    // Réseaux de distribution
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", alt: "Station NDC Kati", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI107 copy.jpg", alt: "Réseau distribution Kati", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg", alt: "Point de distribution", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", alt: "Station-service NDC", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", alt: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", alt: "Inauguration station", category: "reseaux" },
+    // Bureaux
+    { src: "/images/images_ndc/Bureaux/B-1.png", alt: "Siège NDC - Accueil", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B-2.png", alt: "Espace de travail", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B - 3.png", alt: "Salle de réunion", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B -4.png", alt: "Open space", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B - 5.png", alt: "Direction", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B -6.png", alt: "Équipe bureaux", category: "bureaux" },
+    { src: "/images/images_ndc/Bureaux/B -7.png", alt: "Salle conférence", category: "bureaux" },
+    // Garage & Maintenance
+    { src: "/images/images_ndc/GARAGE/G-1.png", alt: "Atelier maintenance", category: "garage" },
+    { src: "/images/images_ndc/GARAGE/G - 2.png", alt: "Garage NDC", category: "garage" },
+    { src: "/images/images_ndc/GARAGE/G - 3.png", alt: "Équipements garage", category: "garage" },
+    // Événements
+    { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", alt: "Cérémonie de lancement", category: "evenements" },
+    { src: "/images/Social Media Size/NDC-Lancement119-sm.jpg", alt: "Événement NDC", category: "evenements" },
+    { src: "/images/Social Media Size/NDC-Lancement130-sm.jpg", alt: "Partenaires NDC", category: "evenements" },
+    { src: "/images/Social Media Size/NDC--de-KATI101-sm.jpg", alt: "Inauguration Kati", category: "evenements" },
+    { src: "/images/Social Media Size/NDC--de-KATI134-sm.jpg", alt: "Événement terrain", category: "evenements" },
+    { src: "/images/Social Media Size/NDC--de-KATI181-sm.jpg", alt: "Célébration NDC", category: "evenements" },
+  ];
+
+  const filteredGallery = activeCategory === "all" 
+    ? gallery 
+    : gallery.filter(img => img.category === activeCategory);
 
   const   news = [
     {
@@ -205,8 +229,20 @@ const Media = () => {
                 alt={modalImage.alt}
                 className="w-full h-auto max-h-[85vh] object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="text-white font-semibold">{modalImage.alt}</p>
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/60 to-transparent">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#e11a1a] flex items-center justify-center">
+                    <Camera className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg">{modalImage.alt}</p>
+                    {modalImage.category && (
+                      <p className="text-white/60 text-sm">
+                        {categories.find(c => c.id === modalImage.category)?.label} • NDC Énergie
+                      </p>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           )}
@@ -440,48 +476,94 @@ const Media = () => {
         </div>
       </section> */}
 
-      <section id="galerie" className="py-16 bg-white">
+      <section id="galerie" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-sm font-semibold text-[#e11a1a] uppercase tracking-wider">
-            <Camera className="w-4 h-4" />
-            Galerie
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e11a1a]/10 border border-[#e11a1a]/20 mb-4">
+              <Camera className="w-4 h-4 text-[#e11a1a]" />
+              <span className="text-[#e11a1a] text-sm font-semibold">Galerie photos</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Nos activités en images
+            </h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              Découvrez nos infrastructures, nos équipes et nos opérations sur le terrain à travers notre galerie photo.
+            </p>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-2">
-            Images terrain
-          </h2>
-          <p className="text-muted-foreground mt-2 max-w-2xl">
-            Infrastructures, distribution, opérations et transport.
-          </p>
 
-          <div className="mt-10 columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
-            {gallery.map((img) => (
-              <div key={img.alt} className="mb-6 break-inside-avoid">
+          {/* Filtres par catégorie */}
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
+                  activeCategory === cat.id
+                    ? "bg-[#e11a1a] text-white shadow-lg shadow-red-500/25"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Compteur */}
+          <div className="text-center mb-8">
+            <span className="text-gray-500 text-sm">
+              {filteredGallery.length} photo{filteredGallery.length > 1 ? "s" : ""} 
+              {activeCategory !== "all" && ` dans "${categories.find(c => c.id === activeCategory)?.label}"`}
+            </span>
+          </div>
+
+          {/* Grille d'images */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {filteredGallery.map((img, index) => (
+              <div 
+                key={`${img.src}-${index}`} 
+                className={`group relative overflow-hidden rounded-2xl cursor-pointer ${
+                  index === 0 ? "md:col-span-2 md:row-span-2" : ""
+                }`}
+              >
                 <div 
-                  className="group overflow-hidden border border-gray-200 bg-white cursor-pointer"
+                  className={`relative overflow-hidden ${index === 0 ? "h-[300px] md:h-full" : "h-[200px] md:h-[250px]"}`}
                   onClick={() => openImageModal(img)}
                 >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Camera className="w-5 h-5 text-white" />
-                      </div>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Icône */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <Camera className="w-6 h-6 text-white" />
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                      <div className="text-sm font-semibold text-white">
-                        {img.alt}
-                      </div>
-                    </div>
+                  </div>
+
+                  {/* Label catégorie + titre */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="inline-block px-2 py-1 rounded-full bg-[#e11a1a] text-white text-xs font-medium mb-2">
+                      {categories.find(c => c.id === img.category)?.label}
+                    </span>
+                    <p className="text-white font-semibold text-sm">{img.alt}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Message si vide */}
+          {filteredGallery.length === 0 && (
+            <div className="text-center py-20">
+              <Camera className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+              <p className="text-gray-500">Aucune image dans cette catégorie</p>
+            </div>
+          )}
         </div>
       </section>
 

@@ -78,7 +78,7 @@ const FuelManagement = () => {
             alt="Fuel management"
             className="w-full h-full object-cover opacity-45 saturate-125 contrast-110"
           />
-          <div className="absolute inset-0  bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
+          <div className="absolute inset-0  bg-gradient-to-b from-black/50 via-black/30 to-black/10" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
