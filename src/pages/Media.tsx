@@ -156,24 +156,24 @@ const Media = () => {
     
     // { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", alt: "Inauguration station", category: "reseaux" },
     // Bureaux
-    { src: "/images/images_ndc/Bureaux/B-1.png", alt: "Siège NDC - Accueil", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B-2.png", alt: "Espace de travail", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B - 3.png", alt: "Salle de réunion", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B -4.png", alt: "Open space", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B - 8.png", alt: "Direction", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B - 9.png", alt: "Équipe bureaux", category: "bureaux" },
-    { src: "/images/images_ndc/Bureaux/B - 5.png", alt: "Salle conférence", category: "bureaux" },
+    // { src: "/images/images_ndc/Bureaux/B-1.png", alt: "Siège NDC - Accueil", category: "bureaux" },
+    // { src: "/images/images_ndc/Bureaux/B-2.png", alt: "Espace de travail", category: "bureaux" },
+    // { src: "/images/images_ndc/Bureaux/B - 3.png", alt: "Salle de réunion", category: "bureaux" },
+    // { src: "/images/images_ndc/Bureaux/B -4.png", alt: "Open space", category: "bureaux" },
+    // { src: "/images/images_ndc/Bureaux/B - 8.png", alt: "Direction", category: "bureaux" },
+    // { src: "/images/images_ndc/Bureaux/B - 9.png", alt: "Équipe bureaux", category: "bureaux" },
+    // { src: "/images/images_ndc/Bureaux/B - 5.png", alt: "Salle conférence", category: "bureaux" },
     // Garage & Maintenance
-    { src: "/images/images_ndc/GARAGE/G-1.png", alt: "Atelier maintenance", category: "garage" },
-    { src: "/images/images_ndc/GARAGE/G - 2.png", alt: "Garage NDC", category: "garage" },
-    { src: "/images/images_ndc/GARAGE/G - 3.png", alt: "Équipements garage", category: "garage" },
+    // { src: "/images/images_ndc/GARAGE/G-1.png", alt: "Atelier maintenance", category: "garage" },
+    // { src: "/images/images_ndc/GARAGE/G - 2.png", alt: "Garage NDC", category: "garage" },
+    // { src: "/images/images_ndc/GARAGE/G - 3.png", alt: "Équipements garage", category: "garage" },
     // Événements
-    { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", alt: "Cérémonie de lancement", category: "evenements" },
-    { src: "/images/Social Media Size/NDC-Lancement119-sm.jpg", alt: "Événement NDC", category: "evenements" },
-    { src: "/images/Social Media Size/NDC-Lancement130-sm.jpg", alt: "Partenaires NDC", category: "evenements" },
-    { src: "/images/Social Media Size/NDC--de-KATI101-sm.jpg", alt: "Inauguration Kati", category: "evenements" },
-    { src: "/images/Social Media Size/NDC--de-KATI134-sm.jpg", alt: "Événement terrain", category: "evenements" },
-    { src: "/images/Social Media Size/NDC--de-KATI181-sm.jpg", alt: "Célébration NDC", category: "evenements" },
+    // { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", alt: "Cérémonie de lancement", category: "evenements" },
+    // { src: "/images/Social Media Size/NDC-Lancement119-sm.jpg", alt: "Événement NDC", category: "evenements" },
+    // { src: "/images/Social Media Size/NDC-Lancement130-sm.jpg", alt: "Partenaires NDC", category: "evenements" },
+    // { src: "/images/Social Media Size/NDC--de-KATI101-sm.jpg", alt: "Inauguration Kati", category: "evenements" },
+    // { src: "/images/Social Media Size/NDC--de-KATI134-sm.jpg", alt: "Événement terrain", category: "evenements" },
+    // { src: "/images/Social Media Size/NDC--de-KATI181-sm.jpg", alt: "Célébration NDC", category: "evenements" },
   ];
 
   const filteredGallery = activeCategory === "all" 
