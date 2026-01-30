@@ -226,7 +226,7 @@ const Media = () => {
               />
             </div> */}
             <img
-              src="/images/high-angle-view-industry-factory.jpg"
+              src="/images/images_ndc/GARAGE/G - 2.png"
               alt="Industries et mines"
               className="w-full h-full object-cover"
             />
