@@ -271,7 +271,7 @@ const FuelManagement = () => {
         </div>
       </section>
 
-      <section className="py-16 section-dark scroll-animate">
+      {/* <section className="py-16 section-dark scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
@@ -336,7 +336,7 @@ const FuelManagement = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Section Galerie - Style Bento */}
       <section className="py-24 bg-white scroll-animate overflow-hidden">
