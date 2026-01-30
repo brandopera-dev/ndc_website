@@ -21,7 +21,7 @@ const About = () => {
 
   const stats = [
     { value: '16', label: 'Années d\'expérience' },
-    { value: '94%', label: 'Taux de livraison à l\'heure' },
+    { value: '94%', label: 'Taux de réussies des opérations'},
     // { value: '500+', label: 'Livraisons réussies' },
     { value: '18 000+', label: 'Personnes impactées par nos oeuvres sociales' },
     { value: '50+', label: 'Experts dans notre équipe' },
