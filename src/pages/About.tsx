@@ -63,7 +63,7 @@ const About = () => {
     { year: '2012', title: 'Expansion', description: 'Ouverture de nouvelles routes logistiques à travers le continent africain' },
     { year: '2015', title: 'Innovation', description: 'Lancement de solutions avancées de Fuel Management' },
     { year: '2020', title: 'Croissance', description: 'Établissement de partenariats stratégiques majeurs' },
-    { year: '2024', title: 'Leadership', description: 'Devenu le leader régional en importation de produits pétroliers' },
+    { year: '2022', title: 'Leadership', description: 'Devenu le leader régional en importation de produits pétroliers' },
   ];
 
   const teamMembers = [
