@@ -30,6 +30,12 @@ const Header = () => {
 
   const serviceMenuItems = [
     {
+      title: t("servicesMenu.reseauxDistribution.title"),
+      subtitle: t("servicesMenu.reseauxDistribution.subtitle"),
+      to: "/services/reseaux-distribution",
+      image: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg",
+    },
+    {
       title: t("servicesMenu.fuelManagement.title"),
       subtitle: t("servicesMenu.fuelManagement.subtitle"),
       to: "/services/fuel-management",
@@ -41,12 +47,7 @@ const Header = () => {
       to: "/services/transport-transit",
       image: "/images/images_ndc/TRANSPORT/TR -1.png",
     },
-    {
-      title: t("servicesMenu.reseauxDistribution.title"),
-      subtitle: t("servicesMenu.reseauxDistribution.subtitle"),
-      to: "/services/reseaux-distribution",
-      image: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg",
-    },
+  
   ];
 
   return (
