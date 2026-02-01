@@ -24,7 +24,10 @@ const CustomerServiceSection = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+            <a 
+              href="tel:+22391883867" 
+              className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer"
+            >
               <div className="w-10 h-10 bg-[#1f1f1f]/10 rounded-full flex items-center justify-center">
                 <Phone className="w-5 h-5 text-red-600" />
               </div>
@@ -32,7 +35,7 @@ const CustomerServiceSection = () => {
                 <p className="text-sm font-semibold text-foreground">Appelez-nous</p>
                 <p className="text-xs text-muted-foreground">Support 24/7</p>
               </div>
-            </div>
+            </a>
             <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
               <div className="w-10 h-10 bg-[#1f1f1f]/10 rounded-full flex items-center justify-center">
                 <MessageCircle className="w-5 h-5 text-red-600" />
@@ -42,7 +45,10 @@ const CustomerServiceSection = () => {
                 <p className="text-xs text-muted-foreground">Réponse rapide</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+            <a 
+              href="mailto:info@ndc.africa" 
+              className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer"
+            >
               <div className="w-10 h-10 bg-[#1f1f1f]/10 rounded-full flex items-center justify-center">
                 <Mail className="w-5 h-5 text-red-600" />
               </div>
@@ -50,7 +56,7 @@ const CustomerServiceSection = () => {
                 <p className="text-sm font-semibold text-foreground">Envoyez un email</p>
                 <p className="text-xs text-muted-foreground">Retour rapide</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

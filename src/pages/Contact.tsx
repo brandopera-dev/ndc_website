@@ -12,15 +12,15 @@ const Contact = () => {
   const { t, language } = useI18n();
 
   const contactInfo = language === "fr" ? [
-    { icon: MapPin, title: "Notre Siège", info: "Hamdalaye, ACI 2000, Bamako, Mali", subinfo: "" },
-    { icon: Phone, title: "Téléphone", info: "+223 91 88 38 67", subinfo: "" },
-    { icon: Mail, title: "Email", info: "info@ndc.africa", subinfo: "" },
-    { icon: Clock, title: "Horaires", info: "Lun - Ven: 8h00 - 18h00", subinfo: "Sam: 9h00 - 13h00" },
+    { icon: MapPin, title: "Notre Siège", info: "Hamdalaye, ACI 2000, Bamako, Mali", subinfo: "", href: "" },
+    { icon: Phone, title: "Téléphone", info: "+223 91 88 38 67", subinfo: "", href: "tel:+22391883867" },
+    { icon: Mail, title: "Email", info: "info@ndc.africa", subinfo: "", href: "mailto:info@ndc.africa" },
+    { icon: Clock, title: "Horaires", info: "Lun - Ven: 8h00 - 18h00", subinfo: "Sam: 9h00 - 13h00", href: "" },
   ] : [
-    { icon: MapPin, title: "Headquarters", info: "Hamdalaye, ACI 2000, Bamako, Mali", subinfo: "" },
-    { icon: Phone, title: "Phone", info: "+223 91 88 38 67", subinfo: "" },
-    { icon: Mail, title: "Email", info: "info@ndc.africa", subinfo: "" },
-    { icon: Clock, title: "Hours", info: "Mon - Fri: 8:00 AM - 6:00 PM", subinfo: "Sat: 9:00 AM - 1:00 PM" },
+    { icon: MapPin, title: "Headquarters", info: "Hamdalaye, ACI 2000, Bamako, Mali", subinfo: "", href: "" },
+    { icon: Phone, title: "Phone", info: "+223 91 88 38 67", subinfo: "", href: "tel:+22391883867" },
+    { icon: Mail, title: "Email", info: "info@ndc.africa", subinfo: "", href: "mailto:info@ndc.africa" },
+    { icon: Clock, title: "Hours", info: "Mon - Fri: 8:00 AM - 6:00 PM", subinfo: "Sat: 9:00 AM - 1:00 PM", href: "" },
   ];
 
   useEffect(() => {
@@ -68,19 +68,35 @@ const Contact = () => {
       <section className="py-16 -mt-8 relative z-20 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactInfo.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all hover:-translate-y-1 scroll-animate"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <item.icon className="w-7 h-7 text-primary" />
+            {contactInfo.map((item, index) => {
+              const CardContent = (
+                <>
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <item.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-700">{item.info}</p>
+                  {item.subinfo && <p className="text-gray-600 text-sm">{item.subinfo}</p>}
+                </>
+              );
+              
+              return item.href ? (
+                <a 
+                  key={index}
+                  href={item.href}
+                  className="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all hover:-translate-y-1 scroll-animate block cursor-pointer"
+                >
+                  {CardContent}
+                </a>
+              ) : (
+                <div 
+                  key={index} 
+                  className="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all hover:-translate-y-1 scroll-animate"
+                >
+                  {CardContent}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-700">{item.info}</p>
-                {item.subinfo && <p className="text-gray-600 text-sm">{item.subinfo}</p>}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

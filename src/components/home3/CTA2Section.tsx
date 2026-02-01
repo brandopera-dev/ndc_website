@@ -37,29 +37,35 @@ export const CTA2Section = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <a 
+                href="tel:+22391883867" 
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-colors block"
+              >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="text-sm text-white/80">Appelez-nous</div>
-                    <div className="text-xl font-bold text-white">+243 XXX XXX XXX</div>
+                    <div className="text-xl font-bold text-white">+223 91 88 38 67</div>
                   </div>
                 </div>
-              </div>
+              </a>
 
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <a 
+                href="mailto:info@ndc.africa" 
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-colors block"
+              >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="text-sm text-white/80">Écrivez-nous</div>
-                    <div className="text-xl font-bold text-white">contact@logistics.com</div>
+                    <div className="text-xl font-bold text-white">info@ndc.africa</div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

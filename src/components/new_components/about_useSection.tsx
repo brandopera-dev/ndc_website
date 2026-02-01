@@ -148,7 +148,7 @@ const AboutUseSection = () => {
                   {texts.learnMore}
                 </motion.button>
 
-                <div className="flex items-center gap-4">
+                <a href="tel:+22391883867" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
                   <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-700">
                     <Phone className="w-5 h-5" />
                   </div>
@@ -156,7 +156,7 @@ const AboutUseSection = () => {
                     <p className="text-xs text-gray-500">{texts.callUs}</p>
                     <p className="font-extrabold text-gray-900">+223 91 88 38 67</p>
                   </div>
-                </div>
+                </a>
               </motion.div>
             </motion.div>
 
