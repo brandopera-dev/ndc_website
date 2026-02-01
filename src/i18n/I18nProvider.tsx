@@ -16,12 +16,40 @@ const getByPath = (obj: any, path: string) => {
   return path.split(".").reduce((acc, part) => (acc ? acc[part] : undefined), obj);
 };
 
+// Détecte la langue préférée du navigateur
+const detectBrowserLanguage = (): Language => {
+  // Vérifier les langues préférées du navigateur
+  const browserLangs = navigator.languages || [navigator.language];
+  
+  for (const lang of browserLangs) {
+    const shortLang = lang.split("-")[0].toLowerCase();
+    if (shortLang === "fr") return "fr";
+    if (shortLang === "en") return "en";
+  }
+  
+  // Par défaut, français
+  return DEFAULT_LANGUAGE;
+};
+
 export const I18nProvider = ({ children }: { children: React.ReactNode }) => {
   const [language, setLanguageState] = useState<Language>(DEFAULT_LANGUAGE);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (raw === "fr" || raw === "en") setLanguageState(raw);
+    // Vérifier d'abord si l'utilisateur a déjà choisi une langue
+    const savedLang = window.localStorage.getItem(STORAGE_KEY);
+    
+    if (savedLang === "fr" || savedLang === "en") {
+      // Utiliser la langue sauvegardée
+      setLanguageState(savedLang);
+    } else {
+      // Sinon, détecter automatiquement la langue du navigateur
+      const detectedLang = detectBrowserLanguage();
+      setLanguageState(detectedLang);
+      // Ne pas sauvegarder pour permettre à l'utilisateur de changer
+    }
+    
+    setIsInitialized(true);
   }, []);
 
   const setLanguage = (lang: Language) => {

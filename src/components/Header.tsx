@@ -220,13 +220,15 @@ const Header = () => {
             <button
               type="button"
               onClick={toggleLanguage}
-              className={`rounded-full px-3 py-1 text-xs font-semibold tracking-wide border transition-colors ${
+              className={`rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide border transition-colors flex items-center gap-2 ${
                 isScrolled
                   ? "border-white/20 text-white/85 hover:bg-white/10"
                   : "border-white/20 text-white/85 hover:bg-white/10"
               }`}
+              title={language === "fr" ? "Switch to English" : "Passer en Français"}
             >
-              {language === "fr" ? "FR" : "EN"}
+              <span className="text-base leading-none">{language === "fr" ? "🇫🇷" : "🇬🇧"}</span>
+              <span>{language === "fr" ? "FR" : "EN"}</span>
             </button>
             <Link to="/contact">
               <Button
@@ -324,9 +326,10 @@ const Header = () => {
                 <button
                   type="button"
                   onClick={toggleLanguage}
-                  className={`text-left transition-colors font-medium py-2 text-white/90 hover:text-white`}
+                  className={`flex items-center gap-3 transition-colors font-medium py-2 text-white/90 hover:text-white`}
                 >
-                  {t("nav.langToggle")}
+                  <span className="text-xl">{language === "fr" ? "🇬🇧" : "🇫🇷"}</span>
+                  <span>{t("nav.langToggle")}</span>
                 </button>
 
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
