@@ -29,26 +29,25 @@ const Header = () => {
   ];
 
   const serviceMenuItems = [
-  {
-    title: "Fuel Management",
-    subtitle: "Stockage & distribution d’hydrocarbures sur site",
-    to: "/services/fuel-management",
-    image: "/images/storage-tanks-petroleum-products.jpg",
-  },
-  {
-    title: "Transport & Transit",
-    subtitle: "Logistique industrielle et ressources minières",
-    to: "/services/transport-transit",
-    image: "/images/images_ndc/TRANSPORT/TR -1.png",
-  },
-  {
-    title: "Réseaux de distribution",
-    subtitle: "Stations-service & infrastructures multi-sites",
-    to: "/services/reseaux-distribution",
-    image: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg",
-  },
-];
-
+    {
+      title: t("servicesMenu.fuelManagement.title"),
+      subtitle: t("servicesMenu.fuelManagement.subtitle"),
+      to: "/services/fuel-management",
+      image: "/images/storage-tanks-petroleum-products.jpg",
+    },
+    {
+      title: t("servicesMenu.transportTransit.title"),
+      subtitle: t("servicesMenu.transportTransit.subtitle"),
+      to: "/services/transport-transit",
+      image: "/images/images_ndc/TRANSPORT/TR -1.png",
+    },
+    {
+      title: t("servicesMenu.reseauxDistribution.title"),
+      subtitle: t("servicesMenu.reseauxDistribution.subtitle"),
+      to: "/services/reseaux-distribution",
+      image: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg",
+    },
+  ];
 
   return (
     <motion.header
@@ -121,42 +120,9 @@ const Header = () => {
                 {t("nav.services")}
                 <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpenDesktop ? 'rotate-180' : ''}`} />
               </button>
-              {/* <div className="fixed left-0 right-0 top-16 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all">
-                <div className="bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-lg">
-                  <div className="max-w-7xl mx-auto px-8 py-4">
-                    <div className="flex flex-wrap gap-3">
-                      {serviceMenuItems.map((s) => (
-                        <Link
-                          key={s.to}
-                          to={s.to}
-                          className="flex items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm hover:bg-gray-50 transition-colors flex-1 min-w-[260px]"
-                        >
-                          <img
-                            src={s.image}
-                            alt={s.title}
-                            className="h-12 w-16 rounded-xl object-cover border border-gray-200"
-                          />
-                          <span className="font-semibold text-gray-900 leading-tight">{s.title}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div> */}
 
-              
-  {/* ZONE TAMPON INVISIBLE (très important) */}
-  <div className="absolute left-0 top-full h-6 w-full"></div>
-
-  {/* MEGA MENU */}
-  {/* <div
-    className="
-      absolute left-1/2 top-full mt-6 -translate-x-1/2
-      opacity-0 invisible pointer-events-none
-      group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto
-      transition-all duration-200
-    "
-  ></div> */}
+              {/* ZONE TAMPON INVISIBLE */}
+              <div className="absolute left-0 top-full h-6 w-full"></div>
 
               <AnimatePresence>
                 {isServicesOpenDesktop && (
@@ -168,71 +134,61 @@ const Header = () => {
                     transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                     onMouseLeave={() => setIsServicesOpenDesktop(false)}
                   >
-  
-  <div className="bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-2xl">
-    <div className="max-w-7xl mx-auto px-8 py-10">
+                    <div className="bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-2xl">
+                      <div className="max-w-7xl mx-auto px-8 py-10">
+                        {/* Header du sous-menu */}
+                        <div className="mb-8">
+                          <p className="text-xs font-semibold tracking-widest text-red-600 uppercase mb-2">
+                            {t("servicesMenu.label")}
+                          </p>
+                          <h3 className="text-2xl font-extrabold text-gray-900">
+                            {t("servicesMenu.title")}
+                          </h3>
+                          <p className="text-gray-600 mt-1 max-w-xl">
+                            {t("servicesMenu.description")}
+                          </p>
+                        </div>
 
-      {/* Header du sous-menu */}
-      <div className="mb-8">
-        <p className="text-xs font-semibold tracking-widest text-red-600 uppercase mb-2">
-          Nos expertises
-        </p>
-        <h3 className="text-2xl font-extrabold text-gray-900">
-          Solutions énergétiques & logistiques
-        </h3>
-        <p className="text-gray-600 mt-1 max-w-xl">
-          Des services conçus pour sécuriser, optimiser et accompagner
-          les opérations industrielles.
-        </p>
-      </div>
+                        {/* Cartes services */}
+                        <div className="grid grid-cols-3 gap-6">
+                          {serviceMenuItems.map((s) => (
+                            <Link
+                              key={s.to}
+                              to={s.to}
+                              className="group relative overflow-hidden border border-gray-200 bg-gray-100 hover:border-red-500/40 transition-all"
+                            >
+                              {/* Image */}
+                              <div className="relative h-48">
+                                <img
+                                  src={s.image}
+                                  alt={s.title}
+                                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                              </div>
 
-      {/* Cartes services */}
-      <div className="grid grid-cols-3 gap-6">
-        {serviceMenuItems.map((s) => (
-          <Link
-            key={s.to}
-            to={s.to}
-            className="group relative overflow-hidden
-              border border-gray-200 bg-gray-100
-              hover:border-red-500/40 transition-all"
-          >
-            {/* Image */}
-            <div className="relative h-48">
-              <img
-                src={s.image}
-                alt={s.title}
-                className="absolute inset-0 w-full h-full object-cover
-                  transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t
-                from-black/80 via-black/40 to-transparent" />
-            </div>
+                              {/* Contenu */}
+                              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                                <h4 className="text-white text-xl font-bold leading-tight">
+                                  {s.title}
+                                </h4>
+                                <p className="text-white/80 text-sm mt-1 leading-snug">
+                                  {s.subtitle}
+                                </p>
 
-            {/* Contenu */}
-            <div className="absolute inset-0 flex flex-col justify-end p-6">
-              <h4 className="text-white text-xl font-bold leading-tight">
-                {s.title}
-              </h4>
-              <p className="text-white/80 text-sm mt-1 leading-snug">
-                {s.subtitle}
-              </p>
-
-              <div className="mt-4 inline-flex items-center gap-2 text-sm
-                font-semibold text-white opacity-0
-                group-hover:opacity-100 transition-opacity">
-                Découvrir
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </div>
-  </div>
+                                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                  {t("servicesMenu.discover")}
+                                  <ArrowRight className="w-4 h-4" />
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-
             </div>
 
             {navItems
@@ -305,83 +261,83 @@ const Header = () => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-            <nav className="flex flex-col gap-4">
-              <Link
-                to="/"
-                className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("nav.home")}
-              </Link>
+              <nav className="flex flex-col gap-4">
+                <Link
+                  to="/"
+                  className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t("nav.home")}
+                </Link>
 
-              <div>
+                <div>
+                  <button
+                    type="button"
+                    className={`w-full flex items-center justify-between transition-colors font-medium py-2 text-white/90 hover:text-white`}
+                    onClick={() => setIsServicesOpenMobile((v) => !v)}
+                  >
+                    <span>{t("nav.services")}</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpenMobile ? "rotate-180" : ""}`} />
+                  </button>
+                  {isServicesOpenMobile && (
+                    <div className={`mt-2 ml-3 flex flex-col border-l border-white/20`}>
+                      {serviceMenuItems.map((s) => (
+                        <Link
+                          key={s.to}
+                          to={s.to}
+                          className={`pl-4 pr-2 py-2 text-sm transition-colors text-white/75 hover:text-white`}
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsServicesOpenMobile(false);
+                          }}
+                        >
+                          {s.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <Link
+                  to="/about"
+                  className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t("nav.about")}
+                </Link>
+                <Link
+                  to="/media"
+                  className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t("nav.media")}
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t("nav.contact")}
+                </Link>
+
                 <button
                   type="button"
-                  className={`w-full flex items-center justify-between transition-colors font-medium py-2 text-white/90 hover:text-white`}
-                  onClick={() => setIsServicesOpenMobile((v) => !v)}
+                  onClick={toggleLanguage}
+                  className={`text-left transition-colors font-medium py-2 text-white/90 hover:text-white`}
                 >
-                  <span>{t("nav.services")}</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpenMobile ? "rotate-180" : ""}`} />
+                  {t("nav.langToggle")}
                 </button>
-                {isServicesOpenMobile && (
-                  <div className={`mt-2 ml-3 flex flex-col border-l border-white/20`}>
-                    {serviceMenuItems.map((s) => (
-                      <Link
-                        key={s.to}
-                        to={s.to}
-                        className={`pl-4 pr-2 py-2 text-sm transition-colors text-white/75 hover:text-white`}
-                        onClick={() => {
-                          setIsMenuOpen(false);
-                          setIsServicesOpenMobile(false);
-                        }}
-                      >
-                        {s.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
 
-              <Link
-                to="/about"
-                className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("nav.about")}
-              </Link>
-              <Link
-                to="/media"
-                className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("nav.media")}
-              </Link>
-
-              <Link
-                to="/contact"
-                className={`transition-colors font-medium py-2 text-white/90 hover:text-white`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("nav.contact")}
-              </Link>
-
-              <button
-                type="button"
-                onClick={toggleLanguage}
-                className={`text-left transition-colors font-medium py-2 text-white/90 hover:text-white`}
-              >
-                {language === "fr" ? "Passer en EN" : "Switch to FR"}
-              </button>
-
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button
-                  className={`rounded-full px-6 py-2 text-sm font-semibold inline-flex items-center gap-2 w-full mt-4 bg-white hover:bg-white/90 text-[#1f1f1f]`}
-                >
-                  {t("nav.quote")}
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-            </nav>
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                  <Button
+                    className={`rounded-full px-6 py-2 text-sm font-semibold inline-flex items-center gap-2 w-full mt-4 bg-white hover:bg-white/90 text-[#1f1f1f]`}
+                  >
+                    {t("nav.quote")}
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+              </nav>
             </motion.div>
           )}
         </AnimatePresence>

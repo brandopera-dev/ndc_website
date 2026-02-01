@@ -1,51 +1,101 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, MapPin, Quote } from 'lucide-react';
-
-const testimonials = [
-  {
-    name: "Amadou Traoré",
-    location: "Bamako → Kayes",
-    rating: 5,
-    text: "Service excellent pour le transport de nos équipements miniers. NDC a géré toute la logistique avec professionnalisme. Livraison dans les délais, équipe très réactive.",
-    service: "Transport Minier",
-    avatar: "AT"
-  },
-  {
-    name: "Fatoumata Diallo",
-    location: "Bamako → Sikasso",
-    rating: 5,
-    text: "Excellente gestion du fuel management pour notre site minier. Support 24/7 très réactif. NDC assure la continuité de nos opérations sans interruption.",
-    service: "Fuel Management",
-    avatar: "FD"
-  },
-  {
-    name: "Ibrahim Keita",
-    location: "Mali → Burkina Faso",
-    rating: 5,
-    text: "Transit et douanes gérés de manière impeccable. Aucun retard, documentation complète. NDC est notre partenaire logistique de confiance en Afrique de l'Ouest.",
-    service: "Transit & Douanes",
-    avatar: "IK"
-  },
-  {
-    name: "Aissata Coulibaly",
-    location: "Bamako → Kati",
-    rating: 5,
-    text: "Solution complète de stockage d'hydrocarbures très professionnelle. Installation sécurisée, suivi rigoureux. NDC répond parfaitement à nos besoins opérationnels.",
-    service: "Stockage Hydrocarbures",
-    avatar: "AC"
-  },
-  {
-    name: "Moussa Sangaré",
-    location: "Mali → Sénégal",
-    rating: 5,
-    text: "Transport de marchandises entre pays très efficace. Coordination parfaite, respect des délais. NDC maîtrise parfaitement les routes transafricaines.",
-    service: "Transport International",
-    avatar: "MS"
-  }
-];
+import { useI18n } from '@/i18n/I18nProvider';
 
 const TestimonialsModernSection = () => {
+  const { language } = useI18n();
+
+  const testimonials = language === "fr" ? [
+    {
+      name: "Amadou Traoré",
+      location: "Bamako → Kayes",
+      rating: 5,
+      text: "Service excellent pour le transport de nos équipements miniers. NDC a géré toute la logistique avec professionnalisme. Livraison dans les délais, équipe très réactive.",
+      service: "Transport Minier",
+      avatar: "AT"
+    },
+    {
+      name: "Fatoumata Diallo",
+      location: "Bamako → Sikasso",
+      rating: 5,
+      text: "Excellente gestion du fuel management pour notre site minier. Support 24/7 très réactif. NDC assure la continuité de nos opérations sans interruption.",
+      service: "Fuel Management",
+      avatar: "FD"
+    },
+    {
+      name: "Ibrahim Keita",
+      location: "Mali → Burkina Faso",
+      rating: 5,
+      text: "Transit et douanes gérés de manière impeccable. Aucun retard, documentation complète. NDC est notre partenaire logistique de confiance en Afrique de l'Ouest.",
+      service: "Transit & Douanes",
+      avatar: "IK"
+    },
+    {
+      name: "Aissata Coulibaly",
+      location: "Bamako → Kati",
+      rating: 5,
+      text: "Solution complète de stockage d'hydrocarbures très professionnelle. Installation sécurisée, suivi rigoureux. NDC répond parfaitement à nos besoins opérationnels.",
+      service: "Stockage Hydrocarbures",
+      avatar: "AC"
+    },
+    {
+      name: "Moussa Sangaré",
+      location: "Mali → Sénégal",
+      rating: 5,
+      text: "Transport de marchandises entre pays très efficace. Coordination parfaite, respect des délais. NDC maîtrise parfaitement les routes transafricaines.",
+      service: "Transport International",
+      avatar: "MS"
+    }
+  ] : [
+    {
+      name: "Amadou Traoré",
+      location: "Bamako → Kayes",
+      rating: 5,
+      text: "Excellent service for transporting our mining equipment. NDC handled all the logistics professionally. On-time delivery, very responsive team.",
+      service: "Mining Transport",
+      avatar: "AT"
+    },
+    {
+      name: "Fatoumata Diallo",
+      location: "Bamako → Sikasso",
+      rating: 5,
+      text: "Excellent fuel management for our mining site. Very responsive 24/7 support. NDC ensures the continuity of our operations without interruption.",
+      service: "Fuel Management",
+      avatar: "FD"
+    },
+    {
+      name: "Ibrahim Keita",
+      location: "Mali → Burkina Faso",
+      rating: 5,
+      text: "Transit and customs handled impeccably. No delays, complete documentation. NDC is our trusted logistics partner in West Africa.",
+      service: "Transit & Customs",
+      avatar: "IK"
+    },
+    {
+      name: "Aissata Coulibaly",
+      location: "Bamako → Kati",
+      rating: 5,
+      text: "Very professional complete hydrocarbon storage solution. Secure installation, rigorous monitoring. NDC perfectly meets our operational needs.",
+      service: "Hydrocarbon Storage",
+      avatar: "AC"
+    },
+    {
+      name: "Moussa Sangaré",
+      location: "Mali → Sénégal",
+      rating: 5,
+      text: "Very efficient cross-border goods transport. Perfect coordination, respect for deadlines. NDC perfectly masters trans-African routes.",
+      service: "International Transport",
+      avatar: "MS"
+    }
+  ];
+
+  const texts = {
+    badge: language === "fr" ? "AVIS CLIENTS" : "CLIENT REVIEWS",
+    title: language === "fr" ? "Ce que disent nos clients" : "What our clients say",
+    prev: language === "fr" ? "Précédent" : "Previous",
+    next: language === "fr" ? "Suivant" : "Next",
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
@@ -110,10 +160,10 @@ const TestimonialsModernSection = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block bg-[#1f1f1f]/10 text-[#e11a1a] text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4">
-            AVIS CLIENTS
+            {texts.badge}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
-            Ce que disent nos clients
+            {texts.title}
           </h2>
         </motion.div>
 

@@ -1,8 +1,19 @@
 import React from 'react';
 import { Truck, Phone, Globe, Tag } from 'lucide-react';
+import { useI18n } from '@/i18n/I18nProvider';
 
-  const ExperienceSection = () => {
-  const features = [
+const ExperienceSection = () => {
+  const { language } = useI18n();
+
+  const texts = language === 'fr' ? {
+    badge: "NOS ENGAGEMENTS TERRAIN",
+    title: "L'expertise NDC sur le terrain",
+  } : {
+    badge: "OUR FIELD COMMITMENTS",
+    title: "NDC expertise in the field",
+  };
+
+  const features = language === 'fr' ? [
     {
       icon: <Truck className="text-[#e11a1a]" size={32} />,
       title: "Transport minier & distribution",
@@ -23,6 +34,27 @@ import { Truck, Phone, Globe, Tag } from 'lucide-react';
       title: "Support 24/7 & HSE",
       description: "Assistance terrain continue, procédures de sécurité et respect des exigences opérationnelles."
     }
+  ] : [
+    {
+      icon: <Truck className="text-[#e11a1a]" size={32} />,
+      title: "Mining transport & distribution",
+      description: "Secure transport to mining sites, depots and stations, with planning and operational monitoring."
+    },
+    {
+      icon: <Globe className="text-[#e11a1a]" size={32} />,
+      title: "Transit & Customs",
+      description: "Document management, compliance and coordination of transit operations to streamline your flows."
+    },
+    {
+      icon: <Tag className="text-[#e11a1a]" size={32} />,
+      title: "Fuel Management",
+      description: "Storage, distribution and control of fuel operations (traceability, optimization and loss control)."
+    },
+    {
+      icon: <Phone className="text-[#e11a1a]" size={32} />,
+      title: "24/7 Support & HSE",
+      description: "Continuous field assistance, safety procedures and compliance with operational requirements."
+    }
   ];
 
   return (
@@ -30,10 +62,10 @@ import { Truck, Phone, Globe, Tag } from 'lucide-react';
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-12">
           <span className="bg-gray-200 text-gray-600 text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider mb-4 inline-block">
-            NOS ENGAGEMENTS TERRAIN
+            {texts.badge}
           </span>
           <h2 className="text-4xl font-bold text-black">
-            L'expertise NDC sur le terrain
+            {texts.title}
           </h2>
         </div>
 
@@ -52,6 +84,5 @@ import { Truck, Phone, Globe, Tag } from 'lucide-react';
     </section>
   );
 };
-
 
 export default ExperienceSection;

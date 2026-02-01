@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Clock, Award } from 'lucide-react';
 import { heroVariants, fadeInUp, scaleIn } from '@/utils/animations';
+import { useI18n } from '@/i18n/I18nProvider';
 
 export const HeroModernSection = () => {
+  const { t } = useI18n();
+
   const stats = [
     { icon: <Shield className="w-6 h-6" />, value: '15+', label: 'Ans d\'expérience' },
     { icon: <Clock className="w-6 h-6" />, value: '24/7', label: 'Support opérationnel' },
@@ -40,16 +43,16 @@ export const HeroModernSection = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-5 sm:mb-6"
               variants={fadeInUp}
             >
-              Votre Partenaire 
+              {t("heroModern.title1")} 
               <br />
-              <span className="text-[#e11a1a]">Hydrocarbures & Logistique</span>
+              <span className="text-[#e11a1a]">{t("heroModern.title2")}</span>
             </motion.h1>
 
             <motion.p 
               className="text-base sm:text-xl text-gray-300 leading-relaxed mb-7 sm:mb-8 max-w-xl"
               variants={fadeInUp}
             >
-              Solutions complètes de systèmes de gestion et de stockage d'hydrocarbures, de Transport et de Transit pour le secteur minier et industriel.
+              {t("heroModern.description")}
             </motion.p>
 
             <motion.div 
@@ -62,7 +65,7 @@ export const HeroModernSection = () => {
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(225, 26, 26, 0.5)" }}
                 whileTap={{ scale: 0.98 }}
               >
-                Nos services
+                {t("heroModern.servicesBtn")}
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               <motion.a
@@ -71,7 +74,7 @@ export const HeroModernSection = () => {
                 whileHover={{ scale: 1.05, borderColor: "rgba(255, 255, 255, 0.5)" }}
                 whileTap={{ scale: 0.98 }}
               >
-                Demander un devis
+                {t("heroModern.quoteBtn")}
               </motion.a>
             </motion.div>
           </motion.div>
@@ -105,8 +108,8 @@ export const HeroModernSection = () => {
                     <Shield className="w-6 h-6 text-[#e11a1a]" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Fuel Management</p>
-                    <p className="font-bold text-gray-900">Solution Full</p>
+                    <p className="text-sm text-gray-500">{t("heroModern.floatingCards.fuelManagement.title")}</p>
+                    <p className="font-bold text-gray-900">{t("heroModern.floatingCards.fuelManagement.subtitle")}</p>
                   </div>
                 </div>
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
@@ -141,9 +144,9 @@ export const HeroModernSection = () => {
                   }
                 }}
               >
-                <p className="text-sm text-white/80 mb-2">Transit & Douanes</p>
-                <p className="text-3xl font-extrabold mb-1">98%</p>
-                <p className="text-sm text-white/90">Taux de conformité</p>
+                <p className="text-sm text-white/80 mb-2">{t("heroModern.floatingCards.transit.title")}</p>
+                <p className="text-3xl font-extrabold mb-1">{t("heroModern.floatingCards.transit.value")}</p>
+                <p className="text-sm text-white/90">{t("heroModern.floatingCards.transit.label")}</p>
               </motion.div>
 
               {/* Floating Card 3 */}
@@ -174,9 +177,9 @@ export const HeroModernSection = () => {
                     <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
                     <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-white"></div>
                   </div>
-                  <p className="text-sm text-gray-600">+50 clients actifs</p>
+                  <p className="text-sm text-gray-600">{t("heroModern.floatingCards.clients.value")}</p>
                 </div>
-                <p className="text-xs text-gray-500">Mines & Industries</p>
+                <p className="text-xs text-gray-500">{t("heroModern.floatingCards.clients.label")}</p>
               </motion.div>
             </div>
           </div>
@@ -186,6 +189,4 @@ export const HeroModernSection = () => {
   );
 };
 
-
-
-export default HeroModernSection
+export default HeroModernSection;

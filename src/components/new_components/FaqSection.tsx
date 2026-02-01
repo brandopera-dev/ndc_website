@@ -1,32 +1,68 @@
 import React, { useMemo, useState } from 'react';
 import { Check, Minus, Plus } from 'lucide-react';
+import { useI18n } from '@/i18n/I18nProvider';
 
 const FaqSection = () => {
+  const { language } = useI18n();
+  
   const items = useMemo(
-    () => [
+    () => language === "fr" ? [
       {
         title: "Quels sont les différents types de logistique ?",
-        content:
-          "La logistique regroupe la planification, l'exécution et le contrôle du transport et du stockage des marchandises, de l'origine jusqu'au point de consommation.",
+        content: "La logistique regroupe la planification, l'exécution et le contrôle du transport et du stockage des marchandises, de l'origine jusqu'au point de consommation.",
       },
       {
         title: "Comment fonctionne le dédouanement pour un transport international ?",
-        content:
-          "Le dédouanement inclut la documentation, les droits et taxes, et les contrôles de conformité. Un transitaire/broker vous accompagne pour respecter les règles avant la mise à disposition.",
+        content: "Le dédouanement inclut la documentation, les droits et taxes, et les contrôles de conformité. Un transitaire/broker vous accompagne pour respecter les règles avant la mise à disposition.",
       },
       {
         title: "Quels sont les défis courants en logistique ?",
-        content:
-          "Les défis les plus fréquents : variations de capacité, retards, exigences réglementaires, et manque de visibilité sur plusieurs transporteurs et itinéraires.",
+        content: "Les défis les plus fréquents : variations de capacité, retards, exigences réglementaires, et manque de visibilité sur plusieurs transporteurs et itinéraires.",
       },
       {
         title: "Quel est l'impact de la technologie sur la logistique ?",
-        content:
-          "La technologie améliore le tracking, l'optimisation des itinéraires, la précision des stocks et la communication grâce à la visibilité temps réel et l'automatisation.",
+        content: "La technologie améliore le tracking, l'optimisation des itinéraires, la précision des stocks et la communication grâce à la visibilité temps réel et l'automatisation.",
+      },
+    ] : [
+      {
+        title: "What are the different types of logistics?",
+        content: "Logistics encompasses the planning, execution and control of transportation and storage of goods, from origin to point of consumption.",
+      },
+      {
+        title: "How does customs clearance work for international transport?",
+        content: "Customs clearance includes documentation, duties and taxes, and compliance checks. A freight forwarder/broker assists you in meeting regulations before release.",
+      },
+      {
+        title: "What are common challenges in logistics?",
+        content: "The most frequent challenges: capacity variations, delays, regulatory requirements, and lack of visibility across multiple carriers and routes.",
+      },
+      {
+        title: "What is the impact of technology on logistics?",
+        content: "Technology improves tracking, route optimization, inventory accuracy and communication through real-time visibility and automation.",
       },
     ],
-    []
+    [language]
   );
+
+  const features = language === "fr" ? [
+    "Gestion efficace du transport de matières premières, engins et marchandises",
+    "Gestion des risques et protocoles d'urgence en cas de déversement de produits transportés",
+    "Suivi en temps réel des expéditions avec mises à jour",
+  ] : [
+    "Efficient management of raw material, equipment and goods transport",
+    "Risk management and emergency protocols for transported product spills",
+    "Real-time shipment tracking with updates",
+  ];
+
+  const texts = {
+    badge: language === "fr" ? "Questions & Réponses" : "Questions & Answers",
+    title1: language === "fr" ? "Questions" : "Frequently",
+    title2: language === "fr" ? "fréquentes" : "Asked Questions",
+    description: language === "fr" 
+      ? "Nous répondons aux questions les plus courantes sur nos services de transport, stockage et distribution."
+      : "We answer the most common questions about our transport, storage and distribution services.",
+    viewAllBtn: language === "fr" ? "Voir toutes les FAQ" : "View all FAQs",
+  };
 
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -36,43 +72,33 @@ const FaqSection = () => {
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div className="scroll-animate">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#e11a1a]">
-              Questions & Réponses
+              {texts.badge}
               <span className="text-[#e11a1a]">⇄</span>
             </div>
 
             <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-              Questions
+              {texts.title1}
               <br />
-              fréquentes
+              {texts.title2}
             </h2>
 
             <p className="mt-5 text-sm sm:text-base text-gray-500 max-w-md">
-              Nous répondons aux questions les plus courantes sur nos services de transport, stockage et distribution.
+              {texts.description}
             </p>
 
             <div className="mt-8 space-y-3 text-sm text-gray-700">
-              <div className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
-                  <Check className="w-3.5 h-3.5" />
-                </span>
-                <p>Gestion efficace du transport de matières premières, engins et marchandises</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
-                  <Check className="w-3.5 h-3.5" />
-                </span>
-                <p> Gestion des risques et protocoles d'urgence en cas de deversement de produits transportes </p>
-              </div> 
-              <div className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
-                  <Check className="w-3.5 h-3.5" />
-                </span>
-                <p>Suivi en temps réel des expéditions avec mises à jour</p>
-              </div>
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <span className="w-5 h-5 rounded-full bg-[#e11a1a]/10 flex items-center justify-center text-[#e11a1a] mt-0.5">
+                    <Check className="w-3.5 h-3.5" />
+                  </span>
+                  <p>{feature}</p>
+                </div>
+              ))}
             </div>
 
             <button className="mt-10 bg-[#e11a1a] hover:bg-red-700 text-white px-6 py-3 rounded-md font-semibold text-sm transition-all hover:scale-105 hover:shadow-lg">
-              Voir toutes les FAQ
+              {texts.viewAllBtn}
             </button>
           </div>
 

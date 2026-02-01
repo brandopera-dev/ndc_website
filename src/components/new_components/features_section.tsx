@@ -2,9 +2,12 @@ import { motion } from 'framer-motion';
 import { TrendingDown, TrendingUp } from 'lucide-react';
 import SectionTitle from '@/components/SectionTitle';
 import { fadeInUp, staggerContainer, staggerItem, slideInLeft, slideInRight } from '@/utils/animations';
+import { useI18n } from '@/i18n/I18nProvider';
 
 const FeaturesSection = () => {
-  const benefits = [
+  const { t, language } = useI18n();
+
+  const benefits = language === 'fr' ? [
     {
       icon: TrendingDown,
       title: "Moins d'interruptions",
@@ -29,6 +32,31 @@ const FeaturesSection = () => {
       description: "Une chaîne d'approvisionnement alignée sur les objectifs d'exploitation du client.",
       tone: "plus",
     },
+  ] : [
+    {
+      icon: TrendingDown,
+      title: "Fewer interruptions",
+      description: "Reduction in production stoppages due to fuel shortages or logistics delays.",
+      tone: "minus",
+    },
+    {
+      icon: TrendingDown,
+      title: "Less complexity",
+      description: "A single partner to manage critical issues (energy, transport, transit).",
+      tone: "minus",
+    },
+    {
+      icon: TrendingUp,
+      title: "More visibility",
+      description: "Better knowledge of consumption, costs, and deadlines.",
+      tone: "plus",
+    },
+    {
+      icon: TrendingUp,
+      title: "More performance",
+      description: "A supply chain aligned with the client's operational objectives.",
+      tone: "plus",
+    },
   ];
   
   const minusBenefits = benefits.filter((b) => b.tone === "minus");
@@ -44,7 +72,7 @@ const FeaturesSection = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="hidden lg:block absolute -left-1 top-24">
-          <div className="ndc-vertical-label text-white/80 text-sm">VALEUR</div>
+          <div className="ndc-vertical-label text-white/80 text-sm">{t("features.badge")}</div>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
@@ -67,9 +95,9 @@ const FeaturesSection = () => {
 
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="rounded-2xl border border-white/10 bg-black/40 backdrop-blur px-5 py-4">
-                  <p className="text-white text-sm font-semibold">Priorité: continuité des opérations</p>
+                  <p className="text-white text-sm font-semibold">{t("features.priority")}</p>
                   <p className="text-white/70 text-sm mt-1 leading-relaxed">
-                    Réduction du risque opérationnel et pilotage de la performance sur les sites.
+                    {t("features.priorityDescription")}
                   </p>
                 </div>
               </div>
@@ -81,14 +109,14 @@ const FeaturesSection = () => {
             variants={slideInRight}
           >
             <SectionTitle
-              kicker="Ce que nous pouvons vous apporter"
+              kicker={t("features.kicker")}
               variant="dark"
-              title={<>NDC plus qu'un simple prestataire</>}
+              title={<>{t("features.title")}</>}
               description={
                 <>
-                  Nous offrons des solutions innovantes et une expertise terrain pour réduire les risques opérationnels et augmenter la performance.
+                  {t("features.description")}
                   <br />
-                  Choisissez NDC Énergie et optez pour :
+                  {t("features.subtitle")}
                 </>
               }
             />
@@ -103,7 +131,7 @@ const FeaturesSection = () => {
                 whileHover={{ y: -5, borderColor: "rgba(255, 255, 255, 0.2)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/80">Réduction des risques</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/80">{t("features.riskReduction.title")}</p>
                 <div className="mt-5 space-y-5">
                   {minusBenefits.map((b, index) => {
                     const Icon = b.icon;
@@ -133,7 +161,7 @@ const FeaturesSection = () => {
                 whileHover={{ y: -5, borderColor: "rgba(255, 255, 255, 0.2)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/80">Gain de performance</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/80">{t("features.performanceGain.title")}</p>
                 <div className="mt-5 space-y-5">
                   {plusBenefits.map((b, index) => {
                     const Icon = b.icon;

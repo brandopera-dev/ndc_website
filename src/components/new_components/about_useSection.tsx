@@ -3,18 +3,55 @@ import { motion } from 'framer-motion';
 import { Phone, Ship, Plane, Shield, Clock, TrendingUp, Users, Droplet, Truck } from 'lucide-react';
 import SectionTitle from '@/components/SectionTitle';
 import { fadeInUp, staggerContainer, staggerItem } from '@/utils/animations';
+import { useI18n } from '@/i18n/I18nProvider';
 
 const AboutUseSection = () => {
-  const features = [
+  const { language } = useI18n();
+
+  const features = language === "fr" ? [
     { icon: Shield, title: "Sûr & sécurisé", description: "Votre marchandise est protégée grâce à une couverture et des procédures adaptées." },
     { icon: Clock, title: "Livraison ponctuelle", description: "Nous garantissons des délais maîtrisés avec un suivi en temps réel." },
     { icon: TrendingUp, title: "Rentable", description: "Des tarifs compétitifs sans compromis sur la qualité de service." },
     { icon: Users, title: "Équipe experte", description: "Des professionnels expérimentés, dédiés à votre réussite." },
+  ] : [
+    { icon: Shield, title: "Safe & secure", description: "Your goods are protected through adapted coverage and procedures." },
+    { icon: Clock, title: "On-time delivery", description: "We guarantee controlled deadlines with real-time tracking." },
+    { icon: TrendingUp, title: "Cost-effective", description: "Competitive rates without compromising service quality." },
+    { icon: Users, title: "Expert team", description: "Experienced professionals, dedicated to your success." },
   ];
+
+  const texts = {
+    verticalLabel: language === "fr" ? "À PROPOS" : "ABOUT",
+    kicker: language === "fr" ? "Comment ça marche" : "How it works",
+    title1: language === "fr" ? "Solutions NDC Énergie" : "NDC Energy Solutions",
+    title2: language === "fr" ? "100% Fiables" : "100% Reliable",
+    description: language === "fr" 
+      ? "Partenaire de confiance pour vos opérations minières et industrielles en Afrique. Expertise complète en Fuel Management, Transport et Transit avec une disponibilité 24/7."
+      : "Trusted partner for your mining and industrial operations in Africa. Complete expertise in Fuel Management, Transport and Transit with 24/7 availability.",
+    fuelManagement: {
+      title: language === "fr" ? "Stockage & Fuel Management" : "Storage & Fuel Management",
+      subtitle: language === "fr" ? "4 niveaux de service" : "4 service levels",
+    },
+    transport: {
+      title: language === "fr" ? "Transit & Transport" : "Transit & Transport",
+      subtitle: language === "fr" ? "Support complet 24/7" : "Complete 24/7 support",
+    },
+    learnMore: language === "fr" ? "EN SAVOIR PLUS" : "LEARN MORE",
+    callUs: language === "fr" ? "Appelez-nous 24/7" : "Call us 24/7",
+    projects: {
+      value: "50+",
+      label1: language === "fr" ? "Projets" : "Projects",
+      label2: language === "fr" ? "Réussis" : "Completed",
+    },
+    experience: {
+      value: language === "fr" ? "18+ Années" : "18+ Years",
+      label1: language === "fr" ? "d'Expérience" : "of Experience",
+      label2: language === "fr" ? "Terrain" : "in the Field",
+    },
+  };
 
   return (
     <>
-      
       <motion.section 
         id="about" 
         className="py-14 sm:py-20 lg:py-28 bg-gray-50"
@@ -26,27 +63,22 @@ const AboutUseSection = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative">
           <div className="hidden lg:block absolute -left-1 top-20">
             <div className="ndc-vertical-label text-[#e11a1a] text-sm">
-              À PROPOS
+              {texts.verticalLabel}
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={staggerItem}>
               <SectionTitle
-                kicker="Comment ça marche"
+                kicker={texts.kicker}
                 title={
                   <>
-                    Solutions NDC Énergie
+                    {texts.title1}
                     <br />
-                    100% Fiables
+                    {texts.title2}
                   </>
                 }
-                description={
-                  <>
-                    Partenaire de confiance pour vos opérations minières et industrielles en Afrique.
-                    Expertise complète en Fuel Management, Transport et Transit avec une disponibilité 24/7.
-                  </>
-                }
+                description={<>{texts.description}</>}
               />
 
               <motion.div 
@@ -58,8 +90,8 @@ const AboutUseSection = () => {
                     <Droplet className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">Stockage & Fuel Management</p>
-                    <p className="text-xs text-gray-500">4 niveaux de service</p>
+                    <p className="font-bold text-gray-900">{texts.fuelManagement.title}</p>
+                    <p className="text-xs text-gray-500">{texts.fuelManagement.subtitle}</p>
                   </div>
                 </motion.div>
 
@@ -68,8 +100,8 @@ const AboutUseSection = () => {
                     <Truck className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">Transit & Transport</p>
-                    <p className="text-xs text-gray-500">Support complet 24/7</p>
+                    <p className="font-bold text-gray-900">{texts.transport.title}</p>
+                    <p className="text-xs text-gray-500">{texts.transport.subtitle}</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -91,7 +123,7 @@ const AboutUseSection = () => {
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                       <div className="flex items-start gap-4">
-                        <div className="w-11 h-11  flex items-center justify-center text-[#e11a1a]">
+                        <div className="w-11 h-11 flex items-center justify-center text-[#e11a1a]">
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
@@ -104,11 +136,6 @@ const AboutUseSection = () => {
                 })}
               </motion.div>
 
-              {/* <p className="mt-6 text-sm md:text-base text-gray-500 leading-relaxed max-w-xl">
-                De la conception de cuves au transport de matières premières, nous assurons la continuité
-                de vos opérations avec expertise et conformité aux normes internationales.
-              </p> */}
-
               <motion.div 
                 className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6"
                 variants={fadeInUp}
@@ -118,7 +145,7 @@ const AboutUseSection = () => {
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)" }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  EN SAVOIR PLUS
+                  {texts.learnMore}
                 </motion.button>
 
                 <div className="flex items-center gap-4">
@@ -126,7 +153,7 @@ const AboutUseSection = () => {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">Appelez-nous 24/7</p>
+                    <p className="text-xs text-gray-500">{texts.callUs}</p>
                     <p className="font-extrabold text-gray-900">+223 91 88 38 67</p>
                   </div>
                 </div>
@@ -163,9 +190,9 @@ const AboutUseSection = () => {
 
                   <div className="absolute inset-0 flex items-end p-6">
                     <div className="text-white">
-                      <p className="text-sm font-extrabold leading-none">50+</p>
-                      <p className="text-sm font-semibold">Projets</p>
-                      <p className="text-sm font-semibold">Réussis</p>
+                      <p className="text-sm font-extrabold leading-none">{texts.projects.value}</p>
+                      <p className="text-sm font-semibold">{texts.projects.label1}</p>
+                      <p className="text-sm font-semibold">{texts.projects.label2}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -173,16 +200,16 @@ const AboutUseSection = () => {
 
               <motion.div className="space-y-6" variants={staggerItem}>
                 <motion.div 
-                  className=" bg-[#e11a1a] text-white p-8 h-[200px] sm:h-[260px] flex items-center justify-center cursor-pointer"
+                  className="bg-[#e11a1a] text-white p-8 h-[200px] sm:h-[260px] flex items-center justify-center cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <p className="text-2xl font-extrabold leading-snug text-center">
-                    18+ Années
+                    {texts.experience.value}
                     <br />
-                    d'Expérience
+                    {texts.experience.label1}
                     <br />
-                    Terrain
+                    {texts.experience.label2}
                   </p>
                 </motion.div>
 
@@ -202,8 +229,6 @@ const AboutUseSection = () => {
           </div>
         </div>
       </motion.section>
-
-
     </>
   );
 };

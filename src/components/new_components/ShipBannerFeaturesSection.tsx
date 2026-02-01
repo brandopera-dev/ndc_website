@@ -1,8 +1,11 @@
 import React from 'react';
 import { ShieldCheck, Globe2, BadgeDollarSign, Headphones } from 'lucide-react';
+import { useI18n } from '@/i18n/I18nProvider';
 
 const ShipBannerFeaturesSection = () => {
-  const features = [
+  const { t, language } = useI18n();
+
+  const features = language === 'fr' ? [
     {
       icon: <ShieldCheck className="w-5 h-5" />,
       title: 'Livraison fiable, sur site',
@@ -23,6 +26,27 @@ const ShipBannerFeaturesSection = () => {
       title: 'Support 24/7',
       description: 'Assistance opérationnelle\npour continuité sur le terrain.',
     },
+  ] : [
+    {
+      icon: <ShieldCheck className="w-5 h-5" />,
+      title: 'Reliable on-site delivery',
+      description: "Securing flows to mining sites\nand industrial zones.",
+    },
+    {
+      icon: <Globe2 className="w-5 h-5" />,
+      title: 'Multi-site coverage',
+      description: 'Route coordination\nand drop point management.',
+    },
+    {
+      icon: <BadgeDollarSign className="w-5 h-5" />,
+      title: 'Controlled costs',
+      description: 'Route optimization\nand transparent operations.',
+    },
+    {
+      icon: <Headphones className="w-5 h-5" />,
+      title: '24/7 Support',
+      description: 'Operational assistance\nfor field continuity.',
+    },
   ];
 
   return (
@@ -32,7 +56,7 @@ const ShipBannerFeaturesSection = () => {
           <div className="h-[420px]">
             <img
               src="/images/images_ndc/TRANSPORT/TR -7.png"
-              alt="Opérations minières"
+              alt={language === 'fr' ? "Opérations minières" : "Mining operations"}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-[#0f1729]/40"></div>

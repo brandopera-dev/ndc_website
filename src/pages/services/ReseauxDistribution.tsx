@@ -28,8 +28,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { initScrollAnimations } from "@/utils/scrollAnimations";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const ReseauxDistribution = () => {
+  const { t, language } = useI18n();
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const leafletMapRef = useRef<any>(null);
 
@@ -49,6 +51,8 @@ const ReseauxDistribution = () => {
     ],
     []
   );
+
+  const stationPopupText = language === "fr" ? "Station NDC Énergie" : "NDC Energy Station";
 
   useEffect(() => {
     const loadLeaflet = async () => {
@@ -92,13 +96,11 @@ const ReseauxDistribution = () => {
         attributionControl: false,
       }).setView([14.0, -6.0], 6);
 
-      // Tile layer gris/dark style
       L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
         maxZoom: 19,
         subdomains: "abcd",
       }).addTo(map);
 
-      // Custom pin icon NDC
       const ndcIcon = L.divIcon({
         className: "ndc-map-marker",
         html: `
@@ -130,7 +132,7 @@ const ReseauxDistribution = () => {
               text-align: center;
             ">
               <div style="font-weight: 700; font-size: 14px; color: #1f1f1f;">${s.name}</div>
-              <div style="font-size: 11px; color: #666; margin-top: 4px;">Station NDC Énergie</div>
+              <div style="font-size: 11px; color: #666; margin-top: 4px;">${stationPopupText}</div>
             </div>
           `);
       });
@@ -152,9 +154,9 @@ const ReseauxDistribution = () => {
         }
       }
     };
-  }, [stations]);
+  }, [stations, stationPopupText]);
 
-  const gallery = [
+  const gallery = language === "fr" ? [
     { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", label: "Station Kati" },
     { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", label: "Réseau" },
     { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", label: "Distribution" },
@@ -164,31 +166,88 @@ const ReseauxDistribution = () => {
     { src: "/images/images_ndc/RESEAUX/NDC  de KATI19 copy.jpg", label: "Pompes" },
     { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", label: "Équipements" },
     { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", label: "Lancement" },
-    { src: "/images/Social Media Size/NDC-Lancement119-sm.jpg", label: "Événement" },
-    { src: "/images/Social Media Size/NDC--de-KATI181-sm.jpg", label: "Équipe" },
-    { src: "/images/Social Media Size/NDC--de-KATI134-sm.jpg", label: "Service" },
+  ] : [
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", label: "Kati Station" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", label: "Network" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", label: "Distribution" },
+    { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", label: "Inauguration" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI107 copy.jpg", label: "Infrastructure" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg", label: "Service Station" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI19 copy.jpg", label: "Pumps" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", label: "Equipment" },
+    { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", label: "Launch" },
   ];
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
 
-  const faqs = [
-    {
-      q: "Pouvez-vous livrer plusieurs stations sur une même journée ?",
-      a: "Oui. Nous planifions des tournées multi-sites selon vos volumes et vos contraintes locales.",
-    },
-    {
-      q: "Proposez-vous un suivi des livraisons ?",
-      a: "Oui. Traçabilité et reporting sont mis en place selon le périmètre de service.",
-    },
-    {
-      q: "Peut-on mettre en place un contrat récurrent ?",
-      a: "Oui, avec fréquences, volumes et indicateurs de performance (SLA/KPI).",
-    },
-    {
-      q: "Intervenez-vous sur des zones éloignées ?",
-      a: "Oui. Nous adaptons le plan de transport et, si nécessaire, nous nous appuyons sur un réseau de partenaires.",
-    },
+  const faqs = language === "fr" ? [
+    { q: "Pouvez-vous livrer plusieurs stations sur une même journée ?", a: "Oui. Nous planifions des tournées multi-sites selon vos volumes et vos contraintes locales." },
+    { q: "Proposez-vous un suivi des livraisons ?", a: "Oui. Traçabilité et reporting sont mis en place selon le périmètre de service." },
+    { q: "Peut-on mettre en place un contrat récurrent ?", a: "Oui, avec fréquences, volumes et indicateurs de performance (SLA/KPI)." },
+    { q: "Intervenez-vous sur des zones éloignées ?", a: "Oui. Nous adaptons le plan de transport et, si nécessaire, nous nous appuyons sur un réseau de partenaires." },
+  ] : [
+    { q: "Can you deliver to multiple stations on the same day?", a: "Yes. We plan multi-site routes according to your volumes and local constraints." },
+    { q: "Do you offer delivery tracking?", a: "Yes. Traceability and reporting are set up according to the service scope." },
+    { q: "Can we set up a recurring contract?", a: "Yes, with frequencies, volumes and performance indicators (SLA/KPI)." },
+    { q: "Do you operate in remote areas?", a: "Yes. We adapt the transport plan and, if necessary, rely on a network of partners." },
   ];
+
+  const texts = {
+    hero: {
+      breadcrumb: t("hero.reseauxDistribution.breadcrumb"),
+      title: t("hero.reseauxDistribution.title"),
+      description: t("hero.reseauxDistribution.description"),
+      quoteBtn: t("hero.reseauxDistribution.quoteBtn"),
+      transportBtn: t("hero.reseauxDistribution.transportBtn"),
+    },
+    operate: {
+      badge: language === "fr" ? "• Comment nous opérons" : "• How we operate",
+      title: language === "fr" ? "Système automatisé, Planification et pilotage des volumes" : "Automated system, Planning and volume management",
+      paragraph1: language === "fr" 
+        ? "Dotées de systèmes gestion automatisée, nos stations-services sont suivis et pilotés en temps réel pour garantir la disponibilité des produits ainsi qu'une traçabilité sécurisée des flux de ventes et de stocks."
+        : "Equipped with automated management systems, our service stations are monitored and controlled in real time to guarantee product availability and secure traceability of sales and stock flows.",
+      paragraph2: language === "fr"
+        ? "Leader en importation de produits pétroliers au Mali, NDC Energie accompagne les distributeurs d'hydrocarbures et détenteur de stations-service par une politique d'approvisionnement qui s'appuie sur :"
+        : "Leader in petroleum product imports in Mali, NDC Energy supports hydrocarbon distributors and service station owners with a supply policy based on:",
+      modulesTitle: language === "fr" ? "Modules" : "Modules",
+      modules: language === "fr" ? [
+        { icon: Network, title: "La distribution multi-sites", description: "Planification centralisée et coordination des points de vente." },
+        { icon: BarChart3, title: "Le pilotage des volumes", description: "Suivi des livraisons, contrôle des volumes et reporting." },
+        { icon: Building2, title: "Support exploitation", description: "Accompagnement opérationnel pour assurer la continuité de service." },
+        { icon: MapPin, title: "Livraison multi-zones", description: "Gestion des contraintes locales et des zones éloignées." },
+      ] : [
+        { icon: Network, title: "Multi-site distribution", description: "Centralized planning and coordination of sales points." },
+        { icon: BarChart3, title: "Volume management", description: "Delivery tracking, volume control and reporting." },
+        { icon: Building2, title: "Operations support", description: "Operational support to ensure service continuity." },
+        { icon: MapPin, title: "Multi-zone delivery", description: "Management of local constraints and remote areas." },
+      ],
+      contactBtn: language === "fr" ? "Contacter" : "Contact",
+      fuelBtn: language === "fr" ? "Fuel management" : "Fuel management",
+    },
+    map: {
+      badge: language === "fr" ? "• Notre réseau" : "• Our network",
+      title: language === "fr" ? "Stations NDC Énergie au Mali" : "NDC Energy Stations in Mali",
+      description: language === "fr"
+        ? "Un maillage stratégique couvrant les principales zones économiques du Mali pour garantir la disponibilité des produits pétroliers sur l'ensemble du territoire."
+        : "A strategic network covering Mali's main economic zones to guarantee the availability of petroleum products throughout the territory.",
+      legendStation: language === "fr" ? "Station-service NDC Énergie" : "NDC Energy Service Station",
+      legendCoverage: language === "fr" ? "Zone de couverture" : "Coverage area",
+    },
+    gallery: {
+      badge: language === "fr" ? "Galerie photos" : "Photo gallery",
+      title1: language === "fr" ? "Nos stations" : "Our stations",
+      title2: language === "fr" ? "& événements" : "& events",
+      description: language === "fr" 
+        ? "Découvrez notre réseau de stations-service, nos inaugurations et nos équipes sur le terrain au Mali."
+        : "Discover our service station network, our inaugurations and our teams in the field in Mali.",
+      photoCount: language === "fr" ? "photos" : "photos",
+      clickToEnlarge: language === "fr" ? "Cliquez pour agrandir" : "Click to enlarge",
+    },
+    faq: {
+      badge: "FAQ",
+      title: language === "fr" ? "Questions fréquentes" : "Frequently asked questions",
+    },
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -211,31 +270,26 @@ const ReseauxDistribution = () => {
                 Services
               </Link>
               <span className="text-white/50">/</span>
-              <span className="text-white">Réseaux de distribution</span>
+              <span className="text-white">{texts.hero.breadcrumb}</span>
             </nav>
 
-            {/* <div className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/10 text-white/85 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#e11a1a]" />
-              Disponibilité multi-sites
-            </div> */}
-
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-              Réseaux de distribution
+              {texts.hero.title}
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Approvisionnement et gestion automatisée de stations-service avec une plateforme dédiée au suivi des flux de vente et de stocks en temps réel.
+              {texts.hero.description}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/contact">
                 <Button className="bg-[#e11a1a] hover:bg-red-700 text-white rounded-xl px-8 py-6 font-semibold inline-flex items-center gap-2">
-                  Demander un devis
+                  {texts.hero.quoteBtn}
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/services/transport-transit">
                 <Button variant="outline" className="border-white/25 text-white hover:bg-white/10 rounded-xl px-8 py-6 font-semibold">
-                  Transport & transit
+                  {texts.hero.transportBtn}
                 </Button>
               </Link>
             </div>
@@ -247,87 +301,41 @@ const ReseauxDistribution = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
-              <p className="text-white/90 text-sm font-semibold tracking-wider uppercase">• Comment nous opérons</p>
+              <p className="text-white/90 text-sm font-semibold tracking-wider uppercase">{texts.operate.badge}</p>
               <h2 className="text-2xl md:text-3xl font-bold text-white mt-4">
-              Système automatisé, Planification et pilotage des volumes
+                {texts.operate.title}
               </h2>
               <p className="text-white/80 leading-relaxed mt-5">
-              Dotées de systèmes gestion automatisée, nos stations-services sont suivis et pilotés en temps réel pourgarantir la disponibilité des produits ainsi qu’une traçabilité sécurisée des flux de ventes et de stocks.
+                {texts.operate.paragraph1}
               </p>
               <p className="text-white/80 leading-relaxed mt-5">
-              Leader en importation de produits pétroliers au Mali, NDC Energie accompagne les distributeursd’hydrocarbures et détenteur de stations-service par une politique d’approvisionnement quis’appuie sur :
+                {texts.operate.paragraph2}
               </p>
-
-              {/* <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
-                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
-                    <RefreshCcw className="w-5 h-5" />
-                  </div>
-                  <p className="mt-4 font-bold text-white">Réassort optimisé</p>
-                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
-                    Planification des tournées et optimisation des fréquences.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-white/20 bg-white/10 p-5 hover:bg-white/15 transition-all">
-                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-white">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <p className="mt-4 font-bold text-white">Conformité & sécurité</p>
-                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
-                    Protocoles adaptés aux opérations station-service.
-                  </p>
-                </div>
-              </div> */}
             </div>
 
             <div className="rounded-3xl border border-white/20 bg-white/10 p-6">
-              <h3 className="text-lg font-bold text-white">Modules</h3>
+              <h3 className="text-lg font-bold text-white">{texts.operate.modulesTitle}</h3>
               <div className="mt-5 space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
-                    <Network className="w-5 h-5" />
+                {texts.operate.modules.map((module, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
+                      <module.icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white">{module.title}</p>
+                      <p className="text-sm text-white/80">{module.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-white">La distribution multi-sites</p>
-                    <p className="text-sm text-white/80">Planification centralisée et coordination des points de vente.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
-                    <BarChart3 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">Le pilotage des volumes</p>
-                    <p className="text-sm text-white/80">Suivi des livraisons, contrôle des volumes et reporting.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
-                    <Building2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">Support exploitation</p>
-                    <p className="text-sm text-white/80">Accompagnement opérationnel pour assurer la continuité de service.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">Livraison multi-zones</p>
-                    <p className="text-sm text-white/80">Gestion des contraintes locales et des zones éloignées.</p>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Link to="/contact" className="w-full">
-                  <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">Contacter</Button>
+                  <Button className="w-full ndc-btn-red rounded-xl py-3 font-semibold">{texts.operate.contactBtn}</Button>
                 </Link>
                 <Link to="/services/fuel-management" className="w-full">
                   <Button variant="outline" className="w-full rounded-xl py-3 font-semibold">
-                    Fuel management
+                    {texts.operate.fuelBtn}
                   </Button>
                 </Link>
               </div>
@@ -336,20 +344,17 @@ const ReseauxDistribution = () => {
         </div>
       </section>
 
-      {/* Section Carte des implantations - Grande carte */}
+      {/* Section Carte des implantations */}
       <section className="py-20 section-dark scroll-animate">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Header */}
           <div className="text-center mb-12">
-            <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">• Notre réseau</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mt-4">Stations NDC Énergie au Mali</h2>
+            <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">{texts.map.badge}</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-4">{texts.map.title}</h2>
             <p className="text-white/70 leading-relaxed mt-4 max-w-2xl mx-auto">
-              Un maillage stratégique couvrant les principales zones économiques du Mali pour garantir 
-              la disponibilité des produits pétroliers sur l'ensemble du territoire.
+              {texts.map.description}
             </p>
           </div>
 
-          {/* Stations list */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             {stations.map((station) => (
               <div 
@@ -362,12 +367,10 @@ const ReseauxDistribution = () => {
             ))}
           </div>
 
-          {/* Grande carte */}
           <div className="rounded-3xl overflow-hidden border border-white/10 bg-[#0d1117]">
             <div ref={mapContainerRef} className="w-full h-[500px] md:h-[600px]" />
           </div>
 
-          {/* Légende */}
           <div className="mt-8 flex flex-wrap justify-center gap-8">
             <div className="flex items-center gap-3">
               <div className="w-8 h-10 flex items-center justify-center">
@@ -376,39 +379,36 @@ const ReseauxDistribution = () => {
                   <circle cx="18" cy="16" r="8" fill="white"/>
                 </svg>
               </div>
-              <span className="text-white/80 text-sm">Station-service NDC Énergie</span>
+              <span className="text-white/80 text-sm">{texts.map.legendStation}</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-4 h-4 rounded-full bg-[#e11a1a]/30 border-2 border-[#e11a1a]" />
-              <span className="text-white/80 text-sm">Zone de couverture</span>
+              <span className="text-white/80 text-sm">{texts.map.legendCoverage}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section Galerie - Style Bento */}
+      {/* Section Galerie */}
       <section className="py-24 bg-white scroll-animate overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Header avec style premium */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e11a1a]/10 border border-[#e11a1a]/20 mb-4">
                 <Camera className="w-4 h-4 text-[#e11a1a]" />
-                <span className="text-[#e11a1a] text-sm font-semibold">Galerie photos</span>
+                <span className="text-[#e11a1a] text-sm font-semibold">{texts.gallery.badge}</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Nos stations
-                <span className="block text-gray-400">& événements</span>
+                {texts.gallery.title1}
+                <span className="block text-gray-400">{texts.gallery.title2}</span>
               </h2>
             </div>
             <p className="text-gray-600 max-w-md text-sm leading-relaxed">
-              Découvrez notre réseau de stations-service, nos inaugurations et nos équipes sur le terrain au Mali.
+              {texts.gallery.description}
             </p>
           </div>
 
-          {/* Grille Bento asymétrique */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {/* Grande image */}
             <div
               onClick={() => setSelectedImage(gallery[0])}
               className="col-span-2 row-span-2 group relative overflow-hidden rounded-3xl cursor-pointer h-[300px] md:h-[450px]"
@@ -422,7 +422,6 @@ const ReseauxDistribution = () => {
               </div>
             </div>
 
-            {/* Images moyennes */}
             {gallery.slice(1, 5).map((item, index) => (
               <div
                 key={index}
@@ -439,7 +438,6 @@ const ReseauxDistribution = () => {
               </div>
             ))}
 
-            {/* Rangée du bas - images plus petites */}
             {gallery.slice(5, 9).map((item, index) => (
               <div
                 key={index}
@@ -457,16 +455,15 @@ const ReseauxDistribution = () => {
             ))}
           </div>
 
-          {/* Compteur */}
           <div className="mt-8 flex items-center justify-center gap-2 text-gray-400 text-sm">
-            <span>{gallery.length} photos</span>
+            <span>{gallery.length} {texts.gallery.photoCount}</span>
             <span>•</span>
-            <span>Cliquez pour agrandir</span>
+            <span>{texts.gallery.clickToEnlarge}</span>
           </div>
         </div>
       </section>
 
-      {/* Modal Image - Style Premium */}
+      {/* Modal Image */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-6xl w-[95vw] p-0 bg-[#0a0a0a] border border-white/10 rounded-3xl overflow-hidden">
           <DialogTitle className="sr-only">{selectedImage?.label || "Image"}</DialogTitle>
@@ -487,8 +484,8 @@ const ReseauxDistribution = () => {
       <section className="py-16 section-dark scroll-animate">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
-            <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">FAQ</p>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mt-3">Questions fréquentes</h2>
+            <p className="text-[#e11a1a] text-sm font-semibold tracking-wider uppercase">{texts.faq.badge}</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mt-3">{texts.faq.title}</h2>
           </div>
 
           <Accordion type="single" collapsible className="w-full">

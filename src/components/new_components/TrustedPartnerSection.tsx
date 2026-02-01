@@ -1,14 +1,49 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown, Play, Target } from "lucide-react";
-// import transportTrailer from "@/assets/transport-trailer.jpg";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const partnerLogos = [
   "LogoIpsum", "LogoIpsum", "LogoIpsum", "LogoIpsum", 
   "LogoIpsum", "LogoIpsum", "LogoIpsum", "LogoIpsum"
 ];
 
-   const TrustedPartnerSection = () => {
+const TrustedPartnerSection = () => {
+  const { t, language } = useI18n();
+
+  const texts = language === 'fr' ? {
+    partnersTitle: "Nos Partenaires de Confiance",
+    aboutTitle: "À Propos de Notre Service",
+    mainTitle: "Votre Partenaire de Confiance en Logistique Globale",
+    description: "NDC accompagne les opérations minières et industrielles avec des solutions intégrées de Fuel Management, Transit & Douanes, transport et approvisionnement multi-sites. Priorité : sécurité, conformité et continuité des opérations sur le terrain.",
+    excellence: {
+      title: "L'Excellence à Chaque Kilomètre",
+      description: "Nous nous engageons à fournir des services logistiques efficaces, transparents et axés sur la technologie qui connectent les entreprises à l'échelle mondiale avec rapidité et fiabilité.",
+    },
+    vision: {
+      title: "Façonner l'Avenir de la Logistique",
+      description: "Notre vision est de construire un écosystème logistique plus intelligent propulsé par l'innovation, la durabilité et une connectivité mondiale sans faille.",
+    },
+    transferFrom: "Transfert Depuis",
+    transferTo: "Transfert Vers",
+    imageAlt: "Transport camion",
+  } : {
+    partnersTitle: "Our Trusted Partners",
+    aboutTitle: "About Our Service",
+    mainTitle: "Your Trusted Partner in Global Logistics",
+    description: "NDC supports mining and industrial operations with integrated solutions for Fuel Management, Transit & Customs, transport and multi-site supply. Priority: safety, compliance and continuity of field operations.",
+    excellence: {
+      title: "Excellence at Every Mile",
+      description: "We are committed to providing efficient, transparent and technology-driven logistics services that connect businesses globally with speed and reliability.",
+    },
+    vision: {
+      title: "Shaping the Future of Logistics",
+      description: "Our vision is to build a smarter logistics ecosystem powered by innovation, sustainability and seamless global connectivity.",
+    },
+    transferFrom: "Transfer From",
+    transferTo: "Transfer To",
+    imageAlt: "Transport truck",
+  };
+
   return (
     <section className="py-16 lg:py-24 bg-[#f5f5f5] scroll-animate">
       <div className="max-w-7xl mx-auto px-8">
@@ -16,7 +51,7 @@ const partnerLogos = [
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm mb-8">
             <span className="text-[#e11a1a]">★</span>
-            <span className="text-sm font-medium text-foreground">Nos Partenaires de Confiance</span>
+            <span className="text-sm font-medium text-foreground">{texts.partnersTitle}</span>
           </div>
           
           <div className="flex items-center justify-center gap-8 lg:gap-12 flex-wrap opacity-60">
@@ -35,7 +70,7 @@ const partnerLogos = [
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="text-[#e11a1a]">★</span>
-            <span className="text-sm font-medium text-muted-foreground">À Propos de Notre Service</span>
+            <span className="text-sm font-medium text-muted-foreground">{texts.aboutTitle}</span>
           </div>
         </div>
 
@@ -43,13 +78,11 @@ const partnerLogos = [
           {/* Left - Text Content + Feature Cards */}
           <div className="lg:col-span-3">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              Votre Partenaire de Confiance en Logistique Globale
+              {texts.mainTitle}
             </h2>
             
             <p className="text-muted-foreground text-base lg:text-lg max-w-lg mb-10">
-              NDC accompagne les opérations minières et industrielles avec des solutions intégrées
-              de Fuel Management, Transit & Douanes, transport et approvisionnement multi-sites.
-              Priorité : sécurité, conformité et continuité des opérations sur le terrain.
+              {texts.description}
             </p>
 
             {/* Feature Cards */}
@@ -59,11 +92,9 @@ const partnerLogos = [
                 <div className="w-10 h-10 rounded-full bg-background/20 flex items-center justify-center mb-6">
                   <Play className="w-5 h-5 text-background" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">L'Excellence à Chaque Kilomètre</h3>
+                <h3 className="text-xl font-bold mb-3">{texts.excellence.title}</h3>
                 <p className="text-background/70 text-sm leading-relaxed">
-                  Nous nous engageons à fournir des services logistiques efficaces, 
-                  transparents et axés sur la technologie qui connectent les entreprises 
-                  à l'échelle mondiale avec rapidité et fiabilité.
+                  {texts.excellence.description}
                 </p>
               </div>
 
@@ -72,10 +103,9 @@ const partnerLogos = [
                 <div className="w-10 h-10 rounded-full bg-[#1f1f1f]/10 flex items-center justify-center mb-6">
                   <Target className="w-5 h-5 text-[#e11a1a]" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">Façonner l'Avenir de la Logistique</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">{texts.vision.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Notre vision est de construire un écosystème logistique plus intelligent 
-                  propulsé par l'innovation, la durabilité et une connectivité mondiale sans faille.
+                  {texts.vision.description}
                 </p>
               </div>
             </div>
@@ -87,7 +117,7 @@ const partnerLogos = [
             <div className="absolute inset-0 overflow-hidden shadow-2xl">
               <img 
                 src="/images/images_ndc/TRANSPORT/TR -8.png" 
-                alt="Transport camion" 
+                alt={texts.imageAlt}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -97,7 +127,7 @@ const partnerLogos = [
             <div className="absolute top-6 left-1/2 -translate-x-1/2 lg:left-6 lg:translate-x-0 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-2xl w-[260px] z-10">
               <div className="space-y-3">
                 <div>
-                  <label className="text-xs text-gray-600 mb-2 block font-medium">Transfert Depuis</label>
+                  <label className="text-xs text-gray-600 mb-2 block font-medium">{texts.transferFrom}</label>
                   <div className="flex items-center justify-between bg-gray-100 rounded-lg px-3 py-2.5 border border-gray-200">
                     <div>
                       <p className="text-sm font-semibold text-gray-900">+1(457)21457(x)</p>
@@ -116,7 +146,7 @@ const partnerLogos = [
                 </div>
 
                 <div>
-                  <label className="text-xs text-gray-600 mb-2 block font-medium">Transfert Vers</label>
+                  <label className="text-xs text-gray-600 mb-2 block font-medium">{texts.transferTo}</label>
                   <div className="flex items-center justify-between bg-gray-100 rounded-lg px-3 py-2.5 border border-gray-200">
                     <div>
                       <p className="text-sm font-semibold text-gray-900">+8(r14521459)Info</p>

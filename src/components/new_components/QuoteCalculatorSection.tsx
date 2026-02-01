@@ -1,29 +1,167 @@
 import React, { useState } from 'react';
+import { useI18n } from '@/i18n/I18nProvider';
 
 type ServiceType = '' | 'fuel-management' | 'transport-transit' | 'reseaux-distribution';
 
 const QuoteCalculatorSection = () => {
+  const { language } = useI18n();
   const [currentStep, setCurrentStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  // All translatable texts
+  const texts = language === 'fr' ? {
+    title: "Demandez un devis",
+    subtitle: "Remplissez le formulaire en quelques étapes. Notre équipe vous recontactera rapidement.",
+    steps: {
+      service: "Service",
+      company: "Société",
+      details: "Détails",
+      contact: "Contact",
+    },
+    success: {
+      title: "Demande envoyée !",
+      description: "Merci pour votre demande. Notre équipe vous recontactera rapidement avec une proposition adaptée.",
+      emailBtn: "Envoyer par email",
+      newRequest: "Nouvelle demande",
+    },
+    step1: {
+      title: "Quel service vous intéresse ?",
+      subtitle: "Sélectionnez le type de service pour votre demande",
+      services: {
+        'fuel-management': { title: "Infrastructures & Fuel Management", description: "Stockage, gestion et approvisionnement" },
+        'transport-transit': { title: "Transport & Transit", description: "Acheminement de marchandises" },
+        'reseaux-distribution': { title: "Réseaux de Distribution", description: "Livraison vers stations-service" },
+      },
+      error: "Veuillez sélectionner un service",
+    },
+    step2: {
+      title: "Votre société",
+      subtitle: "Parlez-nous de votre entreprise",
+      companyName: { label: "Nom de votre société *", placeholder: "Ex: ABC Industries" },
+      sector: { label: "Secteur d'activité *", placeholder: "Ex: Mines, Transport, BTP, Énergie..." },
+    },
+    step3: {
+      title: "Détails de votre besoin",
+      subtitles: {
+        fuel: "Informations sur votre besoin en hydrocarbures",
+        transport: "Informations sur votre transport",
+        reseaux: "Informations sur votre distribution",
+      },
+      fuelType: { label: "Type d'hydrocarbures *", placeholder: "Sélectionnez un type" },
+      consumption: { label: "Consommation prévisionnelle mensuelle *", placeholder: "Ex: 50 000 L/mois" },
+      siteLocation: { label: "Où se trouve votre site d'exploitation ? *", placeholder: "Pays, ville, localité..." },
+      productType: { label: "Nom / Type de produit ou marchandise *", placeholder: "Ex: Matériel minier, carburant, conteneurs..." },
+      pickupAddress: { label: "Adresse du point d'enlèvement *", placeholder: "Pays, ville, localité..." },
+      deliveryAddress: { label: "Adresse du point de livraison *", placeholder: "Pays, ville, localité..." },
+    },
+    step4: {
+      title: "Vos coordonnées",
+      subtitle: "Comment pouvons-nous vous contacter ?",
+      email: { label: "Adresse email *", placeholder: "votre@email.com" },
+      phone: { label: "Numéro de téléphone *", placeholder: "+223 ..." },
+      summary: {
+        title: "Récapitulatif",
+        service: "Service",
+        company: "Société",
+        sector: "Secteur",
+      },
+    },
+    buttons: {
+      prev: "← Précédent",
+      next: "Continuer →",
+      sending: "Envoi...",
+      submit: "Envoyer ma demande",
+    },
+    errors: {
+      required: "Champ requis",
+      general: "Une erreur est survenue. Veuillez réessayer.",
+      connection: "Erreur de connexion. Veuillez vérifier votre connexion internet.",
+    },
+    fuelTypes: ['HFO', 'DDO', 'JET', 'GASOIL', 'Autres'],
+  } : {
+    title: "Request a Quote",
+    subtitle: "Fill out the form in a few steps. Our team will get back to you quickly.",
+    steps: {
+      service: "Service",
+      company: "Company",
+      details: "Details",
+      contact: "Contact",
+    },
+    success: {
+      title: "Request sent!",
+      description: "Thank you for your request. Our team will contact you soon with a tailored proposal.",
+      emailBtn: "Send by email",
+      newRequest: "New request",
+    },
+    step1: {
+      title: "Which service interests you?",
+      subtitle: "Select the type of service for your request",
+      services: {
+        'fuel-management': { title: "Infrastructure & Fuel Management", description: "Storage, management and supply" },
+        'transport-transit': { title: "Transport & Transit", description: "Goods transportation" },
+        'reseaux-distribution': { title: "Distribution Networks", description: "Delivery to service stations" },
+      },
+      error: "Please select a service",
+    },
+    step2: {
+      title: "Your company",
+      subtitle: "Tell us about your business",
+      companyName: { label: "Company name *", placeholder: "E.g.: ABC Industries" },
+      sector: { label: "Industry sector *", placeholder: "E.g.: Mining, Transport, Construction, Energy..." },
+    },
+    step3: {
+      title: "Details of your needs",
+      subtitles: {
+        fuel: "Information about your hydrocarbon needs",
+        transport: "Information about your transport",
+        reseaux: "Information about your distribution",
+      },
+      fuelType: { label: "Type of hydrocarbons *", placeholder: "Select a type" },
+      consumption: { label: "Estimated monthly consumption *", placeholder: "E.g.: 50,000 L/month" },
+      siteLocation: { label: "Where is your operating site? *", placeholder: "Country, city, locality..." },
+      productType: { label: "Product/goods name or type *", placeholder: "E.g.: Mining equipment, fuel, containers..." },
+      pickupAddress: { label: "Pickup address *", placeholder: "Country, city, locality..." },
+      deliveryAddress: { label: "Delivery address *", placeholder: "Country, city, locality..." },
+    },
+    step4: {
+      title: "Your contact details",
+      subtitle: "How can we reach you?",
+      email: { label: "Email address *", placeholder: "your@email.com" },
+      phone: { label: "Phone number *", placeholder: "+223 ..." },
+      summary: {
+        title: "Summary",
+        service: "Service",
+        company: "Company",
+        sector: "Sector",
+      },
+    },
+    buttons: {
+      prev: "← Previous",
+      next: "Continue →",
+      sending: "Sending...",
+      submit: "Submit my request",
+    },
+    errors: {
+      required: "Required field",
+      general: "An error occurred. Please try again.",
+      connection: "Connection error. Please check your internet connection.",
+    },
+    fuelTypes: ['HFO', 'DDO', 'JET', 'GASOIL', 'Other'],
+  };
+
   const getInitialForm = () => ({
     service: '' as ServiceType,
-    // Champs communs
     company: '',
     sector: '',
     email: '',
     phone: '',
-    // Fuel Management & Réseaux de Distribution
     fuelType: '',
     monthlyConsumption: '',
-    // Fuel Management uniquement
     siteLocation: '',
-    // Transport & Transit
     productType: '',
     pickupAddress: '',
-    // Transport & Transit & Réseaux de Distribution
     deliveryAddress: '',
   });
 
@@ -31,20 +169,11 @@ const QuoteCalculatorSection = () => {
 
   const totalSteps = 4;
 
-  const serviceLabels: Record<ServiceType, string> = {
-    '': '',
-    'fuel-management': 'Infrastructures & Fuel Management',
-    'transport-transit': 'Transport & Transit',
-    'reseaux-distribution': 'Réseaux de Distribution',
-  };
-
-  const fuelTypes = ['HFO', 'DDO', 'JET', 'GASOIL', 'Autres'];
-
   const steps = [
-    { id: 1, title: 'Service' },
-    { id: 2, title: 'Société' },
-    { id: 3, title: 'Détails' },
-    { id: 4, title: 'Contact' },
+    { id: 1, title: texts.steps.service },
+    { id: 2, title: texts.steps.company },
+    { id: 3, title: texts.steps.details },
+    { id: 4, title: texts.steps.contact },
   ];
 
   const update = (key: keyof typeof form, value: string) => {
@@ -61,37 +190,37 @@ const QuoteCalculatorSection = () => {
     const nextErrors: Record<string, string> = {};
 
     if (step === 1) {
-      if (!form.service) nextErrors.service = 'Veuillez sélectionner un service';
+      if (!form.service) nextErrors.service = texts.step1.error;
     }
 
     if (step === 2) {
-      if (!form.company.trim()) nextErrors.company = 'Champ requis';
-      if (!form.sector.trim()) nextErrors.sector = 'Champ requis';
+      if (!form.company.trim()) nextErrors.company = texts.errors.required;
+      if (!form.sector.trim()) nextErrors.sector = texts.errors.required;
     }
 
     if (step === 3) {
       if (form.service === 'fuel-management') {
-        if (!form.fuelType) nextErrors.fuelType = 'Champ requis';
-        if (!form.monthlyConsumption.trim()) nextErrors.monthlyConsumption = 'Champ requis';
-        if (!form.siteLocation.trim()) nextErrors.siteLocation = 'Champ requis';
+        if (!form.fuelType) nextErrors.fuelType = texts.errors.required;
+        if (!form.monthlyConsumption.trim()) nextErrors.monthlyConsumption = texts.errors.required;
+        if (!form.siteLocation.trim()) nextErrors.siteLocation = texts.errors.required;
       }
 
       if (form.service === 'transport-transit') {
-        if (!form.productType.trim()) nextErrors.productType = 'Champ requis';
-        if (!form.pickupAddress.trim()) nextErrors.pickupAddress = 'Champ requis';
-        if (!form.deliveryAddress.trim()) nextErrors.deliveryAddress = 'Champ requis';
+        if (!form.productType.trim()) nextErrors.productType = texts.errors.required;
+        if (!form.pickupAddress.trim()) nextErrors.pickupAddress = texts.errors.required;
+        if (!form.deliveryAddress.trim()) nextErrors.deliveryAddress = texts.errors.required;
       }
 
       if (form.service === 'reseaux-distribution') {
-        if (!form.fuelType) nextErrors.fuelType = 'Champ requis';
-        if (!form.monthlyConsumption.trim()) nextErrors.monthlyConsumption = 'Champ requis';
-        if (!form.deliveryAddress.trim()) nextErrors.deliveryAddress = 'Champ requis';
+        if (!form.fuelType) nextErrors.fuelType = texts.errors.required;
+        if (!form.monthlyConsumption.trim()) nextErrors.monthlyConsumption = texts.errors.required;
+        if (!form.deliveryAddress.trim()) nextErrors.deliveryAddress = texts.errors.required;
       }
     }
 
     if (step === 4) {
-      if (!form.email.trim()) nextErrors.email = 'Champ requis';
-      if (!form.phone.trim()) nextErrors.phone = 'Champ requis';
+      if (!form.email.trim()) nextErrors.email = texts.errors.required;
+      if (!form.phone.trim()) nextErrors.phone = texts.errors.required;
     }
 
     setErrors(nextErrors);
@@ -108,12 +237,18 @@ const QuoteCalculatorSection = () => {
     setCurrentStep((s) => Math.max(1, s - 1));
   };
 
+  const getServiceLabel = (service: ServiceType) => {
+    if (!service) return '';
+    return texts.step1.services[service]?.title || '';
+  };
+
   const buildMailto = () => {
-    const subject = encodeURIComponent(`Demande de devis ${serviceLabels[form.service]} – NDC Énergie`);
+    const serviceLabel = getServiceLabel(form.service);
+    const subject = encodeURIComponent(`Demande de devis ${serviceLabel} – NDC Énergie`);
     
     let bodyLines = [
       `=== DEMANDE DE DEVIS ===`,
-      `Service: ${serviceLabels[form.service]}`,
+      `Service: ${serviceLabel}`,
       ``,
       `=== INFORMATIONS SOCIÉTÉ ===`,
       `Société: ${form.company}`,
@@ -168,10 +303,10 @@ const QuoteCalculatorSection = () => {
     setIsSubmitting(true);
     setSubmitError(null);
 
-    // Préparer les données pour Formspree
+    const serviceLabel = getServiceLabel(form.service);
     const formData = {
-      _subject: `Demande de devis ${serviceLabels[form.service]} – NDC Énergie`,
-      service: serviceLabels[form.service],
+      _subject: `Demande de devis ${serviceLabel} – NDC Énergie`,
+      service: serviceLabel,
       societe: form.company,
       secteur: form.sector,
       email: form.email,
@@ -206,11 +341,10 @@ const QuoteCalculatorSection = () => {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        const data = await response.json();
-        setSubmitError(data.error || 'Une erreur est survenue. Veuillez réessayer.');
+        setSubmitError(texts.errors.general);
       }
     } catch {
-      setSubmitError('Erreur de connexion. Veuillez vérifier votre connexion internet.');
+      setSubmitError(texts.errors.connection);
     } finally {
       setIsSubmitting(false);
     }
@@ -229,10 +363,10 @@ const QuoteCalculatorSection = () => {
         {/* Title */}
         <div className="text-center mb-8">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-            Demandez un devis
+            {texts.title}
           </h2>
           <p className="mt-3 text-white/80 max-w-2xl mx-auto text-sm md:text-base">
-            Remplissez le formulaire en quelques étapes. Notre équipe vous recontactera rapidement.
+            {texts.subtitle}
           </p>
         </div>
 
@@ -284,21 +418,20 @@ const QuoteCalculatorSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h4 className="mt-5 text-2xl font-bold text-gray-900">Demande envoyée !</h4>
+              <h4 className="mt-5 text-2xl font-bold text-gray-900">{texts.success.title}</h4>
               <p className="mt-3 text-gray-600 max-w-md mx-auto">
-                Merci pour votre demande. Notre équipe vous recontactera rapidement avec une proposition adaptée.
+                {texts.success.description}
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
                 <button
                   type="button"
                   onClick={() => {
                     const mailtoLink = buildMailto();
-                    console.log('Mailto link:', mailtoLink);
                     window.open(mailtoLink, '_blank');
                   }}
                   className="inline-flex justify-center rounded-xl px-6 py-3 font-semibold bg-[#e11a1a] text-white hover:bg-red-700 transition-colors"
                 >
-                  Envoyer par email
+                  {texts.success.emailBtn}
                 </button>
                 <button
                   type="button"
@@ -310,7 +443,7 @@ const QuoteCalculatorSection = () => {
                   }}
                   className="rounded-xl px-6 py-3 font-semibold border border-gray-100 bg-white text-gray-900 hover:bg-gray-50 transition-colors"
                 >
-                  Nouvelle demande
+                  {texts.success.newRequest}
                 </button>
               </div>
             </div>
@@ -320,8 +453,8 @@ const QuoteCalculatorSection = () => {
               {currentStep === 1 && (
                 <div className="space-y-6">
                   <div className="text-center">
-                    <h3 className="text-xl font-bold text-gray-900">Quel service vous intéresse ?</h3>
-                    <p className="text-gray-500 text-sm mt-2">Sélectionnez le type de service pour votre demande</p>
+                    <h3 className="text-xl font-bold text-gray-900">{texts.step1.title}</h3>
+                    <p className="text-gray-500 text-sm mt-2">{texts.step1.subtitle}</p>
                   </div>
 
                   <div className="grid grid-cols-1 gap-3">
@@ -358,12 +491,10 @@ const QuoteCalculatorSection = () => {
                         </div>
                         <div className="flex-1">
                           <div className={`font-semibold ${form.service === s ? 'text-[#e11a1a]' : 'text-gray-900'}`}>
-                            {serviceLabels[s]}
+                            {texts.step1.services[s].title}
                           </div>
                           <div className="text-sm text-gray-500 mt-0.5">
-                            {s === 'fuel-management' && 'Stockage, gestion et approvisionnement'}
-                            {s === 'transport-transit' && 'Acheminement de marchandises'}
-                            {s === 'reseaux-distribution' && 'Livraison vers stations-service'}
+                            {texts.step1.services[s].description}
                           </div>
                         </div>
                         {form.service === s && (
@@ -384,29 +515,29 @@ const QuoteCalculatorSection = () => {
               {currentStep === 2 && (
                 <div className="space-y-6">
                   <div className="text-center">
-                    <h3 className="text-xl font-bold text-gray-900">Votre société</h3>
-                    <p className="text-gray-500 text-sm mt-2">Parlez-nous de votre entreprise</p>
+                    <h3 className="text-xl font-bold text-gray-900">{texts.step2.title}</h3>
+                    <p className="text-gray-500 text-sm mt-2">{texts.step2.subtitle}</p>
                   </div>
 
                   <div className="space-y-4">
                     <div className="flex flex-col gap-1.5">
-                      <label className={labelClass}>Nom de votre société *</label>
+                      <label className={labelClass}>{texts.step2.companyName.label}</label>
                       <input
                         type="text"
                         value={form.company}
                         onChange={(e) => update('company', e.target.value)}
-                        placeholder="Ex: ABC Industries"
+                        placeholder={texts.step2.companyName.placeholder}
                         className={inputClass('company')}
                       />
                       {errors.company && <span className="text-xs text-[#e11a1a]">{errors.company}</span>}
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className={labelClass}>Secteur d'activité *</label>
+                      <label className={labelClass}>{texts.step2.sector.label}</label>
                       <input
                         type="text"
                         value={form.sector}
                         onChange={(e) => update('sector', e.target.value)}
-                        placeholder="Ex: Mines, Transport, BTP, Énergie..."
+                        placeholder={texts.step2.sector.placeholder}
                         className={inputClass('sector')}
                       />
                       {errors.sector && <span className="text-xs text-[#e11a1a]">{errors.sector}</span>}
@@ -419,11 +550,11 @@ const QuoteCalculatorSection = () => {
               {currentStep === 3 && (
                 <div className="space-y-6">
                   <div className="text-center">
-                    <h3 className="text-xl font-bold text-gray-900">Détails de votre besoin</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{texts.step3.title}</h3>
                     <p className="text-gray-500 text-sm mt-2">
-                      {form.service === 'fuel-management' && 'Informations sur votre besoin en hydrocarbures'}
-                      {form.service === 'transport-transit' && 'Informations sur votre transport'}
-                      {form.service === 'reseaux-distribution' && 'Informations sur votre distribution'}
+                      {form.service === 'fuel-management' && texts.step3.subtitles.fuel}
+                      {form.service === 'transport-transit' && texts.step3.subtitles.transport}
+                      {form.service === 'reseaux-distribution' && texts.step3.subtitles.reseaux}
                     </p>
                   </div>
 
@@ -431,37 +562,37 @@ const QuoteCalculatorSection = () => {
                   {form.service === 'fuel-management' && (
                     <div className="space-y-4">
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Type d'hydrocarbures *</label>
+                        <label className={labelClass}>{texts.step3.fuelType.label}</label>
                         <select
                           value={form.fuelType}
                           onChange={(e) => update('fuelType', e.target.value)}
                           className={inputClass('fuelType')}
                         >
-                          <option value="">Sélectionnez un type</option>
-                          {fuelTypes.map((type) => (
+                          <option value="">{texts.step3.fuelType.placeholder}</option>
+                          {texts.fuelTypes.map((type) => (
                             <option key={type} value={type}>{type}</option>
                           ))}
                         </select>
                         {errors.fuelType && <span className="text-xs text-[#e11a1a]">{errors.fuelType}</span>}
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Consommation prévisionnelle mensuelle *</label>
+                        <label className={labelClass}>{texts.step3.consumption.label}</label>
                         <input
                           type="text"
                           value={form.monthlyConsumption}
                           onChange={(e) => update('monthlyConsumption', e.target.value)}
-                          placeholder="Ex: 50 000 L/mois"
+                          placeholder={texts.step3.consumption.placeholder}
                           className={inputClass('monthlyConsumption')}
                         />
                         {errors.monthlyConsumption && <span className="text-xs text-[#e11a1a]">{errors.monthlyConsumption}</span>}
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Où se trouve votre site d'exploitation ? *</label>
+                        <label className={labelClass}>{texts.step3.siteLocation.label}</label>
                         <input
                           type="text"
                           value={form.siteLocation}
                           onChange={(e) => update('siteLocation', e.target.value)}
-                          placeholder="Pays, ville, localité..."
+                          placeholder={texts.step3.siteLocation.placeholder}
                           className={inputClass('siteLocation')}
                         />
                         {errors.siteLocation && <span className="text-xs text-[#e11a1a]">{errors.siteLocation}</span>}
@@ -473,34 +604,34 @@ const QuoteCalculatorSection = () => {
                   {form.service === 'transport-transit' && (
                     <div className="space-y-4">
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Nom / Type de produit ou marchandise *</label>
+                        <label className={labelClass}>{texts.step3.productType.label}</label>
                         <input
                           type="text"
                           value={form.productType}
                           onChange={(e) => update('productType', e.target.value)}
-                          placeholder="Ex: Matériel minier, carburant, conteneurs..."
+                          placeholder={texts.step3.productType.placeholder}
                           className={inputClass('productType')}
                         />
                         {errors.productType && <span className="text-xs text-[#e11a1a]">{errors.productType}</span>}
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Adresse du point d'enlèvement *</label>
+                        <label className={labelClass}>{texts.step3.pickupAddress.label}</label>
                         <input
                           type="text"
                           value={form.pickupAddress}
                           onChange={(e) => update('pickupAddress', e.target.value)}
-                          placeholder="Pays, ville, localité..."
+                          placeholder={texts.step3.pickupAddress.placeholder}
                           className={inputClass('pickupAddress')}
                         />
                         {errors.pickupAddress && <span className="text-xs text-[#e11a1a]">{errors.pickupAddress}</span>}
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Adresse du point de livraison *</label>
+                        <label className={labelClass}>{texts.step3.deliveryAddress.label}</label>
                         <input
                           type="text"
                           value={form.deliveryAddress}
                           onChange={(e) => update('deliveryAddress', e.target.value)}
-                          placeholder="Pays, ville, localité..."
+                          placeholder={texts.step3.deliveryAddress.placeholder}
                           className={inputClass('deliveryAddress')}
                         />
                         {errors.deliveryAddress && <span className="text-xs text-[#e11a1a]">{errors.deliveryAddress}</span>}
@@ -512,37 +643,37 @@ const QuoteCalculatorSection = () => {
                   {form.service === 'reseaux-distribution' && (
                     <div className="space-y-4">
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Type d'hydrocarbures *</label>
+                        <label className={labelClass}>{texts.step3.fuelType.label}</label>
                         <select
                           value={form.fuelType}
                           onChange={(e) => update('fuelType', e.target.value)}
                           className={inputClass('fuelType')}
                         >
-                          <option value="">Sélectionnez un type</option>
-                          {fuelTypes.map((type) => (
+                          <option value="">{texts.step3.fuelType.placeholder}</option>
+                          {texts.fuelTypes.map((type) => (
                             <option key={type} value={type}>{type}</option>
                           ))}
                         </select>
                         {errors.fuelType && <span className="text-xs text-[#e11a1a]">{errors.fuelType}</span>}
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Consommation prévisionnelle mensuelle *</label>
+                        <label className={labelClass}>{texts.step3.consumption.label}</label>
                         <input
                           type="text"
                           value={form.monthlyConsumption}
                           onChange={(e) => update('monthlyConsumption', e.target.value)}
-                          placeholder="Ex: 50 000 L/mois"
+                          placeholder={texts.step3.consumption.placeholder}
                           className={inputClass('monthlyConsumption')}
                         />
                         {errors.monthlyConsumption && <span className="text-xs text-[#e11a1a]">{errors.monthlyConsumption}</span>}
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className={labelClass}>Adresse du point de livraison *</label>
+                        <label className={labelClass}>{texts.step3.deliveryAddress.label}</label>
                         <input
                           type="text"
                           value={form.deliveryAddress}
                           onChange={(e) => update('deliveryAddress', e.target.value)}
-                          placeholder="Pays, ville, localité..."
+                          placeholder={texts.step3.deliveryAddress.placeholder}
                           className={inputClass('deliveryAddress')}
                         />
                         {errors.deliveryAddress && <span className="text-xs text-[#e11a1a]">{errors.deliveryAddress}</span>}
@@ -556,29 +687,29 @@ const QuoteCalculatorSection = () => {
               {currentStep === 4 && (
                 <div className="space-y-6">
                   <div className="text-center">
-                    <h3 className="text-xl font-bold text-gray-900">Vos coordonnées</h3>
-                    <p className="text-gray-500 text-sm mt-2">Comment pouvons-nous vous contacter ?</p>
+                    <h3 className="text-xl font-bold text-gray-900">{texts.step4.title}</h3>
+                    <p className="text-gray-500 text-sm mt-2">{texts.step4.subtitle}</p>
                   </div>
 
                   <div className="space-y-4">
                     <div className="flex flex-col gap-1.5">
-                      <label className={labelClass}>Adresse email *</label>
+                      <label className={labelClass}>{texts.step4.email.label}</label>
                       <input
                         type="email"
                         value={form.email}
                         onChange={(e) => update('email', e.target.value)}
-                        placeholder="votre@email.com"
+                        placeholder={texts.step4.email.placeholder}
                         className={inputClass('email')}
                       />
                       {errors.email && <span className="text-xs text-[#e11a1a]">{errors.email}</span>}
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className={labelClass}>Numéro de téléphone *</label>
+                      <label className={labelClass}>{texts.step4.phone.label}</label>
                       <input
                         type="tel"
                         value={form.phone}
                         onChange={(e) => update('phone', e.target.value)}
-                        placeholder="+223 ..."
+                        placeholder={texts.step4.phone.placeholder}
                         className={inputClass('phone')}
                       />
                       {errors.phone && <span className="text-xs text-[#e11a1a]">{errors.phone}</span>}
@@ -587,18 +718,18 @@ const QuoteCalculatorSection = () => {
 
                   {/* Récapitulatif */}
                   <div className="rounded-xl bg-gray-50 border border-gray-200 p-4 mt-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">Récapitulatif</h4>
+                    <h4 className="font-semibold text-gray-900 mb-3">{texts.step4.summary.title}</h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Service</span>
-                        <span className="font-medium text-gray-900">{serviceLabels[form.service]}</span>
+                        <span className="text-gray-500">{texts.step4.summary.service}</span>
+                        <span className="font-medium text-gray-900">{getServiceLabel(form.service)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Société</span>
+                        <span className="text-gray-500">{texts.step4.summary.company}</span>
                         <span className="font-medium text-gray-900">{form.company}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Secteur</span>
+                        <span className="text-gray-500">{texts.step4.summary.sector}</span>
                         <span className="font-medium text-gray-900">{form.sector}</span>
                       </div>
                     </div>
@@ -625,7 +756,7 @@ const QuoteCalculatorSection = () => {
                       : 'border-gray-200 bg-white hover:bg-gray-50 text-gray-700'
                   }`}
                 >
-                  ← Précédent
+                  {texts.buttons.prev}
                 </button>
 
                 {currentStep < totalSteps ? (
@@ -634,7 +765,7 @@ const QuoteCalculatorSection = () => {
                     onClick={goNext}
                     className="rounded-xl px-6 py-3 font-semibold bg-[#e11a1a] text-white hover:bg-red-700 transition-colors"
                   >
-                    Continuer →
+                    {texts.buttons.next}
                   </button>
                 ) : (
                   <button
@@ -645,7 +776,7 @@ const QuoteCalculatorSection = () => {
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
                     }`}
                   >
-                    {isSubmitting ? 'Envoi...' : 'Envoyer ma demande'}
+                    {isSubmitting ? texts.buttons.sending : texts.buttons.submit}
                   </button>
                 )}
               </div>

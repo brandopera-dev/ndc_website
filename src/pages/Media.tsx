@@ -19,8 +19,10 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const Media = () => {
+  const { t, language } = useI18n();
   const heroVideoId = "dQw4w9WgXcQ";
 
   const heroCards = [
@@ -92,14 +94,16 @@ const Media = () => {
   };
 
   // Catégories de la galerie
-  const categories = [
+  const categories = language === "fr" ? [
     { id: "all", label: "Tout", icon: Camera },
     { id: "transport", label: "Transport", icon: Network },
     { id: "fuel", label: "Fuel Management", icon: Droplet },
     { id: "reseaux", label: "Réseaux", icon: ShieldCheck },
-    // { id: "bureaux", label: "Bureaux", icon: Camera },
-    // { id: "garage", label: "Garage & Maintenance", icon: Camera },
-    // { id: "evenements", label: "Événements", icon: Camera },
+  ] : [
+    { id: "all", label: "All", icon: Camera },
+    { id: "transport", label: "Transport", icon: Network },
+    { id: "fuel", label: "Fuel Management", icon: Droplet },
+    { id: "reseaux", label: "Networks", icon: ShieldCheck },
   ];
 
   const [activeCategory, setActiveCategory] = useState("all");
@@ -277,26 +281,35 @@ const Media = () => {
               <div className="lg:col-span-7">
                 <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur">
                   <span className="w-2 h-2 bg-[#e11a1a] rounded-full" />
-                  MÉDIA
+                  {t("hero.media.badge")}
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                  Immersion
-                  <span className="text-[#e11a1a]"> terrain</span>
-                  <br />
-                  de NDC Énergie
+                  {language === "fr" ? (
+                    <>
+                      Immersion
+                      <span className="text-[#e11a1a]"> terrain</span>
+                      <br />
+                      de NDC Énergie
+                    </>
+                  ) : (
+                    <>
+                      Field
+                      <span className="text-[#e11a1a]"> immersion</span>
+                      <br />
+                      at NDC Energy
+                    </>
+                  )}
                 </h1>
 
                 <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-2xl">
-                  Vidéos grande nature, images et actualités : découvrez nos
-                  infrastructures, nos opérations et les équipes qui font
-                  avancer vos sites.
+                  {t("hero.media.description")}
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-3">
                   <a href="#videos" className="w-full sm:w-auto">
                     <Button className="bg-[#e11a1a] hover:bg-red-700 text-white rounded-full px-6 py-3 font-semibold w-full sm:w-auto">
-                      Voir les vidéos
+                      {t("hero.media.videosBtn")}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </a>
@@ -305,7 +318,7 @@ const Media = () => {
                       variant="outline"
                       className="border-white/25 text-white hover:bg-white/10 rounded-full px-6 py-3 font-semibold w-full sm:w-auto"
                     >
-                      Explorer la galerie
+                      {t("hero.media.galleryBtn")}
                     </Button>
                   </a>
                 </div>
@@ -484,13 +497,15 @@ const Media = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e11a1a]/10 border border-[#e11a1a]/20 mb-4">
               <Camera className="w-4 h-4 text-[#e11a1a]" />
-              <span className="text-[#e11a1a] text-sm font-semibold">Galerie photos</span>
+              <span className="text-[#e11a1a] text-sm font-semibold">{language === "fr" ? "Galerie photos" : "Photo gallery"}</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Nos activités en images
+              {language === "fr" ? "Nos activités en images" : "Our activities in pictures"}
             </h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Découvrez nos infrastructures, nos équipes et nos opérations sur le terrain à travers notre galerie photo.
+              {language === "fr" 
+                ? "Découvrez nos infrastructures, nos équipes et nos opérations sur le terrain à travers notre galerie photo."
+                : "Discover our infrastructure, teams and field operations through our photo gallery."}
             </p>
           </div>
 
@@ -515,7 +530,7 @@ const Media = () => {
           <div className="text-center mb-8">
             <span className="text-gray-500 text-sm">
               {filteredGallery.length} photo{filteredGallery.length > 1 ? "s" : ""} 
-              {activeCategory !== "all" && ` dans "${categories.find(c => c.id === activeCategory)?.label}"`}
+              {activeCategory !== "all" && ` ${language === "fr" ? "dans" : "in"} "${categories.find(c => c.id === activeCategory)?.label}"`}
             </span>
           </div>
 
@@ -555,7 +570,7 @@ const Media = () => {
           {filteredGallery.length === 0 && (
             <div className="text-center py-20">
               <Camera className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <p className="text-gray-500">Aucune image dans cette catégorie</p>
+              <p className="text-gray-500">{language === "fr" ? "Aucune image dans cette catégorie" : "No images in this category"}</p>
             </div>
           )}
         </div>

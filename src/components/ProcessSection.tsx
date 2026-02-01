@@ -3,52 +3,64 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronLeft, ChevronRight, Droplet, Network, ShieldCheck, Truck } from "lucide-react";
 import SectionTitle from "@/components/SectionTitle";
-
-const processCards = [
-  {
-    number: 1,
-    id: "fuel-management",
-    title: "INFRASTRUCTURES & FUEL MANAGEMENT",
-    description:
-      "NDC Énergie conçoit, construit, exploite et maintient des infrastructures de stockage et de distribution d’hydrocarbures directement sur site, pour garantir disponibilité, traçabilité et conformité.",
-    image: "/images/storage-tanks-petroleum-products.jpg",
-    features: [
-      { icon: ShieldCheck, label: "Contrôle qualité & conformité" },
-      { icon: Droplet, label: "Sécurisation des volumes" },
-      { icon: Network, label: "Exploitation continue" },
-    ],
-  },
-
-  {
-    number: 2,
-    id: "transport-transit",
-    title: "TRANSPORT & TRANSIT",
-    description:
-      " Transport transfrontalier et transit des matières premières, des materiels et engins miniers ainsi que les produits pétroliers.",
-    image: "/images/images_ndc/TRANSPORT/TR -1.png",
-    features: [
-      { icon: Truck, label: "Flotte dédiée" },
-      { icon: Network, label: "Organisation des flux" },
-      { icon: ShieldCheck, label: "Sécurisation des trajets" },
-    ],
-  }, {
-    number: 3,
-    id: "reseaux-distribution",
-    title: "RESEAUX DE DISTRIBUTION",
-    description:
-      "Conception et exploitation de réseaux de stockage et de distribution d’hydrocarbures sur plusieurs points, pour optimiser les flux et réduire les pertes.",
-    image: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg",
-    features: [
-      { icon: Network, label: "Distribution multi-sites" },
-      { icon: ShieldCheck, label: "Procédures strictes" },
-      { icon: Droplet, label: "Disponibilité permanente" },
-    ],
-  },
-];
+import { useI18n } from "@/i18n/I18nProvider";
 
 const ProcessSection = () => {
+  const { t, language } = useI18n();
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Features labels based on language
+  const fuelFeatures = language === "fr" 
+    ? ["Contrôle qualité & conformité", "Sécurisation des volumes", "Exploitation continue"]
+    : ["Quality control & compliance", "Volume security", "Continuous operation"];
+  
+  const transportFeatures = language === "fr"
+    ? ["Flotte dédiée", "Organisation des flux", "Sécurisation des trajets"]
+    : ["Dedicated fleet", "Flow organization", "Route security"];
+  
+  const reseauxFeatures = language === "fr"
+    ? ["Distribution multi-sites", "Procédures strictes", "Disponibilité permanente"]
+    : ["Multi-site distribution", "Strict procedures", "Permanent availability"];
+
+  const processCards = [
+    {
+      number: 1,
+      id: "fuel-management",
+      title: t("process.cards.fuelManagement.title"),
+      description: t("process.cards.fuelManagement.description"),
+      image: "/images/storage-tanks-petroleum-products.jpg",
+      features: [
+        { icon: ShieldCheck, label: fuelFeatures[0] },
+        { icon: Droplet, label: fuelFeatures[1] },
+        { icon: Network, label: fuelFeatures[2] },
+      ],
+    },
+    {
+      number: 2,
+      id: "transport-transit",
+      title: t("process.cards.transport.title"),
+      description: t("process.cards.transport.description"),
+      image: "/images/images_ndc/TRANSPORT/TR -1.png",
+      features: [
+        { icon: Truck, label: transportFeatures[0] },
+        { icon: Network, label: transportFeatures[1] },
+        { icon: ShieldCheck, label: transportFeatures[2] },
+      ],
+    },
+    {
+      number: 3,
+      id: "reseaux-distribution",
+      title: t("process.cards.reseaux.title"),
+      description: t("process.cards.reseaux.description"),
+      image: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg",
+      features: [
+        { icon: Network, label: reseauxFeatures[0] },
+        { icon: ShieldCheck, label: reseauxFeatures[1] },
+        { icon: Droplet, label: reseauxFeatures[2] },
+      ],
+    },
+  ];
 
   useEffect(() => {
     const update = () => setIsMobile(window.innerWidth < 640);
@@ -70,31 +82,26 @@ const ProcessSection = () => {
   };
 
   return (
-    <section id="services" className="py-14 sm:py-20 lg:py-24 section-dark overflow-hidden scroll-animate ndc-swoosh-bg ">
+    <section id="services" className="py-14 sm:py-20 lg:py-24 section-dark overflow-hidden scroll-animate ndc-swoosh-bg">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative">
         <div className="hidden lg:block absolute -left-1 top-10">
           <div className="ndc-vertical-label text-white/60 text-sm">
-            PROCESS
+            {t("process.verticalLabel")}
           </div>
         </div>
 
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-16">
           <div className="flex flex-col gap-4">
-            {/*  <span className="ndc-text-gradient ndc-accent-underline">NDC Énergie</span> */}
             <SectionTitle
-              kicker="Notre méthode"
+              kicker={t("process.kicker")}
               variant="dark"
               title={
                 <>
-                  Des solutions
-                  <br />
-                  pensées pour les opérations industrielles
+                  {t("process.title")}
                 </>
               }
-              description={
-                <>Découvrez nos axes d’intervention et accédez à chaque service avec des actions dédiées.</>
-              }
+              description={<>{t("process.description")}</>}
             />
           </div>
           <div className="flex gap-2 mt-6 lg:mt-0">
@@ -113,13 +120,12 @@ const ProcessSection = () => {
           </div>
         </div>
 
-        {/* Cards Layout - Stacked carousel with overlap and images */}
+        {/* Cards Layout */}
         <div className="relative h-[680px] sm:h-[650px] lg:h-[620px]">
           <div className="absolute inset-0 flex items-start justify-center">
             {processCards.map((card, index) => {
               const offset = index - currentIndex;
               const isActive = index === currentIndex;
-              // Wider cards with more overlap - reduced spacing from 340 to 280
               const translateX = isMobile ? 0 : offset * 280;
 
               if (isMobile && !isActive) return null;
@@ -154,16 +160,15 @@ const ProcessSection = () => {
                         {card.number}
                       </div>
                       <div className="hidden sm:flex items-center gap-2 rounded-full border border-white/15 bg-black/30 px-3 py-1.5 backdrop-blur">
-                        <span className="text-xs font-semibold tracking-wide text-white">NDC Énergie</span>
+                        <span className="text-xs font-semibold tracking-wide text-white">{t("process.brandBadge")}</span>
                         <span className="h-1 w-1 rounded-full bg-white/50" />
-                        <span className="text-xs text-white/80">Service</span>
+                        <span className="text-xs text-white/80">{t("process.serviceLabel")}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Card Content */}
                   <div className="p-6 sm:p-8">
-                    {/* Card Title */}
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
                         {card.title}
@@ -171,11 +176,10 @@ const ProcessSection = () => {
                       <div className="hidden sm:flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
                         <span className="text-xs font-semibold text-white/90">0{card.number}</span>
                         <span className="h-1 w-1 rounded-full bg-white/35" />
-                        <span className="text-xs text-white/65">Axe</span>
+                        <span className="text-xs text-white/65">{t("process.axeLabel")}</span>
                       </div>
                     </div>
 
-                    {/* Card Description */}
                     <p className="text-white/75 text-sm leading-relaxed mb-6">
                       {card.description}
                     </p>
@@ -193,13 +197,13 @@ const ProcessSection = () => {
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link to={`/services/${card.id}`} className="w-full">
                         <Button className="w-full bg-[#e11a1a] hover:bg-red-700 text-white rounded-xl py-3 font-semibold group/cta">
-                          Découvrir le service
+                          {t("process.discoverBtn")}
                           <ArrowRight className="ml-2 w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
                       <Link to="/contact" className="w-full">
                         <Button variant="outline" className="w-full border-white/25 text-white hover:bg-white/10 rounded-xl py-3 font-semibold">
-                          Demander un devis
+                          {t("process.quoteBtn")}
                         </Button>
                       </Link>
                     </div>
@@ -219,11 +223,10 @@ const ProcessSection = () => {
               className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
                 ? 'w-8 bg-red-600'
                 : 'bg-white/30 hover:bg-white/50'
-                }`}
+              }`}
             />
           ))}
         </div>
-
       </div>
     </section>
   );
