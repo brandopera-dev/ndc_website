@@ -26,6 +26,18 @@ const ProcessSection = () => {
   const processCards = [
     {
       number: 1,
+      id: "reseaux-distribution",
+      title: t("process.cards.reseaux.title"),
+      description: t("process.cards.reseaux.description"),
+      image: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg",
+      features: [
+        { icon: Network, label: reseauxFeatures[0] },
+        { icon: ShieldCheck, label: reseauxFeatures[1] },
+        { icon: Droplet, label: reseauxFeatures[2] },
+      ],
+    },
+    {
+      number: 2,
       id: "fuel-management",
       title: t("process.cards.fuelManagement.title"),
       description: t("process.cards.fuelManagement.description"),
@@ -37,7 +49,7 @@ const ProcessSection = () => {
       ],
     },
     {
-      number: 2,
+      number: 3,
       id: "transport-transit",
       title: t("process.cards.transport.title"),
       description: t("process.cards.transport.description"),
@@ -48,18 +60,7 @@ const ProcessSection = () => {
         { icon: ShieldCheck, label: transportFeatures[2] },
       ],
     },
-    {
-      number: 3,
-      id: "reseaux-distribution",
-      title: t("process.cards.reseaux.title"),
-      description: t("process.cards.reseaux.description"),
-      image: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg",
-      features: [
-        { icon: Network, label: reseauxFeatures[0] },
-        { icon: ShieldCheck, label: reseauxFeatures[1] },
-        { icon: Droplet, label: reseauxFeatures[2] },
-      ],
-    },
+    
   ];
 
   useEffect(() => {
