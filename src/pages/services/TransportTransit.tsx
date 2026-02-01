@@ -35,26 +35,24 @@ const TransportTransit = () => {
     return cleanup;
   }, []);
 
-  const gallery = language === "fr" ? [
+  const gallery =  [
     { src: "/images/images_ndc/TRANSPORT/TR -1.png", label: "Flotte NDC" },
     { src: "/images/images_ndc/TRANSPORT/TR - 2.png", label: "Camion citerne" },
-    { src: "/images/images_ndc/TRANSPORT/TR -3.png", label: "Transport routier" },
-    { src: "/images/images_ndc/TRANSPORT/TR -8.png", label: "Transport sécurisé" },
-    { src: "/images/images_ndc/TRANSPORT/TR -9.png", label: "Logistique" },
-    { src: "/images/images_ndc/TRANSPORT/TR 10.png", label: "Corridor transport" },
-    { src: "/images/images_ndc/CITERNE/C 1.png", label: "Citerne NDC" },
+    { src: "/images/images_ndc/TRANSPORT/TR -3.png", label: "Convoi routier" },
+    { src: "/images/images_ndc/TRANSPORT/TR -4.png", label: "Livraison carburant" },
+    { src: "/images/images_ndc/TRANSPORT/TR -5.png", label: "Transport sécurisé" },
+    { src: "/images/images_ndc/TRANSPORT/TR -6.png", label: "Véhicules NDC" },
+    { src: "/images/images_ndc/TRANSPORT/TR -7.png", label: "Opérations terrain" },
+    { src: "/images/images_ndc/TRANSPORT/TR -8.png", label: "Logistique" },
+    { src: "/images/images_ndc/TRANSPORT/TR -9.png", label: "Corridor transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR 10.png", label: "Transport hydrocarbures" },
+    { src: "/images/images_ndc/CITERNE/C 1.png", label: "Citerne NDC"},
+    { src: "/images/images_ndc/CITERNE/C -2 .png", label: "Équipement citerne" },
     { src: "/images/images_ndc/CHAUFFEURS/CF-1.png", label: "Équipe chauffeurs" },
     { src: "/images/images_ndc/CHAUFFEURS/CF 2.png", label: "Chauffeurs professionnels" },
-  ] : [
-    { src: "/images/images_ndc/TRANSPORT/TR -1.png", label: "NDC Fleet" },
-    { src: "/images/images_ndc/TRANSPORT/TR - 2.png", label: "Tank truck" },
-    { src: "/images/images_ndc/TRANSPORT/TR -3.png", label: "Road transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -8.png", label: "Secure transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -9.png", label: "Logistics" },
-    { src: "/images/images_ndc/TRANSPORT/TR 10.png", label: "Transport corridor" },
-    { src: "/images/images_ndc/CITERNE/C 1.png", label: "NDC Tanker" },
-    { src: "/images/images_ndc/CHAUFFEURS/CF-1.png", label: "Driver team" },
-    { src: "/images/images_ndc/CHAUFFEURS/CF 2.png", label: "Professional drivers" },
+    { src: "/images/images_ndc/GARAGE/G-1.png", label: "Atelier maintenance" },
+    { src: "/images/images_ndc/GARAGE/G -2.png", label: "Atelier maintenance" },
+    { src: "/images/images_ndc/GARAGE/G - 3.png", label: "Équipements garage" },
   ];
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
@@ -298,7 +296,7 @@ const TransportTransit = () => {
               </div>
             ))}
 
-            {gallery.slice(5, 9).map((item, index) => (
+            {gallery.slice(5, 17).map((item, index) => (
               <div
                 key={index}
                 onClick={() => setSelectedImage(item)}

@@ -128,7 +128,7 @@ const Media = () => {
     { src: "/images/images_ndc/GARAGE/G -2.png", alt: "Atelier maintenance", category: "transport" },
     // { src: "/images/images_ndc/GARAGE/G - 4.png", alt: "Garage NDC", category: "transport" },
     { src: "/images/images_ndc/GARAGE/G - 3.png", alt: "Équipements garage", category: "transport" },
-    // Fuel Management
+    // Fuel Management  
     { src: "/images/images_ndc/FUEL/1F.jpg", alt: "Stockage hydrocarbures", category: "fuel" },
     { src: "/images/images_ndc/FUEL/2F.jpg", alt: "Infrastructure de stockage", category: "fuel" },
     // { src: "/images/images_ndc/FUEL/3F.jpg", alt: "Installation cuves", category: "fuel" },
