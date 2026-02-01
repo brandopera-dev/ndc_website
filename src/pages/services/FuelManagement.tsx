@@ -35,19 +35,23 @@ const FuelManagement = () => {
   }, []);
 
   const gallery = [
-    { src: "/images/images_ndc/FUEL/1F.jpg", label: language === "fr" ? "Stockage" : "Storage" },
-    { src: "/images/images_ndc/FUEL/2F.jpg", label: language === "fr" ? "Infrastructures" : "Infrastructure" },
-    { src: "/images/images_ndc/FUEL/3F.jpg", label: language === "fr" ? "Installation" : "Installation" },
-    { src: "/images/images_ndc/FUEL/6F.jpg", label: language === "fr" ? "Approvisionnement" : "Supply" },
-    { src: "/images/images_ndc/FUEL/1.jpg", label: language === "fr" ? "Cuves" : "Tanks" },
-    { src: "/images/images_ndc/FUEL/3.jpg", label: language === "fr" ? "Dépôt" : "Depot" },
-    { src: "/images/images_ndc/FUEL/7.jpg", label: "Site" },
-    { src: "/images/images_ndc/FUEL/13.jpg", label: language === "fr" ? "Opérations" : "Operations" },
-    { src: "/images/images_ndc/FUEL/14.jpg", label: "Maintenance" },
-    { src: "/images/images_ndc/FUEL/16.jpg", label: language === "fr" ? "Équipements" : "Equipment" },
-    { src: "/images/images_ndc/FUEL/17.jpg", label: language === "fr" ? "Contrôle" : "Control" },
-    { src: "/images/images_ndc/FUEL/20241031_142136.jpg", label: language === "fr" ? "Terrain" : "Field" },
-  ];
+    { src: "/images/images_ndc/FUEL/1F.jpg", label: "Stockage hydrocarbures", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/2F.jpg", label: "Infrastructure de stockage", category: "fuel" }, 
+    { src: "/images/images_ndc/FUEL/6F.jpg", label: "Approvisionnement", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/1.jpg", label: "Dépôt carburant", category: "fuel" },
+    { src: "/images/images_ndc/Bureaux/B-2.png", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/3.jpg", label: "Site de stockage", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/7.jpg", label: "Opérations fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/13.jpg", label: "Maintenance équipements", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/14.jpg", label: "Contrôle qualité", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/16.jpg", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F -10.jpg", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F -8.png", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F -4.png", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/20241214_182207.jpg", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F - 7.png", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F 10.png", label: "Équipements fuel", category: "fuel" },
+ ];
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
 
@@ -295,7 +299,7 @@ const FuelManagement = () => {
               </div>
             ))}
 
-            {gallery.slice(5, 9).map((item, index) => (
+            {gallery.slice(5, 16).map((item, index) => (
               <div
                 key={index}
                 onClick={() => setSelectedImage(item)}

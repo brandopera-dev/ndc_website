@@ -156,27 +156,18 @@ const ReseauxDistribution = () => {
     };
   }, [stations, stationPopupText]);
 
-  const gallery = language === "fr" ? [
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", label: "Station Kati" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", label: "Réseau" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", label: "Distribution" },
-    { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", label: "Inauguration" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI107 copy.jpg", label: "Infrastructure" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg", label: "Station-service" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI19 copy.jpg", label: "Pompes" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", label: "Équipements" },
-    { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", label: "Lancement" },
-  ] : [
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", label: "Kati Station" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", label: "Network" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", label: "Distribution" },
-    { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", label: "Inauguration" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI107 copy.jpg", label: "Infrastructure" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg", label: "Service Station" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI19 copy.jpg", label: "Pumps" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", label: "Equipment" },
-    { src: "/images/Social Media Size/NDC-Lancement103-sm.jpg", label: "Launch" },
-  ];
+  const gallery =  [
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", label: "Station NDC Kati", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI107 copy.jpg", label: "Réseau distribution Kati", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg", label: "Point de distribution", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", label: "Station-service NDC", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", label: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", label: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC-Lancement119-sm.jpg", label: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/Bureaux/B - 3.png", label: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/Bureaux/NDC--de-KATI206-sm.jpg", label: "Infrastructure station", category: "reseaux" },
+    
+  ]  ;
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
 
