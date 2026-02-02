@@ -195,7 +195,7 @@ const ReseauxDistribution = () => {
       badge: language === "fr" ? "• Comment nous opérons" : "• How we operate",
       title: language === "fr" ? "Système automatisé, Planification et pilotage des volumes" : "Automated system, Planning and volume management",
       paragraph1: language === "fr" 
-        ? "Dotées de systèmes gestion automatisée, nos stations-services sont suivis et pilotés en temps réel pour garantir la disponibilité des produits ainsi qu'une traçabilité sécurisée des flux de ventes et de stocks."
+        ? "Dotées de systèmes gestion automatisée, nos stations-services sont suivies et pilotées en temps réel pour garantir la disponibilité des produits ainsi qu'une traçabilité sécurisée des flux de ventes et de stocks."
         : "Equipped with automated management systems, our service stations are monitored and controlled in real time to guarantee product availability and secure traceability of sales and stock flows.",
       paragraph2: language === "fr"
         ? "Leader en importation de produits pétroliers au Mali, NDC Energie accompagne les distributeurs d'hydrocarbures et détenteur de stations-service par une politique d'approvisionnement qui s'appuie sur :"
