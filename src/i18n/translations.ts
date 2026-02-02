@@ -729,7 +729,7 @@ export const translations = {
         howWeOperate: {
           badge: "• Comment nous opérons",
           title: "Système automatisé, Planification et pilotage des volumes",
-          paragraph1: "Dotées de systèmes gestion automatisée, nos stations-services sont suivis et pilotées en temps réel pour garantir la disponibilité des produits ainsi qu'une traçabilité sécurisée des flux de ventes et de stocks.",
+          paragraph1: "Dotées de systèmes de gestion automatisée, nos stations-services sont suivis et pilotées en temps réel pour garantir la disponibilité des produits ainsi qu'une traçabilité sécurisée des flux de ventes et de stocks.",
           paragraph2: "Leader en importation de produits pétroliers au Mali, NDC Energie accompagne les distributeurs d'hydrocarbures et détenteur de stations-service par une politique d'approvisionnement qui s'appuie sur :",
           modulesTitle: "Modules",
           modules: [
