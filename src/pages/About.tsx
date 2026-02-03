@@ -42,8 +42,8 @@ const About = () => {
     '/images/images_ndc/FUEL/2F.webp',
     '/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg',
     '/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg',
-    '/images/images_ndc/Bureaux/B-1.png',
-    '/images/images_ndc/Bureaux/B-2.png',
+    '/images/images_ndc/Bureaux/B-1.webp',
+    '/images/images_ndc/Bureaux/B-2.webp',
     '/images/images_ndc/GARAGE/G_1.webp',
   ];
 
@@ -253,7 +253,7 @@ const About = () => {
             <div className="relative">
               <div className="overflow-hidden">
                 <img
-                  src="/images/images_ndc/Bureaux/B-1.png"
+                  src="/images/images_ndc/Bureaux/B-1.webp"
                   alt="Bureaux NDC Énergie"
                   className="w-full h-[400px] object-cover"
                 />

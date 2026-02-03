@@ -133,7 +133,7 @@ const Media = () => {
     // { src: "/images/images_ndc/FUEL/3F.jpg", alt: "Installation cuves", category: "fuel" },
     { src: "/images/images_ndc/FUEL/6F.webp", alt: "Approvisionnement", category: "fuel" },
     { src: "/images/images_ndc/FUEL/1.webp", alt: "Dépôt carburant", category: "fuel" },
-    { src: "/images/images_ndc/Bureaux/B-2.png", alt: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/Bureaux/B-2.webp", alt: "Équipements fuel", category: "fuel" },
     { src: "/images/images_ndc/FUEL/3.webp", alt: "Site de stockage", category: "fuel" },
     { src: "/images/images_ndc/FUEL/7.webp", alt: "Opérations fuel", category: "fuel" },
     { src: "/images/images_ndc/FUEL/13.webp", alt: "Maintenance équipements", category: "fuel" },
@@ -154,8 +154,8 @@ const Media = () => {
     { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", alt: "Infrastructure station", category: "reseaux" },
     { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", alt: "Infrastructure station", category: "reseaux" },
     { src: "/images/images_ndc/RESEAUX/NDC-Lancement119-sm.jpg", alt: "Infrastructure station", category: "reseaux" },
-    { src: "/images/images_ndc/Bureaux/B - 3.png", alt: "Infrastructure station", category: "reseaux" },
-    { src: "/images/images_ndc/Bureaux/NDC--de-KATI206-sm.jpg", alt: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/Bureaux/B-3.webp", alt: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/Bureaux/NDC--de-KATI206-sm.webp", alt: "Infrastructure station", category: "reseaux" },
     
     // { src: "/images/images_ndc/RESEAUX/NDC Lancement142 copy.jpg", alt: "Inauguration station", category: "reseaux" },
     // Bureaux

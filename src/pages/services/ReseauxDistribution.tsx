@@ -96,8 +96,8 @@ const GALLERY_IMAGES: GalleryItem[] = [
   { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", category: "reseaux" },
   { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", category: "reseaux" },
   { src: "/images/images_ndc/RESEAUX/NDC-Lancement119-sm.jpg", category: "reseaux" },
-  { src: "/images/images_ndc/Bureaux/B - 3.png", category: "reseaux" },
-  { src: "/images/images_ndc/Bureaux/NDC--de-KATI206-sm.jpg", category: "reseaux" },
+  { src: "/images/images_ndc/Bureaux/B-3.webp", category: "reseaux" },
+  { src: "/images/images_ndc/Bureaux/NDC--de-KATI206-sm.webp", category: "reseaux" },
 ];
 
 const LEAFLET_CSS_URL = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
