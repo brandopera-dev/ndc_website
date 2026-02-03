@@ -35,22 +35,22 @@ const FuelManagement = () => {
   }, []);
 
   const gallery = [
-    { src: "/images/images_ndc/FUEL/1F.jpg", label: "Stockage hydrocarbures", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/2F.jpg", label: "Infrastructure de stockage", category: "fuel" }, 
-    { src: "/images/images_ndc/FUEL/6F.jpg", label: "Approvisionnement", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/1.jpg", label: "Dépôt carburant", category: "fuel" },
-    { src: "/images/images_ndc/Bureaux/B-2.png", label: "Équipements fuel", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/3.jpg", label: "Site de stockage", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/7.jpg", label: "Opérations fuel", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/13.jpg", label: "Maintenance équipements", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/14.jpg", label: "Contrôle qualité", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/16.jpg", label: "Équipements fuel", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/F -10.jpg", label: "Équipements fuel", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/F -8.png", label: "Équipements fuel", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/F -4.png", label: "Équipements fuel", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/20241214_182207.jpg", label: "Équipements fuel", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/F - 7.png", label: "Équipements fuel", category: "fuel" },
-    { src: "/images/images_ndc/FUEL/F 10.png", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/1F.webp", label: "Stockage hydrocarbures", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/2F.webp", label: "Infrastructure de stockage", category: "fuel" }, 
+    { src: "/images/images_ndc/FUEL/6F.webp", label: "Approvisionnement", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/1.webp", label: "Dépôt carburant", category: "fuel" },
+    { src: "/images/images_ndc/Bureaux/B-2.webp", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/3.webp", label: "Site de stockage", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/7.webp", label: "Opérations fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/13.webp", label: "Maintenance équipements", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/14.webp", label: "Contrôle qualité", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/16.webp", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F-10.webp", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F-8.webp", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F-4.webp", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/20241214_182207.webp", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F-7.webp", label: "Équipements fuel", category: "fuel" },
+    { src: "/images/images_ndc/FUEL/F10.webp", label: "Équipements fuel", category: "fuel" },
  ];
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
@@ -129,7 +129,7 @@ const FuelManagement = () => {
       <section className="relative pt-28 pb-16 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/images_ndc/FUEL/2F.jpg"
+            src="/images/images_ndc/FUEL/2F.webp"
             alt="Fuel management"
             className="w-full h-full object-cover opacity-45 saturate-125 contrast-110"
           />

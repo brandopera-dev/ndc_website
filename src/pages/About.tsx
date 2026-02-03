@@ -38,8 +38,8 @@ const About = () => {
   const galleryImages = [
     '/images/images_ndc/TRANSPORT/TR_1.webp',
     '/images/images_ndc/TRANSPORT/TR_6.webp',
-    '/images/images_ndc/FUEL/1F.jpg',
-    '/images/images_ndc/FUEL/2F.jpg',
+    '/images/images_ndc/FUEL/1F.webp',
+    '/images/images_ndc/FUEL/2F.webp',
     '/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg',
     '/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg',
     '/images/images_ndc/Bureaux/B-1.png',

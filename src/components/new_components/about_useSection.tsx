@@ -183,7 +183,7 @@ const AboutUseSection = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <img
-                    src="/images/images_ndc/FUEL/3F.jpg"
+                    src="/images/images_ndc/FUEL/3F.webp"
                     alt="Projets réalisés"
                     className="absolute inset-0 w-full h-full object-cover opacity-30"
                   />

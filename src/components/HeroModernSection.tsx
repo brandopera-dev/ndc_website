@@ -23,7 +23,7 @@ export const HeroModernSection = () => {
         transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
       >
         <img
-          src="/images/images_ndc/FUEL/1F.jpg"
+          src="/images/images_ndc/FUEL/1F.webp"
           alt="Industries et mines"
           className="w-full h-full object-cover"
         />
