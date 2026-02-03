@@ -110,24 +110,23 @@ const Media = () => {
 
   const gallery = [
     // Transport
-    { src: "/images/images_ndc/TRANSPORT/TR -1.png", alt: "Flotte NDC", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR - 2.png", alt: "Camion citerne", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -3.png", alt: "Convoi routier", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -4.png", alt: "Livraison carburant", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -5.png", alt: "Transport sécurisé", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -6.png", alt: "Véhicules NDC", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -7.png", alt: "Opérations terrain", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -8.png", alt: "Logistique", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR -9.png", alt: "Corridor transport", category: "transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR 10.png", alt: "Transport hydrocarbures", category: "transport" },
-    { src: "/images/images_ndc/CITERNE/C 1.png", alt: "Citerne NDC", category: "transport" },
-    { src: "/images/images_ndc/CITERNE/C -2 .png", alt: "Équipement citerne", category: "transport" },
-    { src: "/images/images_ndc/CHAUFFEURS/CF-1.png", alt: "Équipe chauffeurs", category: "transport" },
-    { src: "/images/images_ndc/CHAUFFEURS/CF 2.png", alt: "Chauffeurs professionnels", category: "transport" },
-    { src: "/images/images_ndc/GARAGE/G-1.png", alt: "Atelier maintenance", category: "transport" },
-    { src: "/images/images_ndc/GARAGE/G -2.png", alt: "Atelier maintenance", category: "transport" },
-    // { src: "/images/images_ndc/GARAGE/G - 4.png", alt: "Garage NDC", category: "transport" },
-    { src: "/images/images_ndc/GARAGE/G - 3.png", alt: "Équipements garage", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_1.webp", alt: "Flotte NDC", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_2.webp", alt: "Camion citerne", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_3.webp", alt: "Convoi routier", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_4.webp", alt: "Livraison carburant", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_5.webp", alt: "Transport sécurisé", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_6.webp", alt: "Véhicules NDC", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_7.webp", alt: "Opérations terrain", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_8.webp", alt: "Logistique", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_9.webp", alt: "Corridor transport", category: "transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_10.webp", alt: "Transport hydrocarbures", category: "transport" },
+    { src: "/images/images_ndc/CITERNE/C_1.webp", alt: "Citerne NDC", category: "transport" },
+    { src: "/images/images_ndc/CITERNE/C_2.webp", alt: "Équipement citerne", category: "transport" },
+    { src: "/images/images_ndc/CHAUFFEURS/CF-1.webp", alt: "Équipe chauffeurs", category: "transport" },
+    { src: "/images/images_ndc/CHAUFFEURS/CF_2.webp", alt: "Chauffeurs professionnels", category: "transport" },
+    { src: "/images/images_ndc/GARAGE/G_1.webp", alt: "Atelier maintenance", category: "transport" },
+    { src: "/images/images_ndc/GARAGE/G_2.webp", alt: "Atelier maintenance", category: "transport" },
+    { src: "/images/images_ndc/GARAGE/G_3.webp", alt: "Équipements garage", category: "transport" },
     // Fuel Management  
     { src: "/images/images_ndc/FUEL/1F.jpg", alt: "Stockage hydrocarbures", category: "fuel" },
     { src: "/images/images_ndc/FUEL/2F.jpg", alt: "Infrastructure de stockage", category: "fuel" },
@@ -268,7 +267,7 @@ const Media = () => {
               />
             </div> */}
             <img
-              src="/images/images_ndc/GARAGE/G - 2.png"
+              src="/images/images_ndc/GARAGE/G_2.webp"
               alt="Industries et mines"
               className="w-full h-full object-cover"
             />

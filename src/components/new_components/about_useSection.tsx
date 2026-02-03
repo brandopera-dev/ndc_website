@@ -219,7 +219,7 @@ const AboutUseSection = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <img
-                    src="/images/images_ndc/TRANSPORT/TR -6.png"
+                    src="/images/images_ndc/TRANSPORT/TR_6.webp"
                     alt="Transport NDC"
                     className="w-full h-full object-cover"
                   />

@@ -55,7 +55,7 @@ const ShipBannerFeaturesSection = () => {
         <div className="relative overflow-hidden">
           <div className="h-[420px]">
             <img
-              src="/images/images_ndc/TRANSPORT/TR -7.png"
+              src="/images/images_ndc/TRANSPORT/TR_7.webp"
               alt={language === 'fr' ? "Opérations minières" : "Mining operations"}
               className="w-full h-full object-cover"
             />

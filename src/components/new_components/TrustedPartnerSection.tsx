@@ -116,7 +116,7 @@ const TrustedPartnerSection = () => {
             {/* Background Image - Full height */}
             <div className="absolute inset-0 overflow-hidden shadow-2xl">
               <img 
-                src="/images/images_ndc/TRANSPORT/TR -8.png" 
+                src="/images/images_ndc/TRANSPORT/TR_8.webp" 
                 alt={texts.imageAlt}
                 className="w-full h-full object-cover"
               />

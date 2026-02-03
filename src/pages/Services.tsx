@@ -185,7 +185,7 @@ const Services = () => {
       <section className="relative pt-32 pb-24 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/images_ndc/TRANSPORT/TR -1.png"
+            src="/images/images_ndc/TRANSPORT/TR_1.webp"
             alt={language === 'fr' ? "Nos Services NDC" : "Our NDC Services"}
             className="w-full h-full object-cover opacity-30"
           />

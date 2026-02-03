@@ -36,23 +36,23 @@ const TransportTransit = () => {
   }, []);
 
   const gallery =  [
-    { src: "/images/images_ndc/TRANSPORT/TR -1.png", label: "Flotte NDC" },
-    { src: "/images/images_ndc/TRANSPORT/TR - 2.png", label: "Camion citerne" },
-    { src: "/images/images_ndc/TRANSPORT/TR -3.png", label: "Convoi routier" },
-    { src: "/images/images_ndc/TRANSPORT/TR -4.png", label: "Livraison carburant" },
-    { src: "/images/images_ndc/TRANSPORT/TR -5.png", label: "Transport sécurisé" },
-    { src: "/images/images_ndc/TRANSPORT/TR -6.png", label: "Véhicules NDC" },
-    { src: "/images/images_ndc/TRANSPORT/TR -7.png", label: "Opérations terrain" },
-    { src: "/images/images_ndc/TRANSPORT/TR -8.png", label: "Logistique" },
-    { src: "/images/images_ndc/TRANSPORT/TR -9.png", label: "Corridor transport" },
-    { src: "/images/images_ndc/TRANSPORT/TR 10.png", label: "Transport hydrocarbures" },
-    { src: "/images/images_ndc/CITERNE/C 1.png", label: "Citerne NDC"},
-    { src: "/images/images_ndc/CITERNE/C -2 .png", label: "Équipement citerne" },
-    { src: "/images/images_ndc/CHAUFFEURS/CF-1.png", label: "Équipe chauffeurs" },
-    { src: "/images/images_ndc/CHAUFFEURS/CF 2.png", label: "Chauffeurs professionnels" },
-    { src: "/images/images_ndc/GARAGE/G-1.png", label: "Atelier maintenance" },
-    { src: "/images/images_ndc/GARAGE/G -2.png", label: "Atelier maintenance" },
-    { src: "/images/images_ndc/GARAGE/G - 3.png", label: "Équipements garage" },
+    { src: "/images/images_ndc/TRANSPORT/TR_1.webp", label: "Flotte NDC" },
+    { src: "/images/images_ndc/TRANSPORT/TR_2.webp", label: "Camion citerne" },
+    { src: "/images/images_ndc/TRANSPORT/TR_3.webp", label: "Convoi routier" },
+    { src: "/images/images_ndc/TRANSPORT/TR_4.webp", label: "Livraison carburant" },
+    { src: "/images/images_ndc/TRANSPORT/TR_5.webp", label: "Transport sécurisé" },
+    { src: "/images/images_ndc/TRANSPORT/TR_6.webp", label: "Véhicules NDC" },
+    { src: "/images/images_ndc/TRANSPORT/TR_7.webp", label: "Opérations terrain" },
+    { src: "/images/images_ndc/TRANSPORT/TR_8.webp", label: "Logistique" },
+    { src: "/images/images_ndc/TRANSPORT/TR_9.webp", label: "Corridor transport" },
+    { src: "/images/images_ndc/TRANSPORT/TR_10.webp", label: "Transport hydrocarbures" },
+    { src: "/images/images_ndc/CITERNE/C_1.webp", label: "Citerne NDC"},
+    { src: "/images/images_ndc/CITERNE/C_2.webp", label: "Équipement citerne" },
+    { src: "/images/images_ndc/CHAUFFEURS/CF-1.webp", label: "Équipe chauffeurs" },
+    { src: "/images/images_ndc/CHAUFFEURS/CF_2.webp", label: "Chauffeurs professionnels" },
+    { src: "/images/images_ndc/GARAGE/G_1.webp", label: "Atelier maintenance" },
+    { src: "/images/images_ndc/GARAGE/G_2.webp", label: "Atelier maintenance" },
+    { src: "/images/images_ndc/GARAGE/G_3.webp", label: "Équipements garage" },
   ];
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
@@ -132,7 +132,7 @@ const TransportTransit = () => {
       <section className="relative pt-28 pb-16 bg-[#1f1f1f] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/images_ndc/TRANSPORT/TR -5.png"
+            src="/images/images_ndc/TRANSPORT/TR_5.webp"
             alt="Transport transit"
             className="w-full h-full object-cover opacity-45 saturate-125 contrast-110"
           />

@@ -7,9 +7,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { I18nProvider } from "@/i18n/I18nProvider";
 import { AnimatePresence, motion } from "framer-motion";
-import Index from "./pages/Index";
-import Home3 from "./pages/Home3";
-import Home2 from "./pages/Home2";
+import Index from "./pages/Index"; 
 import Services from "./pages/Services";
 import ServiceDetails from "./pages/ServiceDetails";
 import FuelManagement from "./pages/services/FuelManagement";
@@ -58,9 +56,7 @@ const AnimatedRoutes = () => {
         className="min-h-screen"
       >
         <Routes location={location}>
-          <Route path="/" element={<Index />} />
-          <Route path="/home3" element={<Home3 />} />
-          <Route path="/home2" element={<Home2 />} />
+          <Route path="/" element={<Index />} /> 
           <Route path="/services" element={<Services />} />
           <Route path="/services/fuel-management" element={<FuelManagement />} />
           <Route path="/services/transport-transit" element={<TransportTransit />} />

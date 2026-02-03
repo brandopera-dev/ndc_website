@@ -53,7 +53,7 @@ const ProcessSection = () => {
       id: "transport-transit",
       title: t("process.cards.transport.title"),
       description: t("process.cards.transport.description"),
-      image: "/images/images_ndc/TRANSPORT/TR -1.png",
+      image: "/images/images_ndc/TRANSPORT/TR_1.webp",
       features: [
         { icon: Truck, label: transportFeatures[0] },
         { icon: Network, label: transportFeatures[1] },

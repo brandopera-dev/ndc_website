@@ -45,7 +45,7 @@ const Header = () => {
       title: t("servicesMenu.transportTransit.title"),
       subtitle: t("servicesMenu.transportTransit.subtitle"),
       to: "/services/transport-transit",
-      image: "/images/images_ndc/TRANSPORT/TR -1.png",
+      image: "/images/images_ndc/TRANSPORT/TR_1.webp",
     },
   
   ];

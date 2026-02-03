@@ -36,15 +36,15 @@ const About = () => {
     : ['Reliability', 'Efficiency', 'Customer focus', 'Sustainability'];
 
   const galleryImages = [
-    '/images/images_ndc/TRANSPORT/TR -1.png',
-    '/images/images_ndc/TRANSPORT/TR -6.png',
+    '/images/images_ndc/TRANSPORT/TR_1.webp',
+    '/images/images_ndc/TRANSPORT/TR_6.webp',
     '/images/images_ndc/FUEL/1F.jpg',
     '/images/images_ndc/FUEL/2F.jpg',
     '/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg',
     '/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg',
     '/images/images_ndc/Bureaux/B-1.png',
     '/images/images_ndc/Bureaux/B-2.png',
-    '/images/images_ndc/GARAGE/G-1.png',
+    '/images/images_ndc/GARAGE/G_1.webp',
   ];
 
   const milestones = language === "fr" ? [
@@ -482,7 +482,7 @@ const About = () => {
         description={ctaTexts.description}
         buttonText={ctaTexts.button}
         buttonLink="/contact"
-        imageSrc="/images/images_ndc/TRANSPORT/TR -1.png"
+        imageSrc="/images/images_ndc/TRANSPORT/TR_1.webp"
         imagePosition="left"
       />
 
