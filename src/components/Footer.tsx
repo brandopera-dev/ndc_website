@@ -137,8 +137,8 @@ const CTAFooterSection = () => {
               >
                 {t("footer.signature.company")}
               </a>
-              <span className="mx-2">•</span>
-              <span className="italic">{t("footer.signature.tagline")}</span>
+              {/* <span className="mx-2">•</span>
+              <span className="italic">{t("footer.signature.tagline")}</span> */}
             </p>
           </div>
         </div>

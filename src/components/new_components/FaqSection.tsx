@@ -97,9 +97,9 @@ const FaqSection = () => {
               ))}
             </div>
 
-            <button className="mt-10 bg-[#e11a1a] hover:bg-red-700 text-white px-6 py-3 rounded-md font-semibold text-sm transition-all hover:scale-105 hover:shadow-lg">
+            {/* <button className="mt-10 bg-[#e11a1a] hover:bg-red-700 text-white px-6 py-3 rounded-md font-semibold text-sm transition-all hover:scale-105 hover:shadow-lg">
               {texts.viewAllBtn}
-            </button>
+            </button> */}
           </div>
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden scroll-animate">

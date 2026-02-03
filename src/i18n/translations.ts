@@ -123,7 +123,7 @@ export const translations = {
       signature: {
         madeWith: "Made with ♥ by",
         company: "SUPERBRAND",
-        tagline: "we love coffee ☕",
+        tagline: "",
       },
     },
 
@@ -863,7 +863,7 @@ export const translations = {
       signature: {
         madeWith: "Made with ♥ by",
         company: "SUPERBRAND",
-        tagline: "we love coffee ☕",
+        tagline: "",
       },
     },
 
