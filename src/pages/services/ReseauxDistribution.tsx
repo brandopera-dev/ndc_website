@@ -89,13 +89,13 @@ const STATIONS: Station[] = [
 ];
 
 const GALLERY_IMAGES: GalleryItem[] = [
-  { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", category: "reseaux" },
-  { src: "/images/images_ndc/RESEAUX/NDC  de KATI107 copy.jpg", category: "reseaux" },
-  { src: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg", category: "reseaux" },
-  { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", category: "reseaux" },
-  { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", category: "reseaux" },
-  { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", category: "reseaux" },
-  { src: "/images/images_ndc/RESEAUX/NDC-Lancement119-sm.jpg", category: "reseaux" },
+  { src: "/images/images_ndc/RESEAUX/NDC-de-KATI101-copy.webp", category: "reseaux" },
+  { src: "/images/images_ndc/RESEAUX/NDC-de-KATI107-copy.webp", category: "reseaux" },
+  { src: "/images/images_ndc/RESEAUX/NDC-de-KATI131-1-copy.webp", category: "reseaux" },
+  { src: "/images/images_ndc/RESEAUX/NDC-de-KATI137-copy.webp", category: "reseaux" },
+  { src: "/images/images_ndc/RESEAUX/NDC-de-KATI178-copy.webp", category: "reseaux" },
+  { src: "/images/images_ndc/RESEAUX/NDC-de-KATI30-copy.webp", category: "reseaux" },
+  { src: "/images/images_ndc/RESEAUX/NDC-Lancement119-sm.webp", category: "reseaux" },
   { src: "/images/images_ndc/Bureaux/B-3.webp", category: "reseaux" },
   { src: "/images/images_ndc/Bureaux/NDC--de-KATI206-sm.webp", category: "reseaux" },
 ];

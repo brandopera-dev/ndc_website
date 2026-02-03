@@ -33,7 +33,7 @@ const Header = () => {
       title: t("servicesMenu.reseauxDistribution.title"),
       subtitle: t("servicesMenu.reseauxDistribution.subtitle"),
       to: "/services/reseaux-distribution",
-      image: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg",
+      image: "/images/images_ndc/RESEAUX/NDC-de-KATI131-1-copy.webp",
     },
     {
       title: t("servicesMenu.fuelManagement.title"),

@@ -147,13 +147,13 @@ const Media = () => {
     { src: "/images/images_ndc/FUEL/F-10.webp", alt: "Équipements fuel", category: "fuel" },
 
     // Réseaux de distribution
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI101 copy.jpg", alt: "Station NDC Kati", category: "reseaux" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI107 copy.jpg", alt: "Réseau distribution Kati", category: "reseaux" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI131 1 copy.jpg", alt: "Point de distribution", category: "reseaux" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI137 copy.jpg", alt: "Station-service NDC", category: "reseaux" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg", alt: "Infrastructure station", category: "reseaux" },
-    { src: "/images/images_ndc/RESEAUX/NDC  de KATI30 copy.jpg", alt: "Infrastructure station", category: "reseaux" },
-    { src: "/images/images_ndc/RESEAUX/NDC-Lancement119-sm.jpg", alt: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC-de-KATI101-copy.webp", alt: "Station NDC Kati", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC-de-KATI107-copy.webp", alt: "Réseau distribution Kati", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC-de-KATI131-1-copy.webp", alt: "Point de distribution", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC-de-KATI137-copy.webp", alt: "Station-service NDC", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC-de-KATI178-copy.webp", alt: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC-de-KATI30-copy.webp", alt: "Infrastructure station", category: "reseaux" },
+    { src: "/images/images_ndc/RESEAUX/NDC-Lancement119-sm.webp", alt: "Infrastructure station", category: "reseaux" },
     { src: "/images/images_ndc/Bureaux/B-3.webp", alt: "Infrastructure station", category: "reseaux" },
     { src: "/images/images_ndc/Bureaux/NDC--de-KATI206-sm.webp", alt: "Infrastructure station", category: "reseaux" },
     

@@ -29,7 +29,7 @@ const ProcessSection = () => {
       id: "reseaux-distribution",
       title: t("process.cards.reseaux.title"),
       description: t("process.cards.reseaux.description"),
-      image: "/images/images_ndc/RESEAUX/NDC  de KATI178 copy.jpg",
+      image: "/images/images_ndc/RESEAUX/NDC-de-KATI178-copy.webp",
       features: [
         { icon: Network, label: reseauxFeatures[0] },
         { icon: ShieldCheck, label: reseauxFeatures[1] },
