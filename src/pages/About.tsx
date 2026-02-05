@@ -48,13 +48,13 @@ const About = () => {
   ];
 
   const milestones = language === "fr" ? [
-    { year: '2008', title: 'Fondation', description: 'Démarré avec une vision de révolutionner le secteur des hydrocarbures et de la logistique au Mali' },
+    { year: '2010', title: 'Fondation', description: 'Démarré avec une vision de révolutionner le secteur des hydrocarbures et de la logistique au Mali' },
     { year: '2012', title: 'Expansion', description: 'Ouverture de nouvelles routes logistiques à travers le continent africain' },
     { year: '2015', title: 'Innovation', description: 'Lancement de solutions avancées de Fuel Management' },
     { year: '2020', title: 'Croissance', description: 'Établissement de partenariats stratégiques majeurs' },
     { year: '2022', title: 'Leadership', description: 'Devenu le leader régional en importation de produits pétroliers' },
   ] : [
-    { year: '2008', title: 'Foundation', description: 'Started with a vision to revolutionize the hydrocarbons and logistics sector in Mali' },
+    { year: '2010', title: 'Foundation', description: 'Started with a vision to revolutionize the hydrocarbons and logistics sector in Mali' },
     { year: '2012', title: 'Expansion', description: 'Opening new logistics routes across the African continent' },
     { year: '2015', title: 'Innovation', description: 'Launch of advanced Fuel Management solutions' },
     { year: '2020', title: 'Growth', description: 'Establishment of major strategic partnerships' },
@@ -154,7 +154,7 @@ const About = () => {
   const context = {
     verticalLabel: language === "fr" ? "CONTEXTE" : "CONTEXT",
     badge: language === "fr" ? "• UN RÔLE CLÉ" : "• A KEY ROLE",
-    title: language === "fr" ? "Un rôle clé auprès des mines et industrie" : "A key role with mines and industry",
+    title: language === "fr" ? "Un rôle clé auprès des mines et industries" : "A key role with mines and industries",
     paragraph1: language === "fr" 
       ? "L'industrie minière malienne est caractérisée par des activités opérationnelles étroitement liées à la disponibilité d'une source d'énergie stable ainsi qu'à une maîtrise parfaite de la chaîne d'approvisionnement des matières premières, des consommables, des engins de manutention et des pièces de rechanges."
       : "The Malian mining industry is characterized by operational activities closely linked to the availability of a stable energy source as well as perfect control of the supply chain for raw materials, consumables, handling equipment and spare parts.",

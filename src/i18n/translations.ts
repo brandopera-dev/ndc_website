@@ -533,7 +533,7 @@ export const translations = {
           badge: "• JALONS",
           title: "Notre Histoire Depuis la Création",
           milestones: [
-            { year: "2008", title: "Fondation", description: "Démarré avec une vision de révolutionner le secteur des hydrocarbures et de la logistique au Mali" },
+            { year: "2010", title: "Fondation", description: "Démarré avec une vision de révolutionner le secteur des hydrocarbures et de la logistique au Mali" },
             { year: "2012", title: "Expansion", description: "Ouverture de nouvelles routes logistiques à travers le continent africain" },
             { year: "2015", title: "Innovation", description: "Lancement de solutions avancées de Fuel Management" },
             { year: "2020", title: "Croissance", description: "Établissement de partenariats stratégiques majeurs" },
