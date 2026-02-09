@@ -1,4 +1,6 @@
+import React from 'react';
 import { useState } from "react";
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -206,6 +208,13 @@ const Media = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{language === 'fr' ? 'Média & Actualités | NDC Énergie' : 'Media & News | NDC Energy'}</title>
+        <meta name="description" content={language === 'fr' 
+          ? "Découvrez l'actualité de NDC Énergie, nos événements, nos vidéos et nos galeries photos sur le terrain au Mali." 
+          : "Discover NDC Energy news, events, videos and photo galleries in the field in Mali."} />
+        <link rel="canonical" href="https://ndc.africa/media" />
+      </Helmet>
       <Header />
 
       {/* Video Modal */}
@@ -306,12 +315,12 @@ const Media = () => {
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-3">
-                  <a href="#videos" className="w-full sm:w-auto">
+                  {/* <a href="#videos" className="w-full sm:w-auto">
                     <Button className="bg-[#e11a1a] hover:bg-red-700 text-white rounded-full px-6 py-3 font-semibold w-full sm:w-auto">
                       {t("hero.media.videosBtn")}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
-                  </a>
+                  </a> */}
                   <a href="#galerie" className="w-full sm:w-auto">
                     <Button
                       variant="outline"

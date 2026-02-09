@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   Camera,
@@ -127,6 +128,13 @@ const TransportTransit = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>{language === 'fr' ? 'Transport & Transit | NDC Énergie' : 'Transport & Transit | NDC Energy'}</title>
+        <meta name="description" content={language === 'fr' 
+          ? "Transport industriel et transit transfrontalier en Afrique de l'Ouest. Coordination logistique sécurisée pour les mines et industries." 
+          : "Industrial transport and cross-border transit in West Africa. Secured logistics coordination for mining and industries."} />
+        <link rel="canonical" href="https://ndc.africa/services/transport-transit" />
+      </Helmet>
       <Header />
 
       <section className="relative pt-28 pb-16 bg-[#1f1f1f] overflow-hidden">

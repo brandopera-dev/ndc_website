@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Check, ChevronLeft, ChevronRight, ArrowRight, Play, ShieldCheck, Target, Users, ClipboardList, Route, BadgeCheck } from 'lucide-react';
@@ -199,6 +200,17 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{language === 'fr' ? 'À Propos | NDC Énergie - Expertise Énergétique au Mali' : 'About Us | NDC Energy - Energy Expertise in Mali'}</title>
+        <meta name="description" content={language === 'fr' 
+          ? "Découvrez l'histoire, la mission et l'expertise de NDC Énergie. Partenaire de confiance pour le fuel management et la logistique industrielle au Mali." 
+          : "Discover NDC Energy's history, mission, and expertise. Trusted partner for fuel management and industrial logistics in Mali."} />
+        <meta property="og:title" content={language === 'fr' ? 'À Propos de NDC Énergie' : 'About NDC Energy'} />
+        <meta property="og:description" content={language === 'fr' 
+          ? "Notre engagement : sécuriser l'approvisionnement énergétique des industries et mines en Afrique." 
+          : "Our commitment: securing energy supply for industries and mines in Africa."} />
+        <link rel="canonical" href="https://ndc.africa/about" />
+      </Helmet>
       <Header />
 
       {/* Hero Section */}
@@ -213,7 +225,7 @@ const About = () => {
         title={t('hero.about.title')}
         description={t('hero.about.description')}
         primaryAction={{
-          to: '/services',
+          to: '/#services',
           label: t('hero.about.primaryCta'),
         }}
         secondaryAction={{

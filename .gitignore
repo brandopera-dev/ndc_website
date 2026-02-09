@@ -25,3 +25,5 @@ dist-ssr
 
 public/images/logo/*.zip
 *.zip
+
+.env

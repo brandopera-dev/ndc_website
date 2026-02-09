@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useI18n } from "@/i18n/I18nProvider";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import HeroModernSection from "@/components/HeroModernSection";
 import ProcessSection from "@/components/ProcessSection";
@@ -33,6 +34,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{language === 'fr' ? 'NDC Énergie | Solutions Énergétiques et Logistiques au Mali' : 'NDC Energy | Energy and Logistics Solutions in Mali'}</title>
+        <meta name="description" content={language === 'fr' 
+          ? "NDC Énergie : Leader au Mali pour l'importation d'hydrocarbures, le fuel management, le transport et le transit industriel. Solutions intégrées pour les mines et industries." 
+          : "NDC Energy: Leader in Mali for hydrocarbon imports, fuel management, transport, and industrial transit. Integrated solutions for mining and industries."} />
+        <meta property="og:title" content={language === 'fr' ? 'NDC Énergie - Solutions Énergétiques' : 'NDC Energy - Energy Solutions'} />
+        <meta property="og:description" content={language === 'fr' 
+          ? "Découvrez nos solutions intégrées : hydrocarbures, logistique et transit pour le secteur minier et industriel en Afrique de l'Ouest." 
+          : "Discover our integrated solutions: hydrocarbons, logistics, and transit for the mining and industrial sectors in West Africa."} />
+        <meta property="og:url" content="https://ndc.africa/" />
+        <link rel="canonical" href="https://ndc.africa/" />
+      </Helmet>
       <Header />
       <HeroModernSection />
       {/* <ShipBannerFeaturesSection /> */}
@@ -70,7 +83,7 @@ const Index = () => {
                 </svg>
               </button>
             </a>
-            <a href="/services">
+            <a href="/#services">
               <button className="border-2 border-[#1f1f1f] text-[#1f1f1f] hover:bg-[#1f1f1f] hover:text-white rounded-full px-8 py-4 font-semibold transition-colors">
                 {language === 'fr' ? 'Découvrir nos services' : 'Discover our services'}
               </button>

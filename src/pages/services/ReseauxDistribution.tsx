@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   BarChart3,
@@ -80,12 +81,10 @@ declare global {
 // ============================================================================
 
 const STATIONS: Station[] = [
-  { name: "Bamako", lat: 12.6392, lng: -8.0029 },
-  { name: "Kayes", lat: 14.4469, lng: -11.4356 },
-  { name: "Sikasso", lat: 11.3167, lng: -5.6667 },
-  { name: "Ségou", lat: 13.4317, lng: -6.2617 },
-  { name: "Mopti", lat: 14.4843, lng: -4.1973 },
-  { name: "Koutiala", lat: 12.3833, lng: -5.4667 },
+  { name: "NDC ENERGIE SOTUBA", lat: 12.6480099, lng: -8.0579007 },
+  { name: "NDC ENERGIE KABALA", lat: 12.5526023, lng: -8.1091869 },
+  { name: "NDC ÉNERGIE KATI", lat: 12.626886, lng: -8.0349376 },
+  { name: "NDC ÉNERGIE Sirakoro", lat: 12.648448, lng: -8.0150528},
 ];
 
 const GALLERY_IMAGES: GalleryItem[] = [
@@ -407,6 +406,13 @@ const ReseauxDistribution: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{language === 'fr' ? 'Réseaux de Distribution | NDC Énergie' : 'Distribution Networks | NDC Energy'}</title>
+        <meta name="description" content={language === 'fr' 
+          ? "Approvisionnement et gestion de stations-service au Mali. Traçabilité, planification et pilotage des volumes en temps réel." 
+          : "Supply and management of service stations in Mali. Traceability, planning, and real-time volume management."} />
+        <link rel="canonical" href="https://ndc.africa/services/reseaux-distribution" />
+      </Helmet>
       <Header />
 
       {/* Hero Section */}

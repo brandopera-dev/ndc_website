@@ -329,7 +329,7 @@ const QuoteCalculatorSection = () => {
     };
 
     try {
-      const response = await fetch('https://formspree.io/f/xzdgrogw', {
+      const response = await fetch('/api/send-quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -228,8 +228,8 @@ const Header = () => {
               }`}
               title={language === "fr" ? "Switch to English" : "Passer en Français"}
             >
-              <span className="text-base leading-none">{language === "fr" ? "🇫🇷" : "🇬🇧"}</span>
-              <span>{language === "fr" ? "FR" : "EN"}</span>
+              <span className="text-base leading-none">{language === "fr" ?"🇬🇧": "🇫🇷" }</span>
+              <span>{language === "fr" ?  "EN":"FR" }</span>
             </button>
             <Link to="/contact">
               <Button

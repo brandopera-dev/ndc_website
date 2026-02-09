@@ -26,7 +26,7 @@ type PageHeroProps = {
   secondaryAction?: PageHeroAction;
 };
 
- const isExternalHref = (to: string) => /^(https?:|mailto:|tel:)/.test(to);
+ const isExternalHref = (to: string) => /^(https?:|mailto:|tel:|#)/.test(to);
 
 const PageHero = React.memo(({
   backgroundImage,

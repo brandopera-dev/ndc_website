@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Droplet, Network, Truck, TrendingUp, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -179,6 +180,17 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{language === 'fr' ? 'Nos Services | NDC Énergie - Fuel Management, Transport et Transit' : 'Our Services | NDC Energy - Fuel Management, Transport and Transit'}</title>
+        <meta name="description" content={language === 'fr' 
+          ? "Explorez nos solutions : Fuel Management, Réseaux de Distribution et Transport/Transit. Expertise logistique complète pour les secteurs minier et industriel." 
+          : "Explore our solutions: Fuel Management, Distribution Networks and Transport/Transit. Complete logistics expertise for mining and industrial sectors."} />
+        <meta property="og:title" content={language === 'fr' ? 'Services de NDC Énergie' : 'NDC Energy Services'} />
+        <meta property="og:description" content={language === 'fr' 
+          ? "Solutions intégrées pour optimiser votre chaîne d'approvisionnement énergétique et logistique." 
+          : "Integrated solutions to optimize your energy and logistics supply chain."} />
+        <link rel="canonical" href="https://ndc.africa/services" />
+      </Helmet>
       <Header />
 
       {/* Hero Section */}

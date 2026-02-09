@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import Header from "@/components/Header";
 import CTAFooterSection from "@/components/Footer";
@@ -30,6 +31,17 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{language === 'fr' ? 'Contactez NDC Énergie | Siège à Bamako, Mali' : 'Contact NDC Energy | Headquarters in Bamako, Mali'}</title>
+        <meta name="description" content={language === 'fr' 
+          ? "Contactez notre équipe au Mali. Siège à Hamdalaye ACI 2000, Bamako. Téléphone, email et formulaire de demande de devis." 
+          : "Contact our team in Mali. Headquarters in Hamdalaye ACI 2000, Bamako. Phone, email, and quote request form."} />
+        <meta property="og:title" content={language === 'fr' ? 'Contacter NDC Énergie' : 'Contact NDC Energy'} />
+        <meta property="og:description" content={language === 'fr' 
+          ? "Besoin d'un devis ou d'une information ? Notre équipe est à votre disposition." 
+          : "Need a quote or information? Our team is at your disposal."} />
+        <link rel="canonical" href="https://ndc.africa/contact" />
+      </Helmet>
       <Header />
       
       {/* Hero Section */}

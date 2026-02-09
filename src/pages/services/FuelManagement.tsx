@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   Camera,
@@ -124,6 +125,13 @@ const FuelManagement = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>{language === 'fr' ? 'Fuel Management & Infrastructures | NDC Énergie' : 'Fuel Management & Infrastructure | NDC Energy'}</title>
+        <meta name="description" content={language === 'fr' 
+          ? "Solutions de stockage et gestion d'hydrocarbures sur site pour mines et industries au Mali. Conception, construction et maintenance." 
+          : "On-site hydrocarbon storage and management solutions for mining and industry in Mali. Design, construction, and maintenance."} />
+        <link rel="canonical" href="https://ndc.africa/services/fuel-management" />
+      </Helmet>
       <Header />
 
       <section className="relative pt-28 pb-16 bg-[#1f1f1f] overflow-hidden">

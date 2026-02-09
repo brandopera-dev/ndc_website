@@ -58,18 +58,13 @@ const CTAFooterSection = () => {
               
               {/* Social Icons */}
               <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 bg-gray-100 hover:bg-[#e11a1a] hover:text-white rounded-lg flex items-center justify-center transition-colors">
+                <a href="https://www.instagram.com/ndc_mali" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-100 hover:bg-[#e11a1a] hover:text-white rounded-lg flex items-center justify-center transition-colors">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 hover:bg-[#e11a1a] hover:text-white rounded-lg flex items-center justify-center transition-colors">
+                <a href="https://www.facebook.com/p/NDC-%C3%89nergie-61557207922911/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-100 hover:bg-[#e11a1a] hover:text-white rounded-lg flex items-center justify-center transition-colors">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 hover:bg-[#e11a1a] hover:text-white rounded-lg flex items-center justify-center transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 hover:bg-[#e11a1a] hover:text-white rounded-lg flex items-center justify-center transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
+               
               </div>
             </div>
 
@@ -120,15 +115,15 @@ const CTAFooterSection = () => {
           <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
             <p>{t("footer.copyright")}</p>
             <div className="flex gap-6">
-              <Link to="/contact" className="hover:text-[#e11a1a] transition-colors">{t("footer.legal.mentions")}</Link>
-              <Link to="/contact" className="hover:text-[#e11a1a] transition-colors">{t("footer.legal.privacy")}</Link>
+              <Link to="/mentions-legales" className="hover:text-[#e11a1a] transition-colors">{t("footer.legal.mentions")}</Link>
+              <Link to="/politique-confidentialite" className="hover:text-[#e11a1a] transition-colors">{t("footer.legal.privacy")}</Link>
             </div>
           </div>
 
           {/* Signature */}
           <div className="pt-4 text-center text-xs text-gray-400">
             <p>
-              {t("footer.signature.madeWith")} <span className="text-[#e11a1a]">♥</span> by{' '}
+              {t("footer.signature.madeWith")} {t(" ")}
               <a 
                 href="https://supebrand.com" 
                 target="_blank" 
